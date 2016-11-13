@@ -1,0 +1,126 @@
+@import 'page_1';
+@import 'page_2';
+@import 'page_3';
+@import 'page_4';
+@import 'page_5';
+@import 'page_events';
+
+.ui-header{
+	height: 40px;
+}
+@font-face {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: none;
+}
+body{
+	span, input{
+		text-shadow: none;
+	}
+	a{
+		text-decoration: none;
+		color: #FFF !important;
+	}
+}
+
+.app-page{
+	padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1ebfae;
+	background-size: cover;
+	position: fixed;
+    .menu-bar{
+		height: 7.5%;
+		background-color: #2D2D2D;
+		position: relative;
+	}
+	#user_photo_container{
+		overflow: hidden;
+	    height: 200px;
+	    position: relative;
+	    margin: 0px auto;
+	    width: 100%;
+		#user_photo{
+			width: 100%;
+			height: 200px;
+			background-repeat: no-repeat;
+		}
+		span{
+			position: absolute; 
+		   	left: 0; 
+		   	width: 100%; 
+			text-transform: uppercase;
+			text-align: center;
+			bottom: 0;
+			font-size: 24px;
+		}
+	}
+}
+
+#lista{
+	a{
+		.container{
+			padding: 10px;
+    		height: 45px;
+    		span{
+				margin-left: 11px;
+				line-height: 45px;
+			}
+		}
+		div{
+			text-shadow: none;
+			text-transform: uppercase;
+			color: #eeeeee;
+			.hour{
+				width: 24%;
+				font-size: 18px;
+    			text-align: center;
+    			float: left;
+    			color: #FFF;
+    			border: 1px solid #FFF;
+			}
+
+		}
+	}
+}
+#thanks-redirect{
+	background-color: transparent;
+    border: 1px solid #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    width: 98.5%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 1.5%;
+    height: 22px;
+    border-radius: 0;
+    height: 24px;
+    font-family: 'Avenir Next';
+    font-weight: normal;
+}
+.error-data-entry{
+	display: block;
+	text-transform: uppercase;
+	color: #ddd;
+	margin: 0 auto;
+	font-size: 11px;
+	text-align: center;
+}
+#loading{
+	background-color: #000;
+	opacity: 0.4;
+	z-index: 20;
+	padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#map{
+	display: none;
+}

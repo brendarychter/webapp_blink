@@ -1,0 +1,87 @@
+/*First page*/
+.first-page{
+	background-color: #1ebfae;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+
+	.btns-log-in{
+		padding: 12% 4.5%;
+		height: 50%;
+		width: 92%;
+		float: left;
+		.btn-login{
+			width: 100%;
+			margin-bottom: 3%;
+			border: none;
+			color: #FFFFFF;
+			font-size: 14px;
+			text-shadow: none;
+			&:focus{
+				background-color: #FFFFFF;
+				color: #1d1d1d;
+			}
+		}
+		.log-in-app a{
+			background-color: transparent;
+			border: 1px solid #FFFFFF;
+			text-transform: uppercase;
+			letter-spacing: 1.2px;
+			width: 98.5%;
+		    display: inline-block;
+		    text-align: center;
+		    padding-top: 2.5%;
+		    height: 29px;
+		}
+		.btn-fb{
+			background-color: #39579B;
+			&:focus{
+				color: #39579B;
+			}
+		}
+		.btn-google{
+			background-color: #DF4A32;
+			&:focus{
+				color: #DF4A32;
+			}
+		}
+		.btn-fb, .btn-google{
+			&:focus{
+				background-color: #FFFFFF;
+			}
+		}
+		.input-app{
+			background-color: #ddd;
+			border: 0.8px solid #C4C4C4;
+			color: #C4C4C4;
+			width: 97%;
+			padding-left: 5px;
+			height: 32px;
+		}
+		.btn-pass{
+			margin-bottom: 6%;
+		}
+		.btn-user{
+			margin-bottom: 0;
+		}
+		.option-login{
+			width: 100%;
+			color: #FFFFFF;
+			text-align: center;
+		}
+	}
+	.register{
+		position: absolute;
+		bottom: 15px;
+		width: 100%;
+    	text-align: center;
+    	color: #ddd;
+    	background-color: transparent;
+    	border: 0;
+    	text-shadow: none;
+    	span{
+    		color: #FFF;
+    		font-weight: bold;
+    	}
+	}
+}

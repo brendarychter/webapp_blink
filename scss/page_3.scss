@@ -1,0 +1,69 @@
+//#map-page, #map-canvas { width: 100%; height: 100%; padding: 0; }
+.third-page{
+	.detail-tickets{
+		padding: 20px;
+		background: url('../img/resources/onda_vaga.jpg');
+		height: 32%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		text-shadow: none;
+		text-transform: uppercase;
+		color: #FFF;
+		#event-now-buy{
+			text-align: center;
+			display: block;
+			position: absolute;
+			width: 90%;
+			bottom: 22px;
+			.evt-title{
+				display: block;
+				font-size: 36px;
+				font-weight: bold;
+			}
+			.price{
+				display: inline-block;
+				font-size: 32px;
+				font-weight: 500;
+				margin-bottom: 10px;
+			}
+			.buy-tickets{
+				border: 1px solid #FFF;
+				padding: 10px;
+				a{
+					display: inline-block;
+				}
+			}
+			.share-actions{
+				width: 50px;
+				position: absolute;
+				right: -24px;
+				bottom: -18px;
+			}
+		}
+	}
+}
+
+#page-3{
+	#description-band{
+		h3{
+			text-transform: uppercase;
+		    font-weight: bold;
+		    margin-top: 0;
+		    background-color: #FF8A60;
+		    display: inline-block;
+		    margin: 0;
+		    padding: 5px;
+		}
+		padding: 2%;
+		text-shadow: none;
+		color: #FFF;
+		span{
+			text-transform: uppercase;
+			color: #FF8A60;
+			font-size: 11px;
+			text-align: center;
+			display: block;
+		}
+	}
+}

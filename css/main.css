@@ -1,0 +1,493 @@
+/*First page*/
+.first-page {
+  background-color: #1ebfae;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed; }
+  .first-page .btns-log-in {
+    padding: 12% 4.5%;
+    height: 50%;
+    width: 92%;
+    float: left; }
+    .first-page .btns-log-in .btn-login {
+      width: 100%;
+      margin-bottom: 3%;
+      border: none;
+      color: #FFFFFF;
+      font-size: 14px;
+      text-shadow: none; }
+      .first-page .btns-log-in .btn-login:focus {
+        background-color: #FFFFFF;
+        color: #1d1d1d; }
+    .first-page .btns-log-in .log-in-app a {
+      background-color: transparent;
+      border: 1px solid #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      width: 98.5%;
+      display: inline-block;
+      text-align: center;
+      padding-top: 2.5%;
+      height: 29px; }
+    .first-page .btns-log-in .btn-fb {
+      background-color: #39579B; }
+      .first-page .btns-log-in .btn-fb:focus {
+        color: #39579B; }
+    .first-page .btns-log-in .btn-google {
+      background-color: #DF4A32; }
+      .first-page .btns-log-in .btn-google:focus {
+        color: #DF4A32; }
+    .first-page .btns-log-in .btn-fb:focus, .first-page .btns-log-in .btn-google:focus {
+      background-color: #FFFFFF; }
+    .first-page .btns-log-in .input-app {
+      background-color: #ddd;
+      border: 0.8px solid #C4C4C4;
+      color: #C4C4C4;
+      width: 97%;
+      padding-left: 5px;
+      height: 32px; }
+    .first-page .btns-log-in .btn-pass {
+      margin-bottom: 6%; }
+    .first-page .btns-log-in .btn-user {
+      margin-bottom: 0; }
+    .first-page .btns-log-in .option-login {
+      width: 100%;
+      color: #FFFFFF;
+      text-align: center; }
+  .first-page .register {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    color: #ddd;
+    background-color: transparent;
+    border: 0;
+    text-shadow: none; }
+    .first-page .register span {
+      color: #FFF;
+      font-weight: bold; }
+
+.second-page .events-billboard {
+  padding: 20px;
+  background: url("../img/resources/onda_vaga.jpg");
+  width: 100%;
+  height: 32%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+  .second-page .events-billboard span, .second-page .events-billboard button {
+    text-transform: uppercase;
+    color: #C4C4C4;
+    display: block;
+    font-size: 19px; }
+  .second-page .events-billboard div {
+    padding-left: 20px; }
+  .second-page .events-billboard .event-now span {
+    text-shadow: none; }
+    .second-page .events-billboard .event-now span:first-child {
+      line-height: 12px; }
+    .second-page .events-billboard .event-now span:nth-child(2) {
+      letter-spacing: 1.5px; }
+  .second-page .events-billboard .event-now .show {
+    font-weight: bold; }
+  .second-page .events-billboard .event-later {
+    position: absolute;
+    bottom: 20px;
+    color: #FFFFFF;
+    text-shadow: none; }
+    .second-page .events-billboard .event-later span {
+      color: #FFFFFF; }
+      .second-page .events-billboard .event-later span:first-child, .second-page .events-billboard .event-later span:nth-child(2) {
+        display: inline-block; }
+    .second-page .events-billboard .event-later .day_next_event {
+      line-height: 12px;
+      font-size: 18px; }
+    .second-page .events-billboard .event-later .hour_next_event {
+      display: inline-block;
+      font-size: 24px; }
+    .second-page .events-billboard .event-later .on-scene {
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 30px; }
+    .second-page .events-billboard .event-later button {
+      border: 1px solid #FFFFFF;
+      background-color: transparent; }
+    .second-page .events-billboard .event-later .detail-event {
+      width: 45%;
+      margin-bottom: 3%;
+      border: 2px solid #FFFFFF;
+      color: #FFFFFF;
+      padding: 2px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 3%; }
+      .second-page .events-billboard .event-later .detail-event:focus {
+        background-color: #FFFFFF;
+        color: #1d1d1d; }
+      .second-page .events-billboard .event-later .detail-event #show-next-event {
+        display: block; }
+.second-page .konex-options {
+  width: 100%;
+  height: 30%; }
+  .second-page .konex-options ul {
+    list-style-type: none;
+    background-color: transparent;
+    float: left;
+    position: relative;
+    padding: 5%;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 0; }
+    .second-page .konex-options ul li {
+      width: 44%;
+      margin-right: 3%;
+      background-color: transparent;
+      float: left;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      text-align: center;
+      padding-bottom: 15px;
+      cursor: pointer;
+      position: relative; }
+      .second-page .konex-options ul li span {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        top: 55px;
+        display: inline-block;
+        width: 100%; }
+    .second-page .konex-options ul .landing-option img {
+      width: 100%;
+      height: 100%; }
+
+#page-2 #menu-panel ul li {
+  text-transform: uppercase; }
+
+.third-page .detail-tickets {
+  padding: 20px;
+  background: url("../img/resources/onda_vaga.jpg");
+  height: 32%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-shadow: none;
+  text-transform: uppercase;
+  color: #FFF; }
+  .third-page .detail-tickets #event-now-buy {
+    text-align: center;
+    display: block;
+    position: absolute;
+    width: 90%;
+    bottom: 22px; }
+    .third-page .detail-tickets #event-now-buy .evt-title {
+      display: block;
+      font-size: 36px;
+      font-weight: bold; }
+    .third-page .detail-tickets #event-now-buy .price {
+      display: inline-block;
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 10px; }
+    .third-page .detail-tickets #event-now-buy .buy-tickets {
+      border: 1px solid #FFF;
+      padding: 10px; }
+      .third-page .detail-tickets #event-now-buy .buy-tickets a {
+        display: inline-block; }
+    .third-page .detail-tickets #event-now-buy .share-actions {
+      width: 50px;
+      position: absolute;
+      right: -24px;
+      bottom: -18px; }
+
+#page-3 #description-band {
+  padding: 2%;
+  text-shadow: none;
+  color: #FFF; }
+  #page-3 #description-band h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    background-color: #FF8A60;
+    display: inline-block;
+    margin: 0;
+    padding: 5px; }
+  #page-3 #description-band span {
+    text-transform: uppercase;
+    color: #FF8A60;
+    font-size: 11px;
+    text-align: center;
+    display: block; }
+
+#page-4 .header-4 span {
+  line-height: 40px;
+  padding-left: 20px;
+  text-transform: uppercase;
+  font-weight: normal; }
+#page-4 .content-4 {
+  padding: 15px; }
+  #page-4 .content-4 span {
+    text-transform: uppercase;
+    text-shadow: none;
+    color: #FF8A60; }
+  #page-4 .content-4 .event-data {
+    text-transform: uppercase;
+    color: #FFF;
+    text-shadow: none;
+    padding-bottom: 10px; }
+    #page-4 .content-4 .event-data .title {
+      color: #FF8A60;
+      font-size: 28px;
+      font-weight: bold; }
+    #page-4 .content-4 .event-data .hour, #page-4 .content-4 .event-data .location, #page-4 .content-4 .event-data .price {
+      font-size: 13px;
+      display: inline-block; }
+    #page-4 .content-4 .event-data .price {
+      display: block; }
+      #page-4 .content-4 .event-data .price span {
+        color: #FFFFFF;
+        font-size: 17px; }
+  #page-4 .content-4 input {
+    background-color: #1d1d1d;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px; }
+  #page-4 .content-4 .data-to-send .personal-data {
+    width: 100%;
+    display: inline-block; }
+  #page-4 .content-4 .data-to-send .ui-input-text {
+    width: 47%;
+    display: inline-block;
+    float: left;
+    text-shadow: none;
+    margin: 1%;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #FFF;
+    box-shadow: none; }
+  #page-4 .content-4 .data-to-send .fix-margin .ui-input-text {
+    margin-top: -37px; }
+  #page-4 .content-4 .data-to-send .mail .ui-input-text {
+    width: 96.5%;
+    margin: 1%;
+    margin-top: -18px;
+    color: #FFF;
+    box-shadow: none; }
+  #page-4 .content-4 .data-to-send .ui-radio {
+    width: 48%;
+    margin-top: 20px;
+    display: block;
+    margin: 0; }
+    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-on, #page-4 .content-4 .data-to-send .ui-radio .ui-radio-off {
+      background-color: #1d1d1d;
+      border-color: #1d1d1d;
+      width: 100%;
+      padding-top: 7px;
+      font-size: 11px;
+      text-transform: uppercase;
+      display: inline-block;
+      padding-left: 30px; }
+    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-on:after {
+      border-color: #FF8A60; }
+    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-off:after {
+      background-color: #FFF; }
+  #page-4 .content-4 .data-to-send .location {
+    text-shadow: none;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 10px;
+    line-height: 40px; }
+  #page-4 .content-4 .data-to-send .ui-select {
+    width: 47%;
+    border-radius: 0;
+    background-color: transparent;
+    float: left;
+    display: inline-block;
+    margin-left: 3px; }
+    #page-4 .content-4 .data-to-send .ui-select .ui-btn {
+      background-color: transparent;
+      border-radius: 0;
+      border: 1px solid #fff;
+      box-shadow: none; }
+  #page-4 .content-4 .data-to-send .buy-ticket {
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    text-transform: uppercase;
+    height: 36px;
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: normal;
+    box-shadow: none; }
+  #page-4 .content-4 form span {
+    font-size: 13px; }
+
+#page-5 .notification {
+  padding: 2px 5px; }
+#page-5 .band {
+  padding-top: 10px; }
+#page-5 .band, #page-5 .ticket {
+  width: 100%;
+  position: relative; }
+#page-5 .ticket {
+  z-index: 2;
+  position: absolute;
+  top: 40px; }
+#page-5 .event-data {
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: none;
+  padding-bottom: 10px; }
+  #page-5 .event-data .title {
+    color: #FF8A60;
+    font-size: 28px;
+    font-weight: bold; }
+  #page-5 .event-data .hour, #page-5 .event-data .location, #page-5 .event-data .price {
+    font-size: 13px;
+    display: inline-block; }
+  #page-5 .event-data .price {
+    display: block; }
+    #page-5 .event-data .price span {
+      color: #FFFFFF;
+      font-size: 17px;
+      font-weight: bold; }
+#page-5 .reserva-ticket {
+  padding: 10px; }
+  #page-5 .reserva-ticket p {
+    text-transform: uppercase;
+    text-align: center;
+    color: #CCC; }
+  #page-5 .reserva-ticket p, #page-5 .reserva-ticket span {
+    color: #FFF;
+    text-shadow: none; }
+#page-5 .return {
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  text-transform: uppercase;
+  height: 36px;
+  padding-top: 7px;
+  font-size: 14px;
+  font-weight: normal;
+  box-shadow: none; }
+#page-5 #qrcode {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center; }
+#page-5 #description-thanks {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  display: block; }
+
+#page-events .header-events span {
+  line-height: 40px;
+  padding-left: 20px;
+  text-transform: uppercase;
+  font-weight: normal; }
+
+.ui-header {
+  height: 40px; }
+
+@font-face {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: none; }
+body span, body input {
+  text-shadow: none; }
+body a {
+  text-decoration: none;
+  color: #FFF !important; }
+
+.app-page {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1ebfae;
+  background-size: cover;
+  position: fixed; }
+  .app-page .menu-bar {
+    height: 7.5%;
+    background-color: #2D2D2D;
+    position: relative; }
+  .app-page #user_photo_container {
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    margin: 0px auto;
+    width: 100%; }
+    .app-page #user_photo_container #user_photo {
+      width: 100%;
+      height: 200px;
+      background-repeat: no-repeat; }
+    .app-page #user_photo_container span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      text-align: center;
+      bottom: 0;
+      font-size: 24px; }
+
+#lista a .container {
+  padding: 10px;
+  height: 45px; }
+  #lista a .container span {
+    margin-left: 11px;
+    line-height: 45px; }
+#lista a div {
+  text-shadow: none;
+  text-transform: uppercase;
+  color: #eeeeee; }
+  #lista a div .hour {
+    width: 24%;
+    font-size: 18px;
+    text-align: center;
+    float: left;
+    color: #FFF;
+    border: 1px solid #FFF; }
+
+#thanks-redirect {
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  width: 98.5%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 1.5%;
+  height: 22px;
+  border-radius: 0;
+  height: 24px;
+  font-family: 'Avenir Next';
+  font-weight: normal; }
+
+.error-data-entry {
+  display: block;
+  text-transform: uppercase;
+  color: #ddd;
+  margin: 0 auto;
+  font-size: 11px;
+  text-align: center; }
+
+#loading {
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 20;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; }
+
+#map {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */
