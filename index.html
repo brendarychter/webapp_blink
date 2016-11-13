@@ -32,7 +32,7 @@
         <div class="background-konex app-page first-page" data-role="page" id="page-1">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
 		        <div class="option-login btn-login" data-role="none">
-		        	<img src="img/resources/icon_tab.png" alt="logo"/>
+		        	<img src="img/resources/logo.png" alt="logo"/>
 		        	<p style="font-size: 38px; font-weight: 700;">
 		        		BLINK APP
 		        	</p>
@@ -47,7 +47,7 @@
 	                </div>
 	            </form>
         	</div>
-        	<div data-role="footer" class="register" style>
+        	<div data-role="footer" class="register">
         		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in" id="register-click">Registrate</a></span>
         	</div>
 	    </div>
@@ -58,7 +58,7 @@
         <div class="background-konex app-page first-page" data-role="page" id="page-sign-in">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
         		<div class="option-login btn-login" data-role="none">
-		        	<img src="img/resources/icon_tab.png" alt="logo"/>
+		        	<img src="img/resources/logo.png" alt="logo"/>
 		        	<p style="font-size: 38px; font-weight: 700;">
 		        		BLINK APP
 		        	</p>
@@ -83,10 +83,29 @@
 
 	    <!-- START PAGE 2 -->
 	   	<div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
-	    	<div data-role="header" data-enhance="false" data-theme="b">
+	    	<div class="menu-bottom-app"style="height:70px;position:absolute;bottom:0;background-color: #168C80;width: 100%;">
+	    		<ul class= "list-items">
+	    			<li class="border-item notifications" style="margin-left:-40px; background-color:#fff;text-align:center">
+	    				<img src="img/resources/notification.png" style="height:50px;padding-top:10px"/>
+	    			</li>
+	    			<li class="border-item groups">
+	    			</li>
+	    			<li class="contacts">
+	    			</li>
+	    		</ul>
+	    	</div>
+	    	<!-- <div data-role="header" data-enhance="false" data-theme="b">
 		        <a href="#menu-panel" data-icon="bars" data-iconpos="notext"></a>
 				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
 		    </div>
+			<div class="konex-options">
+	    		<ul>
+	    			<li class="landing-option"><span>N</span><span>NEFETZ</span></li>
+	    			<li class="landing-option"><span>P13N</span></li>
+	    			<li class="landing-option"><span>FACU</span></li>
+	    			<li class="landing-option"><span>FAMILIA</span></li>
+	    		</ul>
+	    	</div>
 		    <div data-role="panel" data-display="overlay" data-theme="b" id="menu-panel">
 	        	<ul data-role="listview">
 					<div id="user_photo_container">
@@ -100,25 +119,16 @@
 		    </div>
 	    	<div class="events-billboard">
 	    		<div class="event-now">
-	    			<span>Pr&oacute;ximo evento</span>
-	    			<!--<span class="show">Teatro ciego</span>-->
+	    			<span>Pr&oacute;ximos eventos</span>
+	    			<span class="show">Teatro ciego</span>
 	    		</div>
 	    		<div class="event-later">
 	    			<span></span><span class="day_next_event"></span>&nbsp;&nbsp;&nbsp;<span class="hour_next_event"></span>hs.
 	    			<span class="on-scene"></span>
 	    			<span class="detail-event" ><a href="#page-3" data-transition="slide" id="show-next-event" class="show-next-event" event-id="">Ver evento</a></span>
 	    		</div>
-	    	</div>
-	    	<div class="konex-options">
-	    		<ul>
-	    			<li class="landing-option"><a data-transition="slide" id="event-selection"><img src="img/resources/eventos.png"><span>Eventos</span></a></li>
-	    			<li class="landing-option"><img src="img/resources/beneficios.png"><span>Beneficios</span></li>
-	    			<li class="landing-option"><img src="img/resources/kids.png"><span>Knx kids</span></li>
-	    			<li class="landing-option"><img src="img/resources/comunidad.png"><span>Comunidad</span></li>
-	    			<li class="landing-option"><img src="img/resources/salas.png"><span>Alquil&aacute; sala</span></li>
-	    			<li class="landing-option"><img src="img/resources/mas.png"><span>Descubr&iacute; m&aacute;s</span></li>
-	    		</ul>
-	    	</div>
+	    	</div> -->
+	    	
 	    </div>
 	    <!-- END PAGE 2 -->
 

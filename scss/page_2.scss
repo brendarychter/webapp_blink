@@ -1,7 +1,8 @@
 .second-page{
 	.events-billboard{
+		margin-top: -20px;
 		padding: 20px;
-		background: url('../img/resources/onda_vaga.jpg');
+		// background: url('../img/resources/onda_vaga.jpg');
 		width: 100%;
 		height: 32%;
 		background-repeat: no-repeat;
@@ -116,10 +117,23 @@
 					width: 100%;
 				}
 			}
-			.landing-option img{
-				width: 100%;
-				height: 100%;
+			.landing-option{
+				height: 75px;
+    			margin-bottom: 12px;
+    			background-color: #222;
 			}
+		}
+	}
+	.list-items{
+		margin-top: 0;
+		li{
+			list-style-type: none;
+			width: 37%;
+			height: 70px;
+			float: left;
+		}
+		.border-item{
+			border-right:1px solid #fff;
 		}
 	}
 }

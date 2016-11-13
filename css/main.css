@@ -59,17 +59,18 @@
     bottom: 15px;
     width: 100%;
     text-align: center;
-    color: #ddd;
+    color: #fff;
     background-color: transparent;
     border: 0;
-    text-shadow: none; }
+    text-shadow: none;
+    font-weight: 100; }
     .first-page .register span {
       color: #FFF;
       font-weight: bold; }
 
 .second-page .events-billboard {
+  margin-top: -20px;
   padding: 20px;
-  background: url("../img/resources/onda_vaga.jpg");
   width: 100%;
   height: 32%;
   background-repeat: no-repeat;
@@ -160,9 +161,19 @@
         top: 55px;
         display: inline-block;
         width: 100%; }
-    .second-page .konex-options ul .landing-option img {
-      width: 100%;
-      height: 100%; }
+    .second-page .konex-options ul .landing-option {
+      height: 75px;
+      margin-bottom: 12px;
+      background-color: #222; }
+.second-page .list-items {
+  margin-top: 0; }
+  .second-page .list-items li {
+    list-style-type: none;
+    width: 37%;
+    height: 70px;
+    float: left; }
+  .second-page .list-items .border-item {
+    border-right: 1px solid #fff; }
 
 #page-2 #menu-panel ul li {
   text-transform: uppercase; }
@@ -408,7 +419,7 @@ body a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #1ebfae;
+  background-color: #43D8AC;
   background-size: cover;
   position: fixed; }
   .app-page .menu-bar {
