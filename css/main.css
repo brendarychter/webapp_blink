@@ -111,6 +111,10 @@
     text-transform: uppercase; }
   #page-2 .active {
     background-color: #43D8AC; }
+  #page-2 #notifications-section, #page-2 #user-section {
+    display: none; }
+  #page-2 #events-section {
+    display: block; }
 
 .ui-header {
   height: 40px; }

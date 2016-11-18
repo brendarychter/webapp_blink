@@ -50,4 +50,10 @@
 	.active{
 		background-color: #43D8AC;
 	}
+	#notifications-section, #user-section{
+		display: none;
+	}
+	#events-section{
+		display: block;
+	}
 }

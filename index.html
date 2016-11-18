@@ -22,7 +22,7 @@
     </head>
     <body>
 		<!-- START PAGE 1 -->
-        <div class="app-page first-page" id="page-1">
+        <div class="app-page first-page" id="page-1" style="display: none;">
         	<div class="btns-log-in">
 		        <div class="option-login btn-login">
 		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
@@ -46,7 +46,7 @@
 		
 		<!-- START PAGE SIGN IN -->
 
-        <div class="app-page first-page" id="page-sign-in">
+        <div class="app-page first-page" id="page-sign-in" style="display: none;">
         	<div class="btns-log-in" >
         		<div class="option-login btn-login" >
 		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
@@ -71,31 +71,36 @@
 	    <!-- END PAGE SIGN IN -->
 
 	    <!-- START PAGE 2 -->
-	   	<div class="app-page second-page" id="page-2">
-	   		<div id="events" style="display: none;">
+	   	<div class="app-page second-page" id="page-2" style="display: block;">
+	   		<div class="active-section " id="events-section">
+	    		<div class="title">
+	    			Pr&oacute;ximos eventos
+	   			</div>
 	   			<ul>
 	    			
 	    		</ul>
 	   		</div>
-	   		<div id="notifications">
-	   			<p>Panel de notificaciones</p>
-	   			<ul>
-	    		</ul>
+	   		<div class="" id="notifications-section">
+	   			<div class="title">
+	   				Notificaciones
+	   			</div>
 	   		</div>
-	   		<div id="settings" style="display: none;">
+	   		<div class="  " id="user-section">
+	   			<div class="title">
+	    			Settings
+	   			</div>
 	   			<ul>
-	    			Pr&oacute;ximos eventos
 	    		</ul>
 	   		</div>
 	    	<div class="menu-bottom-app">
 	    		<ul class= "list-items">
-	    			<li class="border-item events active button-action">
+	    			<li class="border-item events active button-action" action="events-section">
 	    				<img src="img/resources/events.svg"/>
 	    			</li>
-	    			<li class="border-item notifications button-action">
+	    			<li class="border-item notifications button-action" action="notifications-section">
 	    				<img src="img/resources/notification.svg"/>
 	    			</li>
-	    			<li class="user button-action">
+	    			<li class="user button-action" action="user-section">
 	    				<img src="img/resources/user.svg"/>
 	    			</li>
 	    		</ul>
