@@ -1,6 +1,5 @@
 @import 'page_1';
 @import 'page_2';
-@import 'page_events';
 
 .ui-header{
 	height: 40px;
@@ -130,4 +129,7 @@ body{
 	.btns-log-in .input-app{
 		width: 92%;
 	}
+}
+#page-2{
+	display: none;
 }

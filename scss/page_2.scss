@@ -1,134 +1,9 @@
 .second-page{
-	.events-billboard{
-		margin-top: -20px;
-		padding: 20px;
-		// background: url('../img/resources/onda_vaga.jpg');
-		width: 100%;
-		height: 32%;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: relative;
-
-		span, button{
-			text-transform: uppercase;
-			color: #C4C4C4;
-			display: block;
-			font-size: 19px;		
-		}
-
-		div{
-			padding-left: 20px;
-		}
-		.event-now{
-			span{
-				text-shadow: none;
-				&:first-child{
-					line-height: 12px;
-				}
-				&:nth-child(2){
-					letter-spacing: 1.5px
-				}
-			}
-			.show{
-				font-weight: bold;
-			}
-		}
-		.event-later{
-			position: absolute;
-			bottom: 20px;
-			color: #FFFFFF;
-			text-shadow: none;
-			span{
-				color: #FFFFFF;
-				&:first-child, &:nth-child(2){
-					display: inline-block;
-				}
-			}
-			.day_next_event{
-				line-height: 12px;
-				font-size: 18px;
-			}
-			.hour_next_event{
-				display: inline-block;
-				font-size: 24px;
-			}
-			.on-scene{
-				letter-spacing: 2px;
-				font-weight: bold;
-				font-size: 36px;
-				line-height: 30px;
-			}
-			button{
-				border: 1px solid #FFFFFF;
-				background-color: transparent;
-			}
-			.detail-event{
-				width: 45%;
-			    margin-bottom: 3%;
-			    border: 2px solid #FFFFFF;
-			    color: #FFFFFF;
-			    padding: 2px;
-			    text-align: center;
-			    font-size: 14px;
-			    margin-top: 3%;
-			    &:focus{
-					background-color: #FFFFFF;
-					color: #1d1d1d;
-				}
-				#show-next-event{
-					display: block;
-				}
-
-			}
-		}
-	}
-	.konex-options{
-		width: 100%;
-		height: 30%;
-		ul{
-			list-style-type: none;
-			background-color: transparent;
-		    float: left;
-		    position: relative;
-		    padding: 5%;
-		    width: 100%;
-		    margin: 0;
-		    padding-bottom: 0;
-			li{
-				width: 44%;
-			    margin-right: 3%;
-			    background-color: transparent;
-			    float: left;
-			    font-size: 15px;
-			    text-transform: uppercase;
-			    color: #FFFFFF;
-			    font-weight: bold;
-			    letter-spacing: 1.2px;
-			    text-align: center;
-			    padding-bottom: 15px;
-			    cursor: pointer;
-			    position: relative;
-				span{
-					position: absolute;
-					bottom: 10px;
-					left: 0;
-					top: 55px;
-					display: inline-block;
-					width: 100%;
-				}
-			}
-			.landing-option{
-				height: 75px;
-    			margin-bottom: 12px;
-    			background-color: #222;
-			}
-		}
-	}
 	.list-items{
 		margin-top: 0;
 		li{
 			list-style-type: none;
-			width: 37%;
+			width: 33%;
 			height: 70px;
 			float: left;
 		}
@@ -139,11 +14,40 @@
 }
 
 #page-2{
+	background-color: #F3F3F3;
 	#menu-panel{
 		ul{
 			li{
 				text-transform: uppercase;
 			}
 		}
+	}
+	.menu-bottom-app{
+		height:55px;
+		position:absolute;
+		bottom:0;
+		background-color: #3AA792;
+		width: 100%;
+	}
+	.list-items{
+		padding: 0;
+		li{
+			cursor: pointer;
+			text-align: center;
+			img{
+				height:35px;
+				padding-top:10px;
+				margin: 0 auto;
+			}
+		}
+	}
+	#notifications{
+		p{
+			color: #fff;
+			text-transform: uppercase;
+		}
+	}
+	.active{
+		background-color: #43D8AC;
 	}
 }

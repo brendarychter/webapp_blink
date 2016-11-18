@@ -77,121 +77,40 @@
       color: #FFF;
       font-weight: bold; }
 
-.second-page .events-billboard {
-  margin-top: -20px;
-  padding: 20px;
-  width: 100%;
-  height: 32%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative; }
-  .second-page .events-billboard span, .second-page .events-billboard button {
-    text-transform: uppercase;
-    color: #C4C4C4;
-    display: block;
-    font-size: 19px; }
-  .second-page .events-billboard div {
-    padding-left: 20px; }
-  .second-page .events-billboard .event-now span {
-    text-shadow: none; }
-    .second-page .events-billboard .event-now span:first-child {
-      line-height: 12px; }
-    .second-page .events-billboard .event-now span:nth-child(2) {
-      letter-spacing: 1.5px; }
-  .second-page .events-billboard .event-now .show {
-    font-weight: bold; }
-  .second-page .events-billboard .event-later {
-    position: absolute;
-    bottom: 20px;
-    color: #FFFFFF;
-    text-shadow: none; }
-    .second-page .events-billboard .event-later span {
-      color: #FFFFFF; }
-      .second-page .events-billboard .event-later span:first-child, .second-page .events-billboard .event-later span:nth-child(2) {
-        display: inline-block; }
-    .second-page .events-billboard .event-later .day_next_event {
-      line-height: 12px;
-      font-size: 18px; }
-    .second-page .events-billboard .event-later .hour_next_event {
-      display: inline-block;
-      font-size: 24px; }
-    .second-page .events-billboard .event-later .on-scene {
-      letter-spacing: 2px;
-      font-weight: bold;
-      font-size: 36px;
-      line-height: 30px; }
-    .second-page .events-billboard .event-later button {
-      border: 1px solid #FFFFFF;
-      background-color: transparent; }
-    .second-page .events-billboard .event-later .detail-event {
-      width: 45%;
-      margin-bottom: 3%;
-      border: 2px solid #FFFFFF;
-      color: #FFFFFF;
-      padding: 2px;
-      text-align: center;
-      font-size: 14px;
-      margin-top: 3%; }
-      .second-page .events-billboard .event-later .detail-event:focus {
-        background-color: #FFFFFF;
-        color: #1d1d1d; }
-      .second-page .events-billboard .event-later .detail-event #show-next-event {
-        display: block; }
-.second-page .konex-options {
-  width: 100%;
-  height: 30%; }
-  .second-page .konex-options ul {
-    list-style-type: none;
-    background-color: transparent;
-    float: left;
-    position: relative;
-    padding: 5%;
-    width: 100%;
-    margin: 0;
-    padding-bottom: 0; }
-    .second-page .konex-options ul li {
-      width: 44%;
-      margin-right: 3%;
-      background-color: transparent;
-      float: left;
-      font-size: 15px;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      font-weight: bold;
-      letter-spacing: 1.2px;
-      text-align: center;
-      padding-bottom: 15px;
-      cursor: pointer;
-      position: relative; }
-      .second-page .konex-options ul li span {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        top: 55px;
-        display: inline-block;
-        width: 100%; }
-    .second-page .konex-options ul .landing-option {
-      height: 75px;
-      margin-bottom: 12px;
-      background-color: #222; }
 .second-page .list-items {
   margin-top: 0; }
   .second-page .list-items li {
     list-style-type: none;
-    width: 37%;
+    width: 33%;
     height: 70px;
     float: left; }
   .second-page .list-items .border-item {
     border-right: 1px solid #fff; }
 
-#page-2 #menu-panel ul li {
-  text-transform: uppercase; }
-
-#page-events .header-events span {
-  line-height: 40px;
-  padding-left: 20px;
-  text-transform: uppercase;
-  font-weight: normal; }
+#page-2 {
+  background-color: #F3F3F3; }
+  #page-2 #menu-panel ul li {
+    text-transform: uppercase; }
+  #page-2 .menu-bottom-app {
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    background-color: #3AA792;
+    width: 100%; }
+  #page-2 .list-items {
+    padding: 0; }
+    #page-2 .list-items li {
+      cursor: pointer;
+      text-align: center; }
+      #page-2 .list-items li img {
+        height: 35px;
+        padding-top: 10px;
+        margin: 0 auto; }
+  #page-2 #notifications p {
+    color: #fff;
+    text-transform: uppercase; }
+  #page-2 .active {
+    background-color: #43D8AC; }
 
 .ui-header {
   height: 40px; }
@@ -302,5 +221,8 @@ body {
   display: none; }
   #page-sign-in .btns-log-in .input-app {
     width: 92%; }
+
+#page-2 {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

@@ -22,7 +22,7 @@
     </head>
     <body>
 		<!-- START PAGE 1 -->
-        <div class="app-page first-page" id="page-1">
+        <div class="app-page first-page" id="page-1" style="display: none;">
         	<div class="btns-log-in">
 		        <div class="option-login btn-login">
 		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
@@ -46,23 +46,21 @@
 		
 		<!-- START PAGE SIGN IN -->
 
-        <div class="app-page first-page" data-role="page" id="page-sign-in">
-        	<div class="btns-log-in" data-role="none" data-disabled="false">
-        		<div class="option-login btn-login" data-role="none">
+        <div class="app-page first-page" id="page-sign-in" style="display: none;">
+        	<div class="btns-log-in" >
+        		<div class="option-login btn-login" >
 		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
-		        	<p style="font-size: 38px; font-weight: 700;">
+		        	<p class="title-app">
 		        		BLINK APP
 		        	</p>
 		        </div>
 	        	<form id="signinform">
-	        		<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-						<input class="btn-login btn-pass input-app" type="text" placeholder="Usuario" data-role="none" id="usuario_sign_in" name="usuario_sign_in">
-			        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" data-role="none" id="password_sign_in" name="password_sign_in">
-			        	<input class="btn-login btn-pass input-app" type="password" placeholder="Repetir contrase&ntilde;a" data-role="none" id="password_2_sign_in" name="password_2_sign_in">
-			        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" data-role="none" id="mail_sign_in" name="mail_sign_in">
-			        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" class="ui-btn-hidden" href="">Crear cuenta</a></div>
-			        	<span class="error-data-entry" id="error-signin"></span>
-			        </div>
+					<input class="btn-login btn-pass input-app" type="text" placeholder="Usuario" id="usuario_sign_in" name="usuario_sign_in">
+		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" id="password_sign_in" name="password_sign_in">
+		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Repetir contrase&ntilde;a" id="password_2_sign_in" name="password_2_sign_in">
+		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" id="mail_sign_in" name="mail_sign_in">
+		        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="">Crear cuenta</a></div>
+		        	<span class="error-data-entry" id="error-signin"></span>
 		       	</form>
         	</div>
         	<div id="loading"></div>
@@ -73,20 +71,37 @@
 	    <!-- END PAGE SIGN IN -->
 
 	    <!-- START PAGE 2 -->
-	   <!-- 	<div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
-	    	<div class="menu-bottom-app"style="height:70px;position:absolute;bottom:0;background-color: #168C80;width: 100%;">
+	   	<div class="app-page second-page" id="page-2" style="display: block;">
+	   		<div id="events" style="display: none;">
+	   			<ul>
+	    			
+	    		</ul>
+	   		</div>
+	   		<div id="notifications">
+	   			<p>Panel de notificaciones</p>
+	   			<ul>
+	    		</ul>
+	   		</div>
+	   		<div id="settings" style="display: none;">
+	   			<ul>
+	    			Pr&oacute;ximos eventos
+	    		</ul>
+	   		</div>
+	    	<div class="menu-bottom-app">
 	    		<ul class= "list-items">
-	    			<li class="border-item notifications" style="margin-left:-40px; background-color:#fff;text-align:center">
-	    				<img src="img/resources/notification.png" style="height:50px;padding-top:10px"/>
+	    			<li class="border-item events active button-action">
+	    				<img src="img/resources/events.svg"/>
 	    			</li>
-	    			<li class="border-item groups">
+	    			<li class="border-item notifications button-action">
+	    				<img src="img/resources/notification.svg"/>
 	    			</li>
-	    			<li class="contacts">
+	    			<li class="user button-action">
+	    				<img src="img/resources/user.svg"/>
 	    			</li>
 	    		</ul>
 	    	</div>
 	    	
-	    </div> -->
+	    </div>
 	    <!-- END PAGE 2 -->
     </body>
 </html>

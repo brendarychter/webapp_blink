@@ -37,7 +37,7 @@
     <icon gap:platform="ios" height="144" src="img/data/res/icon/ios/icon-72-2x.png" width="144" />
     <icon gap:platform="webos" src="img/data/res/icon/webos/icon-64.png" />
     <icon gap:platform="winphone" src="img/data/res/icon/windows-phone/icon-48.png" />
-    <icon gap:platform="winphone" gap:role="background" src="img/data/res/icon/windows-phone/icon-173.png" />
+    <icon gap:platform="winphone" gap:role="background" src="img/data/res/icon/windows-phone/icon-173.png" /><!-- 
     <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="img/data/res/screen/android/screen-ldpi-portrait.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="img/data/res/screen/android/screen-mdpi-portrait.png" />
     <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="img/data/res/screen/android/screen-hdpi-portrait.png" />
@@ -48,6 +48,6 @@
     <gap:splash gap:platform="ios" height="1136" src="img/data/res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
     <gap:splash gap:platform="ios" height="1024" src="img/data/res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="img/data/res/screen/ios/screen-ipad-landscape.png" width="1024" />
-    <gap:splash gap:platform="winphone" src="img/data/res/screen/windows-phone/screen-portrait.jpg" />
+    <gap:splash gap:platform="winphone" src="img/data/res/screen/windows-phone/screen-portrait.jpg" /> -->
     <access origin="*" />
 </widget>
