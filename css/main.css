@@ -115,6 +115,56 @@
     display: none; }
   #page-2 #events-section {
     display: block; }
+    #page-2 #events-section .group {
+      height: 40px;
+      border-bottom: 1px solid #ccc;
+      padding: 20px;
+      background-color: #fff;
+      padding-top: 12px; }
+      #page-2 #events-section .group .logo-group {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 28px;
+        color: #fff;
+        line-height: 48px;
+        text-align: center;
+        background: #222;
+        display: inline-block; }
+      #page-2 #events-section .group span {
+        margin-left: 20px; }
+  #page-2 .section .title {
+    padding: 11px;
+    letter-spacing: 5px;
+    background-color: #43D8AC;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px; }
+  #page-2 .section ul {
+    list-style-type: none;
+    padding: 0; }
+  #page-2 .section .settings-list li {
+    cursor: pointer;
+    padding-left: 20px; }
+    #page-2 .section .settings-list li img {
+      height: 35px;
+      padding-top: 10px;
+      margin: 0 auto; }
+    #page-2 .section .settings-list li span {
+      padding-left: 15px; }
+  #page-2 #user-section .user-info {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 300px; }
+    #page-2 #user-section .user-info #username-show {
+      text-transform: uppercase;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px; }
 
 .ui-header {
   height: 40px; }
