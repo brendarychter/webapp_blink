@@ -55,7 +55,7 @@ $(document).ready(function(){
                 localStorage.setItem("username", $("#user_name").val());
                 localStorage.setItem("pass", $("#password").val());
 
-                var formData = $("#loginform").serialize();
+                //var formData = $("#loginform").serialize();
                 $.ajax({
                     url: "php/connection.php",
                     type: "POST",

@@ -1,10 +1,21 @@
 /*First page*/
+::-webkit-input-placeholder {
+   color: #fff;
+}
 .first-page{
 	background-color: #1ebfae;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: fixed;
-
+	.title-app{
+		font-size: 38px;
+		font-weight: 700;
+	}
+	#loginform{
+		img{
+			width: 20px;
+		}
+	}
 	.btns-log-in{
 		padding: 12% 4.5%;
 		height: 50%;
@@ -18,8 +29,8 @@
 			font-size: 14px;
 			text-shadow: none;
 			&:focus{
-				background-color: #FFFFFF;
-				color: #1d1d1d;
+				background-color: #43D8AC;
+				color: #fff;
 			}
 		}
 		.log-in-app a{
@@ -30,7 +41,7 @@
 			width: 98.5%;
 		    display: inline-block;
 		    text-align: center;
-		    padding-top: 2.5%;
+		    padding-top: 12px;
 		    height: 29px;
 		}
 		.btn-fb{
@@ -51,18 +62,18 @@
 			}
 		}
 		.input-app{
-			background-color: #ddd;
-			border: 0.8px solid #C4C4C4;
-			color: #C4C4C4;
-			width: 97%;
-			padding-left: 5px;
+			background-color: #43D8AC;
+			border: 0;
+			border-bottom: 1px solid #fff;
+			color: #fff;
+			width: 88%;
+			padding-left: 15px;
+			margin-bottom: 20px;
 			height: 32px;
+			display: inline-block;
 		}
 		.btn-pass{
-			margin-bottom: 6%;
-		}
-		.btn-user{
-			margin-bottom: 0;
+			margin-bottom: 40px;
 		}
 		.option-login{
 			width: 100%;

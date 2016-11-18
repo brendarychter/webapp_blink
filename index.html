@@ -13,41 +13,32 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         
-       	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-        
 		<script src="js/jquery-1.12.2.min.js"></script>
-		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		<script src="js/get_events.js"></script>
+        
+		<script src="js/actions.js"></script>
 
-		<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
 
     </head>
     <body>
-		
 		<!-- START PAGE 1 -->
-		<div class="app-page background-konex first-page" data-role="page" id="page-0">
-	    </div>
-
-        <div class="background-konex app-page first-page" data-role="page" id="page-1">
-        	<div class="btns-log-in" data-role="none" data-disabled="false">
-		        <div class="option-login btn-login" data-role="none">
-		        	<img src="img/resources/logo.png" alt="logo"/>
-		        	<p style="font-size: 38px; font-weight: 700;">
+        <div class="app-page first-page" id="page-1">
+        	<div class="btns-log-in">
+		        <div class="option-login btn-login">
+		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
+		        	<p class="title-app">
 		        		BLINK APP
 		        	</p>
 		        </div>
 				<form id="loginform">
-	                <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-	 					<input class="btn-login btn-user input-app ui-input-text" type="text" id="user_name" placeholder="Usuario" data-role="none" name="user_name">
-	 					<input class="btn-login btn-pass input-app ui-input-text" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" data-role="none" name="password">
+ 					<img src="img/resources/user.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Usuario" name="user_name" required />
+ 					<img src="img/resources/locked.svg"/><input class="btn-login btn-pass input-app" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" name="password" required />
 
-	                    <div class="btn-login log-in-app"><a id="submit_login" type="submit" class="ui-btn-hidden" href="">Iniciar sesi&oacute;n</a></div>
-	                    <span class="error-data-entry" id="error-login"></span>
-	                </div>
+                    <div class="btn-login log-in-app"><a id="submit_login" type="submit" href="#">Iniciar sesi&oacute;n</a></div>
+                    <span class="error-data-entry" id="error-login"></span>
 	            </form>
         	</div>
-        	<div data-role="footer" class="register">
+        	<div class="register">
         		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in" id="register-click">Registrate</a></span>
         	</div>
 	    </div>
@@ -55,10 +46,10 @@
 		
 		<!-- START PAGE SIGN IN -->
 
-        <div class="background-konex app-page first-page" data-role="page" id="page-sign-in">
+        <div class="app-page first-page" data-role="page" id="page-sign-in">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
         		<div class="option-login btn-login" data-role="none">
-		        	<img src="img/resources/logo.png" alt="logo"/>
+		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
 		        	<p style="font-size: 38px; font-weight: 700;">
 		        		BLINK APP
 		        	</p>
@@ -70,19 +61,19 @@
 			        	<input class="btn-login btn-pass input-app" type="password" placeholder="Repetir contrase&ntilde;a" data-role="none" id="password_2_sign_in" name="password_2_sign_in">
 			        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" data-role="none" id="mail_sign_in" name="mail_sign_in">
 			        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" class="ui-btn-hidden" href="">Crear cuenta</a></div>
-			        	<span class="error-data-entry"  id="error-signin"></span>
+			        	<span class="error-data-entry" id="error-signin"></span>
 			        </div>
 		       	</form>
         	</div>
         	<div id="loading"></div>
         	<div data-role="footer" class="register">
-        		<span><a href="#page-1">Volver al inicio</a></span>
+        		<span><a href="#" id="volver">Volver al inicio</a></span>
         	</div>
 	    </div>
 	    <!-- END PAGE SIGN IN -->
 
 	    <!-- START PAGE 2 -->
-	   	<div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
+	   <!-- 	<div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
 	    	<div class="menu-bottom-app"style="height:70px;position:absolute;bottom:0;background-color: #168C80;width: 100%;">
 	    		<ul class= "list-items">
 	    			<li class="border-item notifications" style="margin-left:-40px; background-color:#fff;text-align:center">
@@ -94,169 +85,8 @@
 	    			</li>
 	    		</ul>
 	    	</div>
-	    	<!-- <div data-role="header" data-enhance="false" data-theme="b">
-		        <a href="#menu-panel" data-icon="bars" data-iconpos="notext"></a>
-				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
-		    </div>
-			<div class="konex-options">
-	    		<ul>
-	    			<li class="landing-option"><span>N</span><span>NEFETZ</span></li>
-	    			<li class="landing-option"><span>P13N</span></li>
-	    			<li class="landing-option"><span>FACU</span></li>
-	    			<li class="landing-option"><span>FAMILIA</span></li>
-	    		</ul>
-	    	</div>
-		    <div data-role="panel" data-display="overlay" data-theme="b" id="menu-panel">
-	        	<ul data-role="listview">
-					<div id="user_photo_container">
-						<div id="user_photo"></div><span id="username_menu"></span>
-					</div>
-	                <li data-icon="user"><a href="#">Mis grupos</a></li>
-	                <li data-icon="bullets"><a href="#">Mis contactos</a></li>
-	                <li data-icon="heart"><a href="#">Destacado</a></li>
-	            	<li data-icon="delete"><a href="#page-1" data-rel="close" id="log-out-app">Cerrar sesi&oacute;n</a></li>
-		        </ul>
-		    </div>
-	    	<div class="events-billboard">
-	    		<div class="event-now">
-	    			<span>Pr&oacute;ximos eventos</span>
-	    			<span class="show">Teatro ciego</span>
-	    		</div>
-	    		<div class="event-later">
-	    			<span></span><span class="day_next_event"></span>&nbsp;&nbsp;&nbsp;<span class="hour_next_event"></span>hs.
-	    			<span class="on-scene"></span>
-	    			<span class="detail-event" ><a href="#page-3" data-transition="slide" id="show-next-event" class="show-next-event" event-id="">Ver evento</a></span>
-	    		</div>
-	    	</div> -->
 	    	
-	    </div>
+	    </div> -->
 	    <!-- END PAGE 2 -->
-
-	    <!-- START PAGE 2/b -->
-
-	    <!-- Event Selection list -->
-        <div class="jqm-demos ui-responsive-panel app-page" data-role="page" id="page-events">
-        	<div class="header-events" data-role="header"data-enhance="false" data-theme="b" style="height: 40px;">
-			    <a href="#page-2" href="#page-2" data-icon="arrow-l" data-iconpos="notext" data-rel="back" ></a>
-				<span>Eventos</span>
-				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
-			</div>
-    		<div id="lista">
-
-    		</div>
-	    </div>
-	    <!-- END PAGE 2/b -->
-
-	    <!-- START PAGE 3 -->
-
-	    <div class="app-page third-page jqm-demos ui-responsive-panel" id="page-3" data-role="page">
-		    <div data-role="header" data-enhance="false" data-theme="b" style="height: 40px;">
-			    <a href="#page-2" href="#page-2" data-icon="arrow-l" data-iconpos="notext" data-rel="back" ></a>
-				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
-			</div>
-	    	<div class="detail-tickets">
-				<div id="event-now-buy">
-	    			<span class="evt-title event-title-detail"></span>
-	    			<span id="date-time-detail"></span>&nbsp;&nbsp;<span id="location-detail"></span></br>
-	    			<span class="price">$</span><span class="price" id="price-detail"></span></br>
-	    			<span class="buy-tickets" ><a href="#page-4" data-transition="slide" id="buy_tickets">Comprar entradas</a></span>
-					<div class="share-actions">
-						<button id="search-info" data-icon="star" data-iconpos="notext" data-theme="b"></button>
-						<button id="search-info" data-icon="heart" data-iconpos="notext" data-theme="b"></button>
-					</div>
-	    		</div>
-	    	</div>
-			<div id="description-band" data-role="main">
-				<h3>M&aacute;s info</h3>
-				<p id="principal-description-detail"></p>
-				<span id="sub-description-detail"></span>
-			</div>
-	    </div>
-	    <!-- END PAGE 3 -->
-	    <!-- START PAGE 4 -->
-
-	    <div class="app-page third-page jqm-demos ui-responsive-panel" id="page-4" data-role="page">
-	    	<div data-role="header" class="header-4" data-enhance="false" data-theme="b" style="height: 40px;">
-			    <a href="#page-3" href="#page-2" data-icon="arrow-l" data-iconpos="notext" data-rel="back" ></a>
-				<span>Evento</span>
-				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
-			</div>
-			<div class="content-4">
-				<div class="event-data">
-					<div class="title" id="title-checkout"></div>
-					<div class="hour" id="hour-checkout"></div>&nbsp;&nbsp;
-					<div class="location" id="location-checkout"></div>
-					<div class="price">Precio por entrada: $<span id="price-checkout"></span></div>
-				</div>
-				<form class="data-to-send" id="purchase-ticket-form">
-					<span class="personal-data">Datos personales</span>
-					<input type="text" name="name" name="name-form" id="name-form" value="" placeholder="Nombre" data-corners="false"/>
-					<input type="text" name="lastname" id="lastname" name="lastname"value="" placeholder="Apellido" data-corners="false"/>
-					
-					<input type="text" name="dni" id="dni" value="" placeholder="DNI" data-corners="false"/>
-					<input type="text" name="phone-number" id="phone-number" name="phone-number" value="" placeholder="Celular" data-corners="false"/>
-
-					<div class="mail">
-	    				<input type="text" name="mail-form" id="mail-form" value="" placeholder="Mail" data-corners="false" style="width: 100%"/>
-					</div>
-					<span>Forma de pago</span><br>
-					    <select name="select-native-2" id="select-native-2" data-mini="true"  data-theme="b">
-						        <option value="1">Visa</option>
-						        <option value="2">Master Card</option>
-						</select>
-						<select name="select-native-4" id="select-native-4" data-mini="true"  data-theme="b">
-					        <option value="1" data-mini="true">1 cuota</option>
-					        <option value="2" data-mini="true">3 cuotas</option>
-					        <option value="2" data-mini="true">6 cuotas</option>
-						</select>
-						<input type="text" name="credit-card" id="credit-card" value="" placeholder="N&uacute;mero de tarjeta" data-corners="false"/>
-						<input type="text" name="credit-card-code" id="credit-card-code" value="" placeholder="C&oacute;digo" data-corners="false"/>
-						
-						<span class="personal-data">Entradas</span>
-						<!-- ESTO TIENE QUE SER UN SELECT!!!! -->
-						<select name="select-native-2" id="amount" data-mini="true"  data-theme="b">
-						        <option value="1">1</option>
-						        <option value="2">2</option>
-						        <option value="3">3</option>
-						        <option value="4">4</option>
-						        <option value="5">5</option>
-						        <option value="5">6</option>
-						        <option value="7">7</option>
-						        <option value="8">8</option>
-						        <option value="9">9</option>
-						        <option value="10">10</option>
-						</select>
-						<label class="location">&nbsp;&nbsp;&nbsp;Ubicaci&oacute;n sin numerar</label>
-						<label>
-					        <input data-theme="b" type="radio" name="access-radio" value="retirar" checked>Retirar
-					    </label>
-					    <label>
-					        <input data-theme="b" type="radio" name="access-radio" value="acceder" >Acceder al evento
-					    </label>
-					<div class="btn-login log-in-app"><a href="#page-5" id="thanks-redirect" type="submit" class="ui-btn-hidden" href=""  data-transition="slide">Comprar</a></div>
-				</form>
-			</div>
-	    </div>
-	    <!-- END PAGE 4 -->
-		
-		<!-- START PAGE 5 -->
-
-	    <div class="app-page fifth-page jqm-demos ui-responsive-panel" id="page-5" data-role="page">
-			<div class="reserva-ticket">
-				<p>&iexcl;Tu compra se ha efectuado exitosamente!</p>
-				<div id="qrcode"></div>
-        		<div id="map"></div>
-				<span id="description-thanks"></span></br>
-		    	<div class="event-data">
-					<div class="title" id="title-thanks"></div>
-					<div class="hour" id="hour-thanks"></div>&nbsp;&nbsp;
-					<div class="location" id="location-thanks"></div>
-					<div class="price"><span id="entries-amount"></span> entradas</div>
-					<div class="price">Precio total: $<span id="price-thanks">$</span></div>
-				</div>
-				<button data-theme="b" class="return" id="back_to_home"><a href="#page-2" data-transition="pop">Volver al inicio</a></button>
-			</div>
-	    </div>
-	    <!-- END PAGE 5 -->
     </body>
 </html>

@@ -1,8 +1,5 @@
 @import 'page_1';
 @import 'page_2';
-@import 'page_3';
-@import 'page_4';
-@import 'page_5';
 @import 'page_events';
 
 .ui-header{
@@ -21,7 +18,10 @@ body{
 		color: #FFF !important;
 	}
 }
-
+body{
+	font-family: sans-serif /*{global-font-family}*/;
+	background-color: #43D8AC;
+}
 .app-page{
 	padding: 0;
     margin: 0;
@@ -122,5 +122,9 @@ body{
     display: none;
 }
 #map{
+	display: none;
+}
+
+#page-sign-in{
 	display: none;
 }

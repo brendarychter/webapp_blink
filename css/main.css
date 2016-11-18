@@ -1,9 +1,17 @@
 /*First page*/
+::-webkit-input-placeholder {
+  color: #fff; }
+
 .first-page {
   background-color: #1ebfae;
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed; }
+  .first-page .title-app {
+    font-size: 38px;
+    font-weight: 700; }
+  .first-page #loginform img {
+    width: 20px; }
   .first-page .btns-log-in {
     padding: 12% 4.5%;
     height: 50%;
@@ -17,8 +25,8 @@
       font-size: 14px;
       text-shadow: none; }
       .first-page .btns-log-in .btn-login:focus {
-        background-color: #FFFFFF;
-        color: #1d1d1d; }
+        background-color: #43D8AC;
+        color: #fff; }
     .first-page .btns-log-in .log-in-app a {
       background-color: transparent;
       border: 1px solid #FFFFFF;
@@ -27,7 +35,7 @@
       width: 98.5%;
       display: inline-block;
       text-align: center;
-      padding-top: 2.5%;
+      padding-top: 12px;
       height: 29px; }
     .first-page .btns-log-in .btn-fb {
       background-color: #39579B; }
@@ -40,16 +48,17 @@
     .first-page .btns-log-in .btn-fb:focus, .first-page .btns-log-in .btn-google:focus {
       background-color: #FFFFFF; }
     .first-page .btns-log-in .input-app {
-      background-color: #ddd;
-      border: 0.8px solid #C4C4C4;
-      color: #C4C4C4;
-      width: 97%;
-      padding-left: 5px;
-      height: 32px; }
+      background-color: #43D8AC;
+      border: 0;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      width: 88%;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      height: 32px;
+      display: inline-block; }
     .first-page .btns-log-in .btn-pass {
-      margin-bottom: 6%; }
-    .first-page .btns-log-in .btn-user {
-      margin-bottom: 0; }
+      margin-bottom: 40px; }
     .first-page .btns-log-in .option-login {
       width: 100%;
       color: #FFFFFF;
@@ -178,222 +187,6 @@
 #page-2 #menu-panel ul li {
   text-transform: uppercase; }
 
-.third-page .detail-tickets {
-  padding: 20px;
-  background: url("../img/resources/onda_vaga.jpg");
-  height: 32%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  text-shadow: none;
-  text-transform: uppercase;
-  color: #FFF; }
-  .third-page .detail-tickets #event-now-buy {
-    text-align: center;
-    display: block;
-    position: absolute;
-    width: 90%;
-    bottom: 22px; }
-    .third-page .detail-tickets #event-now-buy .evt-title {
-      display: block;
-      font-size: 36px;
-      font-weight: bold; }
-    .third-page .detail-tickets #event-now-buy .price {
-      display: inline-block;
-      font-size: 32px;
-      font-weight: 500;
-      margin-bottom: 10px; }
-    .third-page .detail-tickets #event-now-buy .buy-tickets {
-      border: 1px solid #FFF;
-      padding: 10px; }
-      .third-page .detail-tickets #event-now-buy .buy-tickets a {
-        display: inline-block; }
-    .third-page .detail-tickets #event-now-buy .share-actions {
-      width: 50px;
-      position: absolute;
-      right: -24px;
-      bottom: -18px; }
-
-#page-3 #description-band {
-  padding: 2%;
-  text-shadow: none;
-  color: #FFF; }
-  #page-3 #description-band h3 {
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 0;
-    background-color: #FF8A60;
-    display: inline-block;
-    margin: 0;
-    padding: 5px; }
-  #page-3 #description-band span {
-    text-transform: uppercase;
-    color: #FF8A60;
-    font-size: 11px;
-    text-align: center;
-    display: block; }
-
-#page-4 .header-4 span {
-  line-height: 40px;
-  padding-left: 20px;
-  text-transform: uppercase;
-  font-weight: normal; }
-#page-4 .content-4 {
-  padding: 15px; }
-  #page-4 .content-4 span {
-    text-transform: uppercase;
-    text-shadow: none;
-    color: #FF8A60; }
-  #page-4 .content-4 .event-data {
-    text-transform: uppercase;
-    color: #FFF;
-    text-shadow: none;
-    padding-bottom: 10px; }
-    #page-4 .content-4 .event-data .title {
-      color: #FF8A60;
-      font-size: 28px;
-      font-weight: bold; }
-    #page-4 .content-4 .event-data .hour, #page-4 .content-4 .event-data .location, #page-4 .content-4 .event-data .price {
-      font-size: 13px;
-      display: inline-block; }
-    #page-4 .content-4 .event-data .price {
-      display: block; }
-      #page-4 .content-4 .event-data .price span {
-        color: #FFFFFF;
-        font-size: 17px; }
-  #page-4 .content-4 input {
-    background-color: #1d1d1d;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px; }
-  #page-4 .content-4 .data-to-send .personal-data {
-    width: 100%;
-    display: inline-block; }
-  #page-4 .content-4 .data-to-send .ui-input-text {
-    width: 47%;
-    display: inline-block;
-    float: left;
-    text-shadow: none;
-    margin: 1%;
-    font-size: 13px;
-    margin-bottom: 10px;
-    color: #FFF;
-    box-shadow: none; }
-  #page-4 .content-4 .data-to-send .fix-margin .ui-input-text {
-    margin-top: -37px; }
-  #page-4 .content-4 .data-to-send .mail .ui-input-text {
-    width: 96.5%;
-    margin: 1%;
-    margin-top: -18px;
-    color: #FFF;
-    box-shadow: none; }
-  #page-4 .content-4 .data-to-send .ui-radio {
-    width: 48%;
-    margin-top: 20px;
-    display: block;
-    margin: 0; }
-    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-on, #page-4 .content-4 .data-to-send .ui-radio .ui-radio-off {
-      background-color: #1d1d1d;
-      border-color: #1d1d1d;
-      width: 100%;
-      padding-top: 7px;
-      font-size: 11px;
-      text-transform: uppercase;
-      display: inline-block;
-      padding-left: 30px; }
-    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-on:after {
-      border-color: #FF8A60; }
-    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-off:after {
-      background-color: #FFF; }
-  #page-4 .content-4 .data-to-send .location {
-    text-shadow: none;
-    text-transform: uppercase;
-    color: #FFF;
-    font-size: 10px;
-    line-height: 40px; }
-  #page-4 .content-4 .data-to-send .ui-select {
-    width: 47%;
-    border-radius: 0;
-    background-color: transparent;
-    float: left;
-    display: inline-block;
-    margin-left: 3px; }
-    #page-4 .content-4 .data-to-send .ui-select .ui-btn {
-      background-color: transparent;
-      border-radius: 0;
-      border: 1px solid #fff;
-      box-shadow: none; }
-  #page-4 .content-4 .data-to-send .buy-ticket {
-    border-radius: 0;
-    background-color: transparent;
-    border: 1px solid #FFF;
-    text-transform: uppercase;
-    height: 36px;
-    padding-top: 7px;
-    font-size: 14px;
-    font-weight: normal;
-    box-shadow: none; }
-  #page-4 .content-4 form span {
-    font-size: 13px; }
-
-#page-5 .notification {
-  padding: 2px 5px; }
-#page-5 .band {
-  padding-top: 10px; }
-#page-5 .band, #page-5 .ticket {
-  width: 100%;
-  position: relative; }
-#page-5 .ticket {
-  z-index: 2;
-  position: absolute;
-  top: 40px; }
-#page-5 .event-data {
-  text-transform: uppercase;
-  color: #FFF;
-  text-shadow: none;
-  padding-bottom: 10px; }
-  #page-5 .event-data .title {
-    color: #FF8A60;
-    font-size: 28px;
-    font-weight: bold; }
-  #page-5 .event-data .hour, #page-5 .event-data .location, #page-5 .event-data .price {
-    font-size: 13px;
-    display: inline-block; }
-  #page-5 .event-data .price {
-    display: block; }
-    #page-5 .event-data .price span {
-      color: #FFFFFF;
-      font-size: 17px;
-      font-weight: bold; }
-#page-5 .reserva-ticket {
-  padding: 10px; }
-  #page-5 .reserva-ticket p {
-    text-transform: uppercase;
-    text-align: center;
-    color: #CCC; }
-  #page-5 .reserva-ticket p, #page-5 .reserva-ticket span {
-    color: #FFF;
-    text-shadow: none; }
-#page-5 .return {
-  border-radius: 0;
-  background-color: transparent;
-  border: 1px solid #FFF;
-  text-transform: uppercase;
-  height: 36px;
-  padding-top: 7px;
-  font-size: 14px;
-  font-weight: normal;
-  box-shadow: none; }
-#page-5 #qrcode {
-  margin: 0 auto;
-  width: 100%;
-  text-align: center; }
-#page-5 #description-thanks {
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  display: block; }
-
 #page-events .header-events span {
   line-height: 40px;
   padding-left: 20px;
@@ -411,6 +204,10 @@ body span, body input {
 body a {
   text-decoration: none;
   color: #FFF !important; }
+
+body {
+  font-family: sans-serif;
+  background-color: #43D8AC; }
 
 .app-page {
   padding: 0;
@@ -499,6 +296,9 @@ body a {
   display: none; }
 
 #map {
+  display: none; }
+
+#page-sign-in {
   display: none; }
 
 /*# sourceMappingURL=main.css.map */

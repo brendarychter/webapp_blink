@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.knx" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Knx</name>
+    <name>Blink App</name>
     <description>
-        Aplicación para el Centro Cultural Konex
+        Blink! App mobile
     </description>
     <author email="brendarychter@gmail.com" href="http://www.blinkapp.com.ar">
         Brenda Rychter
