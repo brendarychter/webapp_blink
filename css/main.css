@@ -300,5 +300,7 @@ body {
 
 #page-sign-in {
   display: none; }
+  #page-sign-in .btns-log-in .input-app {
+    width: 92%; }
 
 /*# sourceMappingURL=main.css.map */
