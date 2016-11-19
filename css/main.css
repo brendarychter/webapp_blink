@@ -112,15 +112,19 @@
   #page-2 .active {
     background-color: #43D8AC; }
   #page-2 #notifications-section, #page-2 #user-section {
+    font-family: "Roboto";
     display: none; }
   #page-2 #events-section {
-    display: block; }
+    display: block;
+    font-family: "Roboto"; }
     #page-2 #events-section .group {
       height: 40px;
       border-bottom: 1px solid #ccc;
       padding: 20px;
       background-color: #fff;
-      padding-top: 12px; }
+      padding-top: 12px;
+      cursor: pointer;
+      padding-right: 0; }
       #page-2 #events-section .group .logo-group {
         width: 50px;
         height: 50px;
@@ -133,6 +137,20 @@
         display: inline-block; }
       #page-2 #events-section .group span {
         margin-left: 20px; }
+      #page-2 #events-section .group li img {
+        width: 22px;
+        float: right;
+        padding: 16px; }
+    #page-2 #events-section .group-actions .hour-group {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 14px;
+      color: #fff;
+      line-height: 40px;
+      text-align: center;
+      background: #3AA792;
+      display: inline-block; }
   #page-2 .section .title {
     padding: 11px;
     letter-spacing: 5px;
@@ -147,13 +165,16 @@
     padding: 0; }
   #page-2 .section .settings-list li {
     cursor: pointer;
-    padding-left: 20px; }
+    padding-left: 20px;
+    position: relative; }
     #page-2 .section .settings-list li img {
       height: 35px;
       padding-top: 10px;
       margin: 0 auto; }
     #page-2 .section .settings-list li span {
-      padding-left: 15px; }
+      padding-left: 15px;
+      position: absolute;
+      top: 30%; }
   #page-2 #user-section .user-info {
     margin: 0 auto;
     width: 100%;
@@ -165,6 +186,38 @@
       font-size: 25px;
       font-weight: bold;
       letter-spacing: 1px; }
+    #page-2 #user-section .user-info .img-user {
+      background-image: url("../img/resources/brenda.jpg");
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      font-size: 28px;
+      color: #fff;
+      line-height: 48px;
+      text-align: center;
+      display: inline-block;
+      background-position: 50% 50%;
+      background-repeat: no-repeat; }
+  #page-2 #notifications-section ul li {
+    height: 50px;
+    background-color: #fff;
+    line-height: 50px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    cursor: pointer; }
+    #page-2 #notifications-section ul li .hour-not {
+      float: right; }
+      #page-2 #notifications-section ul li .hour-not img {
+        width: 30px;
+        float: right;
+        margin-right: -8px; }
+      #page-2 #notifications-section ul li .hour-not span {
+        font-size: 11px;
+        float: right;
+        margin-top: 15px;
+        margin-right: -30px;
+        float: right; }
 
 .ui-header {
   height: 40px; }
