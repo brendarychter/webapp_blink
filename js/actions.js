@@ -82,7 +82,34 @@ $(document).ready(function(){
         });
     })
 
-    
+    $('#nefetz-group').on("click", function(){
+        
+        if($('#nefetz-group-actions').hasClass("active")){
+            $('#nefetz-group-actions').fadeOut("slow");
+            $('#nefetz-group-actions').removeClass("active");
+        }else{
+            $('#nefetz-group-actions').fadeIn("slow");
+            $('#nefetz-group-actions').addClass("active");
+        }
+    })
+    $('#p13n-group').on("click", function(){
+        if($('#p13n-group-actions').hasClass("active")){
+            $('#p13n-group-actions').fadeOut("slow");
+            $('#p13n-group-actions').removeClass("active");
+        }else{
+            $('#p13n-group-actions').fadeIn("slow");
+            $('#p13n-group-actions').addClass("active");
+        }
+    })
+    $('#facu-group').on("click", function(){
+        if($('#facu-group-actions').hasClass("active")){
+            $('#facu-group-actions').fadeOut("slow");
+            $('#facu-group-actions').removeClass("active");
+        }else{
+            $('#facu-group-actions').fadeIn("slow");
+            $('#facu-group-actions').addClass("active");
+        }
+    })
     /*=====  End of Section comment block  ======*/
     
 });

@@ -141,16 +141,37 @@
         width: 22px;
         float: right;
         padding: 16px; }
-    #page-2 #events-section .group-actions .hour-group {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 14px;
-      color: #fff;
-      line-height: 40px;
-      text-align: center;
-      background: #3AA792;
-      display: inline-block; }
+    #page-2 #events-section .group-actions {
+      display: none; }
+      #page-2 #events-section .group-actions .hour-group {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 14px;
+        color: #fff;
+        line-height: 40px;
+        text-align: center;
+        background: #3AA792;
+        display: inline-block; }
+      #page-2 #events-section .group-actions ul {
+        overflow: hidden; }
+        #page-2 #events-section .group-actions ul li {
+          float: left;
+          padding: 5px 25px;
+          background-color: #fff;
+          border-bottom: 1px solid #eee; }
+          #page-2 #events-section .group-actions ul li .time {
+            float: left;
+            width: 20%; }
+            #page-2 #events-section .group-actions ul li .time label {
+              font-size: 11px;
+              margin-left: -13px; }
+          #page-2 #events-section .group-actions ul li .event {
+            float: left;
+            width: 80%; }
+            #page-2 #events-section .group-actions ul li .event p {
+              line-height: 8px;
+              margin-left: 7px; }
   #page-2 .section .title {
     padding: 11px;
     letter-spacing: 5px;
