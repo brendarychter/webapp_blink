@@ -112,11 +112,11 @@
   #page-2 .active {
     background-color: #43D8AC; }
   #page-2 #notifications-section, #page-2 #user-section {
-    font-family: "Roboto";
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     display: none; }
   #page-2 #events-section {
     display: block;
-    font-family: "Roboto"; }
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
     #page-2 #events-section .group {
       height: 40px;
       border-bottom: 1px solid #ccc;
@@ -152,25 +152,36 @@
         line-height: 40px;
         text-align: center;
         background: #3AA792;
-        display: inline-block; }
+        display: inline-block;
+        top: 10px;
+        position: absolute; }
       #page-2 #events-section .group-actions ul {
         overflow: hidden; }
         #page-2 #events-section .group-actions ul li {
           float: left;
           padding: 5px 25px;
           background-color: #fff;
-          border-bottom: 1px solid #eee; }
+          border-bottom: 1px solid #eee;
+          width: 100%; }
           #page-2 #events-section .group-actions ul li .time {
             float: left;
-            width: 20%; }
+            width: 20%;
+            position: relative;
+            height: 60px; }
             #page-2 #events-section .group-actions ul li .time label {
-              font-size: 11px;
-              margin-left: -13px; }
+              font-size: 12px;
+              margin-left: -13px;
+              position: absolute;
+              bottom: -10px;
+              text-align: center;
+              left: 0; }
           #page-2 #events-section .group-actions ul li .event {
             float: left;
             width: 80%; }
+            #page-2 #events-section .group-actions ul li .event strong {
+              text-transform: uppercase; }
             #page-2 #events-section .group-actions ul li .event p {
-              line-height: 8px;
+              line-height: 20px;
               margin-left: 7px; }
   #page-2 .section .title {
     padding: 11px;

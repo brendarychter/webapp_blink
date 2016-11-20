@@ -51,12 +51,12 @@
 		background-color: #43D8AC;
 	}
 	#notifications-section, #user-section{
-		font-family: "Roboto";
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 		display: none;
 	}
 	#events-section{
 		display: block;
-		font-family: "Roboto";
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 		.group{
 			height: 40px;
 		    border-bottom: 1px solid #ccc;
@@ -99,6 +99,8 @@
 				text-align: center;
 				background: #3AA792;
 				display: inline-block;
+				top: 10px;
+				position: absolute;
 			}
 			ul{
 				overflow: hidden;
@@ -107,19 +109,29 @@
 				    padding: 5px 25px;
 				    background-color: #fff;
 				    border-bottom: 1px solid #eee;
+				    width: 100%;
 				    .time{
 				    	float: left;
-    					width: 20%;
+					    width: 20%;
+					    position: relative;
+					    height: 60px;
     					label{
-    						font-size: 11px;
-    						margin-left: -13px;
+    						font-size: 12px;
+						    margin-left: -13px;
+						    position: absolute;
+						    bottom: -10px;
+						    text-align: center;
+						    left: 0;
     					}
 				    }
 				    .event{
 				    	float: left;
 				    	width: 80%;
+				    	strong{
+				    		text-transform: uppercase;
+				    	}
 				    	p{
-				    		line-height: 8px;
+    						line-height: 20px;
     						margin-left: 7px;
 				    	}
 				    }

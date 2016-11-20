@@ -9,8 +9,8 @@ $(document).ready(function(){
         params.password = $('#password').val();
 
         $.ajax({
-            //url: "http://blinkapp.com.ar/web_app/admin/log_in.php",
-            url: "admin/log_in.php",
+            url: "http://www.blinkapp.com.ar/web_app/admin/log_in.php",
+            //url: "admin/log_in.php",
             type: "POST",
             data: params,
             cache: false,
