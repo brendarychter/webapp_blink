@@ -1,16 +1,26 @@
 $(document).ready(function(){
+
+    /*=============================================
+    =            Section LocalStorage block            =
+    =============================================*/
+    
+    
+    
+    
+    if (localStorage.getItem("username") != undefined){
+        $('.overlay').fadeIn(1000, function(){
+            $('#page-2').fadeIn("slow");
+            $('#username-show').text(localStorage.getItem("username"));
+            $('.overlay').fadeOut("slow");
+            getUserGroups();
+        })
+    }
+
+    /*=====  End of LocalStorage block  ======*/
+
     /*=============================================
     =            LOGIN            =
     =============================================*/
-
-    // if (localStorage.getItem("username") != undefined){
-    //     $('.overlay').fadeIn(1000, function(){
-    //         $('#page-2').fadeIn("slow");
-    //         $('#username-show').text(localStorage.getItem("username"));
-    //         $('.overlay').fadeOut("slow");
-    //     })
-    // }
-
 
     $("#submit_login").on("click", function(){
         $("#error-login").empty();
@@ -42,6 +52,7 @@ $(document).ready(function(){
                                 $('#page-2').fadeIn("slow");
                                 $('#username-show').text(localStorage.getItem("username"));
                                 $('.overlay').fadeOut("slow");
+                                getUserGroups();
                             });
                         }
                     }
@@ -99,11 +110,13 @@ $(document).ready(function(){
                         cleanSignIn(data.message);
                         setTimeout(function(){
                             $('.overlay').fadeIn("slow", function(){
-                                setCurrentUser(data);
                                 $('#page-1').fadeOut(200, function(){
                                     $('#page-2').fadeIn("slow");
                                     $('#username-show').text(localStorage.getItem("username"));
                                     $('.overlay').fadeOut("slow");
+                                    localStorage.setItem("username", data.username);
+                                    localStorage.setItem("password", data.password);
+                                    getUserGroups();
                                 });
                             });
                         }, 2000);
@@ -164,25 +177,56 @@ $(document).ready(function(){
     =            APPLICATION            =
     =============================================*/
     
+
+    
+
+    function getCurrentUser(user){
+    }
+    function getUserGroups() {
+        var id = $(".active-section").attr("id");
+        console.log(id)
+        
+        params= {};
+        params.action = "getUser";
+        params.username = localStorage.getItem("username");
+        params.password = localStorage.getItem("password");
+
+        $.ajax({
+                //url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
+            url: "admin/log_in.php",
+            type: "POST",
+            data: params,
+            cache: false,
+            dataType: "json"
+        }).done(function( user ) {
+            setCurrentUser(user);
+        }).error(function(error, textStatus){
+            console.log(error);
+            cleanInputs(textStatus);
+        });
+
+    }
+
     $('.button-action').on("click", function(){
         $('.button-action').removeClass("active");
         $(this).addClass("active");
+
         var id = $(".active-section").attr("id");
         $(".active-section").removeClass("active-section");
+        
         var section = $(this).attr("action");
         $('#'+section).addClass("active-section")
-         $("#"+id).fadeOut(200, function(){
-             $('#'+section).fadeIn()
-             console.log(id)
-             if(section =="events-section"){
+        $("#"+id).fadeOut(200, function(){
+            $('#'+section).fadeIn();
+            if(section =="group-section"){
                 $('#title-section').show();
-                $('#title-section').text("Proximos eventos");
-             }else if (section == "notifications-section"){
+                $('#title-section').text("Mis grupos");
+            }else if (section == "notifications-section"){
                 $('#title-section').show();
                 $('#title-section').text("Notificaciones");
-             }else{
+            }else{
                 $('#title-section').hide();
-             }
+            }
         });
     })
 

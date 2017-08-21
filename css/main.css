@@ -125,10 +125,10 @@
   #page-2 #notifications-section, #page-2 #user-section {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     display: none; }
-  #page-2 #events-section {
+  #page-2 #group-section {
     display: block;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
-    #page-2 #events-section .group {
+    #page-2 #group-section .group {
       height: 40px;
       border-bottom: 1px solid #ccc;
       padding: 20px;
@@ -136,7 +136,7 @@
       padding-top: 12px;
       cursor: pointer;
       padding-right: 0; }
-      #page-2 #events-section .group .logo-group {
+      #page-2 #group-section .group .logo-group {
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -146,15 +146,15 @@
         text-align: center;
         background: #222;
         display: inline-block; }
-      #page-2 #events-section .group span {
+      #page-2 #group-section .group span {
         margin-left: 20px; }
-      #page-2 #events-section .group li img {
+      #page-2 #group-section .group li img {
         width: 22px;
         float: right;
         padding: 16px; }
-    #page-2 #events-section .group-actions {
+    #page-2 #group-section .group-actions {
       display: none; }
-      #page-2 #events-section .group-actions .hour-group {
+      #page-2 #group-section .group-actions .hour-group {
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -166,32 +166,32 @@
         display: inline-block;
         top: 10px;
         position: absolute; }
-      #page-2 #events-section .group-actions ul {
+      #page-2 #group-section .group-actions ul {
         overflow: hidden; }
-        #page-2 #events-section .group-actions ul li {
+        #page-2 #group-section .group-actions ul li {
           float: left;
           padding: 5px 25px;
           background-color: #fff;
           border-bottom: 1px solid #eee;
           width: 100%; }
-          #page-2 #events-section .group-actions ul li .time {
+          #page-2 #group-section .group-actions ul li .time {
             float: left;
             width: 20%;
             position: relative;
             height: 60px; }
-            #page-2 #events-section .group-actions ul li .time label {
+            #page-2 #group-section .group-actions ul li .time label {
               font-size: 12px;
               margin-left: -13px;
               position: absolute;
               bottom: -10px;
               text-align: center;
               left: 0; }
-          #page-2 #events-section .group-actions ul li .event {
+          #page-2 #group-section .group-actions ul li .event {
             float: left;
             width: 80%; }
-            #page-2 #events-section .group-actions ul li .event strong {
+            #page-2 #group-section .group-actions ul li .event strong {
               text-transform: uppercase; }
-            #page-2 #events-section .group-actions ul li .event p {
+            #page-2 #group-section .group-actions ul li .event p {
               line-height: 20px;
               margin-left: 7px; }
   #page-2 .section .title {

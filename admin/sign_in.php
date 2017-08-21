@@ -30,6 +30,7 @@
 			if(!mysqli_num_rows($response2)>=1){
 				$sql = "insert into users (username, password, mail, name, phoneNumber, datetime, active) values ('$username','$password','$mail', '$name', '$tel', '$datetime', '1')";
 				if(mysqli_query($connection->connected, $sql)){
+
 					$responseArray = array('type' => 'success', 'message' => $success, 'username' => $username, 'password' => $password, 'mail' => utf8_encode($mail), 'phoneNumber' => $tel, 'active' => '1');
 				}
 			}else{
