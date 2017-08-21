@@ -7,8 +7,8 @@
     <author email="brendarychter@gmail.com" href="http://www.blinkapp.com.ar">
         Brenda Rychter
     </author>
+    <access origin="https://www.blinkapp.com.ar" subdomains="true" />
     <access origin="*" />
-    <access origin="http://www.blinkapp.com.ar" />
     <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="orientation" value="default" />
@@ -25,7 +25,7 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
-    
+    <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
     <icon src="img/data/icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="img/data/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="img/data/res/icon/android/icon-48-mdpi.png" />
