@@ -2,6 +2,16 @@ $(document).ready(function(){
     /*=============================================
     =            LOGIN            =
     =============================================*/
+
+    // if (localStorage.getItem("username") != undefined){
+    //     $('.overlay').fadeIn(1000, function(){
+    //         $('#page-2').fadeIn("slow");
+    //         $('#username-show').text(localStorage.getItem("username"));
+    //         $('.overlay').fadeOut("slow");
+    //     })
+    // }
+
+
     $("#submit_login").on("click", function(){
         $("#error-login").empty();
         if (!$("#user_name").val() || !$("#password").val()){
@@ -11,41 +21,39 @@ $(document).ready(function(){
             params.action = "getUser";
             params.username = $('#user_name').val();
             params.password = $('#password').val();
-
+            $('.overlay').fadeIn("slow");
             $.ajax({
-                url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
-                //url: "admin/log_in.php",
+                //url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
+                url: "admin/log_in.php",
                 type: "POST",
                 data: params,
                 cache: false,
                 dataType: "json"
             }).done(function( user ) {
-                console.log(user)
-                // console.log(user);
-                // if (user.userID == 0){
-                //     cleanInputs("-Revise los datos ingresados-");
-                // }else{
-                // }
-                cleanInputs(user.username);
-
-                // localStorage.setItem("username", data.username);
-                // localStorage.setItem("password", data.password);
-                // localStorage.setItem("mail", data.mail);
-                // localStorage.setItem("id", data.userID);
-                // localStorage.setItem("phoneNumber", data.phoneNumber);
-                //window.location.href = 'http://www.google.com';
-                // $('#page-1').fadeOut(200, function(){
-                //     $('#page-2').fadeIn("slow");
-                //     $('#username-show').text(localStorage.getItem("username"));
-                // });
+                $('.overlay').fadeOut("slow", function(){
+                    if (user.userID == 0){
+                        cleanInputs("-Revise los datos ingresados-");
+                    }else{
+                        if (user.active == 0){
+                            cleanInputs("-El usuario no se encuentra activo-");
+                        }else{
+                            setCurrentUser(user);
+                            $('#page-1').fadeOut(200, function(){
+                                $('#page-2').fadeIn("slow");
+                                $('#username-show').text(localStorage.getItem("username"));
+                                $('.overlay').fadeOut("slow");
+                            });
+                        }
+                    }
+                });
             }).error(function(error, textStatus){
                 console.log(error);
+                cleanInputs(textStatus);
             });
         }
     });
     
     function cleanInputs(text){
-        $("#user_name").focus();
         $("#user_name").val("");
         $("#password").val("");
         $("#error-login").fadeIn("slow");
@@ -55,14 +63,79 @@ $(document).ready(function(){
         }, 2500);
     }
 
+    function setCurrentUser(user){
+        localStorage.setItem("username", user.username);
+        localStorage.setItem("password", user.password);
+        localStorage.setItem("mail", user.mail);
+        localStorage.setItem("id", user.userID);
+        localStorage.setItem("phoneNumber", user.phoneNumber);
+        localStorage.setItem("active", user.phoneNumber);
+    }
+
     $("#submit_signin").on("click", function(){
-        $('#page-1').fadeOut(200, function(){
-            $('#page-2').fadeIn("slow");
-        })
+        var params = {};
+        params.mail = $("#mail_sign_in").val();
+        params.tel = $("#tel_sign_in").val();
+        params.pass = $("#password_sign_in").val();
+        params.user = $("#usuario_sign_in").val();
+        params.name = $("#name_sign_in").val();
+        var today = new Date();
+        params.datetime = today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear() + '. ' + today.getHours() + ":" + today.getMinutes();
+        
+        $("#error-signin").empty();
+        if (params.user == "" || params.pass == "" || params.tel == "" || params.mail == "" || params.name == ""){
+            cleanSignIn("-Alguno de los campos se encuentra vacío-");
+        }else{
+            if(validateMail(params.mail)){
+                $.ajax({
+                //url: "http://www.blinkapp.com.ar/blink_webapp/admin/sign_in.php",
+                    url: "admin/sign_in.php",
+                    type: "POST",
+                    data: params,
+                    cache: false,
+                    dataType: "json"
+                }).done(function( data ) {
+                    if (data.type == "success"){
+                        cleanSignIn(data.message);
+                        setTimeout(function(){
+                            $('.overlay').fadeIn("slow", function(){
+                                setCurrentUser(data);
+                                $('#page-1').fadeOut(200, function(){
+                                    $('#page-2').fadeIn("slow");
+                                    $('#username-show').text(localStorage.getItem("username"));
+                                    $('.overlay').fadeOut("slow");
+                                });
+                            });
+                        }, 2000);
+                    }else if (data.type == "errorName"){
+                        cleanSignIn(data.message);
+                    }else if (data.type == "errorMail"){
+                        cleanSignIn(data.message);
+                    }
+                }).error(function(error, textStatus){
+                    console.log(error);
+                    cleanSignIn(textStatus);
+                });
+            }else{
+                cleanSignIn("-Verifique su correo electrónico-");
+            }
+        }
     });
 
+    function validateMail(mail) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(mail);
+    }
+
+    function cleanSignIn(text){
+        $("#error-signin").fadeIn("slow");
+        $("#error-signin").append(text);
+        setTimeout(function(){
+            $("#error-signin").fadeOut("slow");
+        }, 2500);
+    }
+
     $('#register-click').on("click", function(){
-        console.log("hola")
         $('#page-1').fadeOut(200, function(){
             $('#page-sign-in').fadeIn("slow");
         })
@@ -74,7 +147,15 @@ $(document).ready(function(){
         })
     });    
     
-    
+    $('#sign-out').on("click", function(){
+        $('.overlay').fadeIn(1000, function(){
+            $('#page-2').hide();
+            $('.overlay').fadeOut("slow");
+            $('#page-1').fadeIn("slow");
+            localStorage.clear();
+        })
+    })
+
     /*=====  End of LOGIN block  ======*/
 
 

@@ -18,11 +18,13 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		
+
 		<script src="js/actions.js"></script>
     </head>
     <body>
 		<!-- START PAGE 1 -->
+		<div class="overlay">
+		</div>
         <div class="app-page first-page" id="page-1">
         	<div class="btns-log-in">
 		        <div class="option-login btn-login">
@@ -32,14 +34,14 @@
 		        	</p>
 		        </div>
 				<form id="loginform" method="post">
- 					<img src="img/resources/user.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Nombre de usuario" name="user_name" required />
+ 					<img src="img/resources/user.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Usuario" name="user_name" required />
  					<img src="img/resources/locked.svg"/><input class="btn-login btn-pass input-app" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" name="password" required />
                     <div class="btn-login log-in-app"><a id="submit_login" type="submit" href="#">Iniciar sesi&oacute;n</a></div>
                     <span class="error-data-entry" id="error-login"></span>
 	            </form>
         	</div>
         	<div class="register">
-        		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in" id="register-click">Registrate</a></span>
+        		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in" id="register-click">&nbsp;Registrate</a></span>
         	</div>
 	    </div>
 	    <!-- END PAGE 1 -->
@@ -54,11 +56,12 @@
 		        		BLINK APP
 		        	</p>
 		        </div>
-	        	<form id="signinform">
-					<input class="btn-login btn-pass input-app" type="text" placeholder="Usuario" id="usuario_sign_in" name="usuario_sign_in">
-		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" id="password_sign_in" name="password_sign_in">
-		        	<input class="btn-login btn-pass input-app" type="tel" placeholder="N&uacute;mero de tel&eacute;fono" id="password_2_sign_in" name="password_2_sign_in">
-		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" id="mail_sign_in" name="mail_sign_in">
+	        	<form id="signinform" method="post">
+					<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre" id="name_sign_in" name="name_sign_in" value="aaa">
+					<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre de usuario" id="usuario_sign_in" name="usuario_sign_in" value="aaa">
+		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" id="password_sign_in" name="password_sign_in" value="bbb">
+		        	<input class="btn-login btn-pass input-app" type="tel" placeholder="N&uacute;mero de tel&eacute;fono" id="tel_sign_in" name="tel_sign_in" value="1234">
+		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" id="mail_sign_in" name="mail_sign_in" value="brenr_19@hotmail.com">
 		        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="#">Crear cuenta</a></div>
 		        	<span class="error-data-entry" id="error-signin"></span>
 		       	</form>
@@ -180,18 +183,18 @@
 	   		<div class="section" id="user-section">
 	   			<div class="user-info">
 	   				<img src=""/>
-	   				<p id="username-show">BRENDA</p>
+	   				<p id="username-show"></p>
 	   				<div class="img-user"></div>
 	   			</div>
 	   			<ul class="settings-list">
-	   				<li style="background-color:#FFF">
+	   				<!-- <li style="background-color:#FFF">
 	   					<img src="img/resources/settings.svg"/><span>Ajustes</span>
-	   				</li>
-	   				<li>
+	   				</li> -->
+	   				<!-- <li>
 	   					<img src="img/resources/phone-book.svg"/><span>Invitar contactos</span>
-	   				</li>
-	   				<li style="background-color:#FFF">
-	   					<img src="img/resources/exit.svg"/><span>Cerrar sesi&oacute;n</span>
+	   				</li> -->
+	   				<li style="background-color:#FFF" id="sign-out">
+	   					<img src="img/resources/exit.svg"/><span><a href="#page-1" style="color:#000 !important;">Cerrar sesi&oacute;n</a></span>
 	   				</li>
 	    		</ul>
 	   		</div>

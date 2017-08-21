@@ -22,6 +22,7 @@
 				}
 			}
 			$datos = json_encode($matriz);
+			
 			echo $datos;
 		}else{
 			echo "data not setted";
