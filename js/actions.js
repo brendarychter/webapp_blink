@@ -20,12 +20,13 @@ $(document).ready(function(){
                 cache: false,
                 dataType: "json"
             }).done(function( user ) {
-                console.log(user);
-                if (user.userID == 0){
-                    cleanInputs("-Revise los datos ingresados-");
-                }else{
-                    cleanInputs("ingreso");
-                }
+                // console.log(user);
+                // if (user.userID == 0){
+                //     cleanInputs("-Revise los datos ingresados-");
+                // }else{
+                // }
+                    cleanInputs(user);
+                
                 // localStorage.setItem("username", data.username);
                 // localStorage.setItem("password", data.password);
                 // localStorage.setItem("mail", data.mail);
