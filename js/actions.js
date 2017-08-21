@@ -20,19 +20,20 @@ $(document).ready(function(){
                 cache: false,
                 dataType: "json"
             }).done(function( user ) {
+                console.log(user)
                 // console.log(user);
                 // if (user.userID == 0){
                 //     cleanInputs("-Revise los datos ingresados-");
                 // }else{
                 // }
-                    cleanInputs(user);
-                
+                cleanInputs(user.username);
+
                 // localStorage.setItem("username", data.username);
                 // localStorage.setItem("password", data.password);
                 // localStorage.setItem("mail", data.mail);
                 // localStorage.setItem("id", data.userID);
                 // localStorage.setItem("phoneNumber", data.phoneNumber);
-                // //window.location.href = 'http://example.com';
+                //window.location.href = 'http://www.google.com';
                 // $('#page-1').fadeOut(200, function(){
                 //     $('#page-2').fadeIn("slow");
                 //     $('#username-show').text(localStorage.getItem("username"));
