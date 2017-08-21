@@ -3,33 +3,55 @@ $(document).ready(function(){
     =            LOGIN            =
     =============================================*/
     $("#submit_login").on("click", function(){
-        params= {};
-        params.action = "getUser";
-        params.username = $('#user_name').val();
-        params.password = $('#password').val();
+        $("#error-login").empty();
+        if (!$("#user_name").val() || !$("#password").val()){
+            cleanInputs("-Alguno de los campos se encuentra vacío-");
+        }else{
+            params= {};
+            params.action = "getUser";
+            params.username = $('#user_name').val();
+            params.password = $('#password').val();
 
-        $.ajax({
-            url: "http://www.blinkapp.com.ar/web_app/admin/log_in.php",
-            //url: "admin/log_in.php",
-            type: "POST",
-            data: params,
-            cache: false,
-            dataType: "json"
-        }).done(function( data ) {
-            console.log(data);
-            localStorage.setItem("username", data.username);
-            localStorage.setItem("password", data.password);
-            localStorage.setItem("mail", data.mail);
-            localStorage.setItem("id", data.userID);
-            localStorage.setItem("phoneNumber", data.phoneNumber);
-            $('#page-1').fadeOut(200, function(){
-                $('#page-2').fadeIn("slow");
-                $('#username-show').text(localStorage.getItem("username"));
+            $.ajax({
+                url: "http://www.blinkapp.com.ar/web_app/admin/log_in.php",
+                //url: "admin/log_in.php",
+                type: "POST",
+                data: params,
+                cache: false,
+                dataType: "json"
+            }).done(function( user ) {
+                console.log(user);
+                if (user.userID == 0){
+                    cleanInputs("-Revise los datos ingresados-");
+                }else{
+                    cleanInputs("ingreso");
+                }
+                // localStorage.setItem("username", data.username);
+                // localStorage.setItem("password", data.password);
+                // localStorage.setItem("mail", data.mail);
+                // localStorage.setItem("id", data.userID);
+                // localStorage.setItem("phoneNumber", data.phoneNumber);
+                // //window.location.href = 'http://example.com';
+                // $('#page-1').fadeOut(200, function(){
+                //     $('#page-2').fadeIn("slow");
+                //     $('#username-show').text(localStorage.getItem("username"));
+                // });
+            }).error(function(error, textStatus){
+                console.log(error);
             });
-        }).error(function(error, textStatus){
-            console.log(error);
-        });
+        }
     });
+    
+    function cleanInputs(text){
+        $("#user_name").focus();
+        $("#user_name").val("");
+        $("#password").val("");
+        $("#error-login").fadeIn("slow");
+        $("#error-login").append(text);
+        setTimeout(function(){
+            $("#error-login").fadeOut("slow");
+        }, 2500);
+    }
 
     $("#submit_signin").on("click", function(){
         $('#page-1').fadeOut(200, function(){
@@ -42,7 +64,6 @@ $(document).ready(function(){
         $('#page-1').fadeOut(200, function(){
             $('#page-sign-in').fadeIn("slow");
         })
-
     });
 
     $("#volver").on("click", function(){

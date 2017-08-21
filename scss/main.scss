@@ -5,7 +5,7 @@
 	height: 40px;
 }
 @font-face {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-shadow: none;
 }
 body{
@@ -132,4 +132,14 @@ body{
 }
 #page-2{
 	display: none;
+}
+.error-data-entry{
+	display: block;
+	text-transform: uppercase;
+	color: #eee;
+	margin: 0 auto;
+	font-size: 13px;
+	text-align: center;
+	letter-spacing: 2px;
+	line-height: 20px;
 }

@@ -10,6 +10,7 @@
 	.title-app{
 		font-size: 38px;
 		font-weight: 700;
+		margin-top: 10px;
 	}
 	#loginform{
 		img{
@@ -26,7 +27,7 @@
 			margin-bottom: 3%;
 			border: none;
 			color: #FFFFFF;
-			font-size: 14px;
+			font-size: 16px;
 			text-shadow: none;
 			&:focus{
 				background-color: #33c197;
@@ -43,6 +44,15 @@
 		    text-align: center;
 		    padding-top: 12px;
 		    height: 29px;
+		    font-weight: bold;
+		}
+		.log-in-app a:hover{
+			background-color: #fff;
+			color: #33c197 !important;
+		}
+		#submit_signin{
+			color: #33c197 !important;
+    		background-color: #fff;
 		}
 		.btn-fb{
 			background-color: #39579B;
@@ -73,7 +83,7 @@
 			display: inline-block;
 		}
 		.btn-pass{
-			margin-bottom: 27px;
+			margin-bottom: 25px;
 		}
 		.option-login{
 			width: 100%;
@@ -83,7 +93,7 @@
 	}
 	.register{
 		position: absolute;
-		bottom: 15px;
+		bottom: 40px;
 		width: 100%;
     	text-align: center;
     	color: #fff;
@@ -95,5 +105,8 @@
     		color: #FFF;
     		font-weight: bold;
     	}
+	}
+	.register span a:hover{
+		color: #ccc !important;
 	}
 }

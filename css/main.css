@@ -9,7 +9,8 @@
   position: fixed; }
   .first-page .title-app {
     font-size: 38px;
-    font-weight: 700; }
+    font-weight: 700;
+    margin-top: 10px; }
   .first-page #loginform img {
     width: 20px; }
   .first-page .btns-log-in {
@@ -22,7 +23,7 @@
       margin-bottom: 3%;
       border: none;
       color: #FFFFFF;
-      font-size: 14px;
+      font-size: 16px;
       text-shadow: none; }
       .first-page .btns-log-in .btn-login:focus {
         background-color: #33c197;
@@ -36,7 +37,14 @@
       display: inline-block;
       text-align: center;
       padding-top: 12px;
-      height: 29px; }
+      height: 29px;
+      font-weight: bold; }
+    .first-page .btns-log-in .log-in-app a:hover {
+      background-color: #fff;
+      color: #33c197 !important; }
+    .first-page .btns-log-in #submit_signin {
+      color: #33c197 !important;
+      background-color: #fff; }
     .first-page .btns-log-in .btn-fb {
       background-color: #39579B; }
       .first-page .btns-log-in .btn-fb:focus {
@@ -58,14 +66,14 @@
       height: 32px;
       display: inline-block; }
     .first-page .btns-log-in .btn-pass {
-      margin-bottom: 27px; }
+      margin-bottom: 25px; }
     .first-page .btns-log-in .option-login {
       width: 100%;
       color: #FFFFFF;
       text-align: center; }
   .first-page .register {
     position: absolute;
-    bottom: 15px;
+    bottom: 40px;
     width: 100%;
     text-align: center;
     color: #fff;
@@ -76,6 +84,8 @@
     .first-page .register span {
       color: #FFF;
       font-weight: bold; }
+  .first-page .register span a:hover {
+    color: #ccc !important; }
 
 .second-page .list-items {
   margin-top: 0; }
@@ -255,7 +265,7 @@
   height: 40px; }
 
 @font-face {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: none; }
 body span, body input {
   text-shadow: none; }
@@ -363,5 +373,15 @@ body {
 
 #page-2 {
   display: none; }
+
+.error-data-entry {
+  display: block;
+  text-transform: uppercase;
+  color: #eee;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 20px; }
 
 /*# sourceMappingURL=main.css.map */

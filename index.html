@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>BlinkApp - Web App</title>
+        <title>Blink App</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,8 +17,6 @@
 		<script src="js/jquery-1.12.2.min.js"></script>
         
 		<script src="js/actions.js"></script>
-
-
     </head>
     <body>
 		<!-- START PAGE 1 -->
@@ -30,10 +28,9 @@
 		        		BLINK APP
 		        	</p>
 		        </div>
-				<form id="loginform">
- 					<img src="img/resources/user.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Usuario" name="user_name" required />
+				<form id="loginform" method="post">
+ 					<img src="img/resources/user.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Nombre de usuario" name="user_name" required />
  					<img src="img/resources/locked.svg"/><input class="btn-login btn-pass input-app" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" name="password" required />
-
                     <div class="btn-login log-in-app"><a id="submit_login" type="submit" href="#">Iniciar sesi&oacute;n</a></div>
                     <span class="error-data-entry" id="error-login"></span>
 	            </form>
@@ -57,15 +54,15 @@
 	        	<form id="signinform">
 					<input class="btn-login btn-pass input-app" type="text" placeholder="Usuario" id="usuario_sign_in" name="usuario_sign_in">
 		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" id="password_sign_in" name="password_sign_in">
-		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Repetir contrase&ntilde;a" id="password_2_sign_in" name="password_2_sign_in">
+		        	<input class="btn-login btn-pass input-app" type="tel" placeholder="N&uacute;mero de tel&eacute;fono" id="password_2_sign_in" name="password_2_sign_in">
 		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" id="mail_sign_in" name="mail_sign_in">
-		        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="">Crear cuenta</a></div>
+		        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="#">Crear cuenta</a></div>
 		        	<span class="error-data-entry" id="error-signin"></span>
 		       	</form>
         	</div>
         	<div id="loading"></div>
         	<div data-role="footer" class="register">
-        		<span><a href="#" id="volver">Volver al inicio</a></span>
+        		<span><a href="#page-1" id="volver">Volver al inicio</a></span>
         	</div>
 	    </div>
 	    <!-- END PAGE SIGN IN -->
