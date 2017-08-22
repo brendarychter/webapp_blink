@@ -199,6 +199,7 @@ $(document).ready(function(){
             dataType: "json"
         }).done(function( data ) {
             //if data.length == 0, show button de agregar grupo.
+            $('.groups-user').empty();
             if (data.length == 0){
                 console.log("todavia no hay grupos");
                 $('.groups-user').hide();
