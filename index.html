@@ -57,11 +57,11 @@
 		        	</p>
 		        </div>
 	        	<form id="signinform" method="post">
-					<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre" id="name_sign_in" name="name_sign_in" value="aaa">
-					<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre de usuario" id="usuario_sign_in" name="usuario_sign_in" value="aaa">
-		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" id="password_sign_in" name="password_sign_in" value="bbb">
-		        	<input class="btn-login btn-pass input-app" type="tel" placeholder="N&uacute;mero de tel&eacute;fono" id="tel_sign_in" name="tel_sign_in" value="1234">
-		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" id="mail_sign_in" name="mail_sign_in" value="brenr_19@hotmail.com">
+					<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre" id="name_sign_in" name="name_sign_in">
+					<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre de usuario" id="usuario_sign_in" name="usuario_sign_in">
+		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" id="password_sign_in" name="password_sign_in">
+		        	<input class="btn-login btn-pass input-app" type="tel" placeholder="N&uacute;mero de tel&eacute;fono" id="tel_sign_in" name="tel_sign_in">
+		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" id="mail_sign_in" name="mail_sign_in">
 		        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="#">Crear cuenta</a></div>
 		        	<span class="error-data-entry" id="error-signin"></span>
 		       	</form>
@@ -189,9 +189,16 @@
 	   				<!-- <li style="background-color:#FFF">
 	   					<img src="img/resources/settings.svg"/><span>Mis datos</span>
 	   				</li> -->
-	   				<li>
+	   				<li id="subir-imagen">
 	   					<img src="img/resources/camera.png"/><span>Subir foto</span>
 	   				</li>
+	   				<div id="form-foto">
+				    	<form method="post" enctype="multipart/form-data" data-type="submit-image" >
+							<input type="file" class="create-foto" id="create-foto" name="imagen" required style="display: inline-block"/><label style="display: inline-block" id="fotis"></label>
+							<a href="" class="save-img" name="submit" type="submit" id="guardar-foto"/>Guardar foto</a>
+							<p class="help-block"></p>
+						</form>
+				    </div>
 	   				<li style="background-color:#FFF" id="sign-out">
 	   					<img src="img/resources/exit.svg"/><span><a href="#page-1" style="color:#000 !important;">Cerrar sesi&oacute;n</a></span>
 	   				</li>

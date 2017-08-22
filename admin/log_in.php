@@ -15,7 +15,7 @@
 			if($response = mysqli_query($connection->connected, $consulta)){
 				if(mysqli_num_rows($response)>=1){
 					while($obj = mysqli_fetch_object($response)){
-						$matriz = array('username' => $obj->username, 'password' => $obj->password, 'mail' => utf8_encode($obj->mail), 'phoneNumber' => $obj->phoneNumber, 'userID' => $obj->userID, 'active' => $obj->active);
+						$matriz = array('username' => $obj->username, 'password' => $obj->password, 'mail' => utf8_encode($obj->mail), 'phoneNumber' => $obj->phoneNumber, 'userID' => $obj->userID, 'active' => $obj->active, 'photo' =>$obj->photo);
 					}
 				}else{
 	        		$matriz = array('userID'=>0);

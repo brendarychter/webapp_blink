@@ -43,13 +43,5 @@
 		$encoded = json_encode($responseArray);
 		echo $encoded;
 
-		// $consulta = "INSERT INTO users WHERE username = '$username' AND password = '$password'";
-		// $response = mysqli_query($connection->connected,$consulta);
-
-		// while($obj = mysqli_fetch_object($response)){
-		// 	$matriz = array('username' => $username, 'password' => $obj->password, 'mail' => utf8_encode($obj->mail), 'phoneNumber' => $obj->phoneNumber, 'userID' => $obj->userID);
-		// }
-		// $datos = json_encode($matriz);
-		// echo $datos;
 	}
 ?>

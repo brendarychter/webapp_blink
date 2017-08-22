@@ -81,6 +81,11 @@ $(document).ready(function(){
         localStorage.setItem("id", user.userID);
         localStorage.setItem("phoneNumber", user.phoneNumber);
         localStorage.setItem("active", user.phoneNumber);
+        if(user.photo == ""){
+            $('.img-user').css('background-image', 'url("img/resources/default_user.svg"');
+        }else{
+            $('.img-user').css('background-image', 'url(' + user.photo + ')');
+        }
     }
 
     $("#submit_signin").on("click", function(){
@@ -165,6 +170,8 @@ $(document).ready(function(){
             $('#page-2').hide();
             $('.overlay').fadeOut("slow");
             $('#page-1').fadeIn("slow");
+            $('.img-user').css('background-image', 'url("../img/resources/default_user.svg"');
+
             localStorage.clear();
         })
     })
@@ -179,9 +186,26 @@ $(document).ready(function(){
     
 
     
-
-    function getCurrentUser(user){
+    function getGroupsSelectedUser(id){
+        params= {};
+        params.id = id;
+        $.ajax({
+                //url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
+            url: "admin/getGroupsCurrentUser.php",
+            type: "POST",
+            data: params,
+            cache: false,
+            dataType: "json"
+        }).done(function( data ) {
+            //if data.length == 0, show button de agregar grupo.
+            console.log(data);
+        }).error(function(error, textStatus){
+            console.log(error);
+            cleanInputs(textStatus);
+        });
     }
+
+
     function getUserGroups() {
         var id = $(".active-section").attr("id");
         console.log(id)
@@ -200,11 +224,11 @@ $(document).ready(function(){
             dataType: "json"
         }).done(function( user ) {
             setCurrentUser(user);
+            getGroupsSelectedUser(user.userID);
         }).error(function(error, textStatus){
             console.log(error);
             cleanInputs(textStatus);
         });
-
     }
 
     $('.button-action').on("click", function(){
@@ -259,5 +283,67 @@ $(document).ready(function(){
         }
     })
     /*=====  End of Section comment block  ======*/
+
+
+    /*====================================
+    =            Subir imagen            =
+    ====================================*/
+    
+
+    function makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+    }
+
+    $('#subir-imagen').on("click", function(){
+        $('#form-foto').slideToggle('slow');
+    })
+    
+    $('#guardar-foto').on("click", function(){
+        var form_data = new FormData();
+        var id = localStorage.getItem("id");
+        var file_data = $('#create-foto').prop('files')[0];
+
+        form_data.append('imagen', file_data);
+        form_data.append('userID', id);
+        form_data.append('submit', 'submit');
+
+
+        var params = {};
+        params.id = id;
+        $.ajax({
+            //url: "http://www.blinkapp.com.ar/webapp_blink/admin/updateImages.php",
+            url: "admin/updateImages.php",
+            type: "POST",
+            cache: false,
+            processData: false,
+            data: form_data,
+            dataType: "text",
+            contentType: false,
+        }).done(function( data ) {
+
+            $.ajax({
+                //url: "http://www.blinkapp.com.ar/webapp_blink/admin/updateImages.php",
+                url: "admin/getPhoto.php",
+                type: "POST",
+                cache: false,
+                data: params,
+                dataType: "json"
+            }).done(function( data ) {
+                $('.img-user').css('background-image', 'url(' + data.photo + ')');
+                $('#form-foto').slideToggle('slow');
+            }).error(function(error, textStatus){
+                console.log(error)
+            });
+
+        }).error(function(error, textStatus){
+            console.log(error)
+        });
+    })
+    /*=====  End of Subir imagen  ======*/
+    
     
 });
