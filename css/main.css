@@ -60,7 +60,7 @@
       border: 0;
       border-bottom: 1px solid #fff;
       color: #fff;
-      width: 88%;
+      width: 80%;
       padding-left: 15px;
       margin-bottom: 20px;
       height: 32px;
@@ -403,7 +403,8 @@ body {
   margin-bottom: 25px; }
 
 .create-foto {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .save-img {
   background-color: #000;

@@ -324,7 +324,7 @@ $(document).ready(function(){
             dataType: "text",
             contentType: false,
         }).done(function( data ) {
-
+            console.log(data);
             $.ajax({
                 url: "http://www.blinkapp.com.ar/blink_webapp/admin/getPhoto.php",
                 //url: "admin/getPhoto.php",
@@ -333,6 +333,7 @@ $(document).ready(function(){
                 data: params,
                 dataType: "json"
             }).done(function( data ) {
+                console.log(data);
                 $('.img-user').css('background-image', 'url(' + data.photo + ')');
                 $('#form-foto').slideToggle('slow');
             }).error(function(error, textStatus){
