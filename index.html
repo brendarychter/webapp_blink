@@ -25,7 +25,7 @@
 		<!-- START PAGE 1 -->
 		<div class="overlay">
 		</div>
-        <div class="app-page first-page" id="page-1">
+        <section class="app-page first-page" id="page-1">
         	<div class="btns-log-in">
 		        <div class="option-login btn-login">
 		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
@@ -43,12 +43,12 @@
         	<div class="register">
         		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in" id="register-click">&nbsp;Registrate</a></span>
         	</div>
-	    </div>
+	    </section>
 	    <!-- END PAGE 1 -->
 		
 		<!-- START PAGE SIGN IN -->
 
-        <div class="app-page first-page" id="page-sign-in">
+        <section class="app-page first-page" id="page-sign-in">
         	<div class="btns-log-in" >
         		<div class="option-login btn-login" >
 		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
@@ -70,11 +70,11 @@
         	<div data-role="footer" class="register">
         		<span><a href="#page-1" id="volver">Volver al inicio</a></span>
         	</div>
-	    </div>
+	    </section>
 	    <!-- END PAGE SIGN IN -->
 
 	    <!-- START PAGE 2 -->
-	   	<div class="app-page second-page" id="page-2">
+	   	<section class="app-page second-page" id="page-2">
 	   		<div class="section">
 	   			<div class="title" id="title-section">
 	    			Mis grupos
@@ -82,23 +82,21 @@
 	   		</div>
 	   		<div class="section active-section " id="group-section">
 	   			<div class="new-user-section">
-	   				<p class="alert-no-groups">Todav&iacute;a no ten&eacute;s grupos asociados</p>
-                	<a href="" type="submit" class="btn btn-primary" id="create-group">+ Crear grupo</a>
-
-					<form id="form-create-group">
-						<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre de grupo" id="name_sign_in" name="name_sign_in">
-			        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="#">Crear grupo</a></div>
+	   				<p class="alert-no-groups">Todav&iacute;a no est&aacute;s unido a ning&uacute;n grupo</p>
+                	<a href="" type="submit" class="btn btn-primary" id="create-group">+</a>
+					
+					<form id="form-create-group" style="display: block;">
+						<input class="input-name-group" type="text" placeholder="Nombre del grupo" id="group_name" name="group_name">
+						<span>Usuarios</span>
+						<ul id="users-to-add">
+						</ul>
+			        	
+			        	<a id="submit-group" type="submit" href="#">Crear grupo</a>
 			        	<span class="error-data-entry" id="error-signin"></span>
 		   			</form>
 	   			</div>
 	   			
 	   			<ul class="group groups-user">
-	    			<!-- <li>
-	    				<div class="logo-group">N
-	    				</div>
-	    				<span>Nefetz</span>
-	    				<img src="img/resources/next.svg" />
-	    			</li> -->
 	    		</ul>
 	    		<!-- <div id="nefetz-group-actions" class="group-actions">
 	    			<ul>
@@ -194,7 +192,7 @@
 	    			</li>
 	    		</ul>
 	    	</div>
-	    </div>
+	    </section>
 	    <!-- END PAGE 2 -->
     </body>
 </html>

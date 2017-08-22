@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	require_once("connection.php");
 	header("Access-Control-Allow-Origin: *");
     $connection = new connection;
