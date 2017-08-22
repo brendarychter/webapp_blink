@@ -48,8 +48,8 @@
 			// DEFINO CUÁL VA A SER LA URL DE MI SITIO WEB, Y LA CARPETA DONDE SE GUARDARÁN LAS IMÁGENES (ESTO DEBERÍA ESTAR EN UN ARCHIVO EXTERNO DE CONFIGURACIÓN)
 			$direccion_web = "http://www.blinkapp.com.ar/blink_webapp/uploads/";
 			//$direccion_web = "http://localhost/webapp_blink/uploads/";
-			$nombre_carpeta = "../uploads/";
-			chmod("../uploads/", 0755);
+			$nombre_carpeta = "uploads/";
+			chmod("uploads/", 0755);
 			// DEFINICIONES INTERNAS PARA CONTROL
 			
 			//generate random name
