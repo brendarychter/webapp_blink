@@ -81,6 +81,7 @@ $(document).ready(function(){
         localStorage.setItem("id", user.userID);
         localStorage.setItem("phoneNumber", user.phoneNumber);
         localStorage.setItem("active", user.phoneNumber);
+        console.log(user);
         if(user.photo == ""){
             $('.img-user').css('background-image', 'url("img/resources/default_user.svg"');
         }else{
@@ -198,7 +199,17 @@ $(document).ready(function(){
             dataType: "json"
         }).done(function( data ) {
             //if data.length == 0, show button de agregar grupo.
-            console.log(data);
+            if (data.length == 0){
+                console.log("todavia no hay grupos");
+                $('.groups-user').hide();
+                $('.new-user-section').show();
+            }else {
+                for (var i in data){
+                    var group = data[i];
+                    $('.groups-user').append("<li><div class='logo-group'>"+group.groupName.charAt(0)+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li>")
+                }   
+            }
+           
         }).error(function(error, textStatus){
             console.log(error);
             cleanInputs(textStatus);
@@ -255,7 +266,6 @@ $(document).ready(function(){
     })
 
     $('#nefetz-group').on("click", function(){
-        
         if($('#nefetz-group-actions').hasClass("active")){
             $('#nefetz-group-actions').fadeOut("slow");
             $('#nefetz-group-actions').removeClass("active");
@@ -325,6 +335,8 @@ $(document).ready(function(){
             contentType: false,
         }).done(function( data ) {
             console.log(data);
+            $('.overlay').fadeIn("slow");
+
             $.ajax({
                 url: "http://www.blinkapp.com.ar/blink_webapp/admin/getPhoto.php",
                 //url: "admin/getPhoto.php",
@@ -336,6 +348,8 @@ $(document).ready(function(){
                 console.log(data);
                 $('.img-user').css('background-image', 'url(' + data.photo + ')');
                 $('#form-foto').slideToggle('slow');
+                $('.overlay').fadeOut("slow");
+
             }).error(function(error, textStatus){
                 console.log(error)
             });

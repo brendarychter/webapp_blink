@@ -81,15 +81,26 @@
 	   			</div>
 	   		</div>
 	   		<div class="section active-section " id="group-section">
-	   			<ul class="nefetz group" id="nefetz-group">
-	    			<li>
+	   			<div class="new-user-section">
+	   				<p class="alert-no-groups">Todav&iacute;a no ten&eacute;s grupos asociados</p>
+                	<a href="" type="submit" class="btn btn-primary" id="create-group">+ Crear grupo</a>
+
+					<form id="form-create-group">
+						<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre de grupo" id="name_sign_in" name="name_sign_in">
+			        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="#">Crear grupo</a></div>
+			        	<span class="error-data-entry" id="error-signin"></span>
+		   			</form>
+	   			</div>
+	   			
+	   			<ul class="group groups-user">
+	    			<!-- <li>
 	    				<div class="logo-group">N
 	    				</div>
 	    				<span>Nefetz</span>
 	    				<img src="img/resources/next.svg" />
-	    			</li>
+	    			</li> -->
 	    		</ul>
-	    		<div id="nefetz-group-actions" class="group-actions">
+	    		<!-- <div id="nefetz-group-actions" class="group-actions">
 	    			<ul>
 	    				<li>
 	    					<div class="time">
@@ -119,44 +130,10 @@
 	    					</div>
 	    				</li>
 	    			</ul>
-	    		</div>
-	    		<ul class="p13n group" id="p13n-group" style="background-color:#ddd">
-	    			<li>
-	    				<div class="logo-group">P
-	    				</div>
-	    				<span>P13N</span>
-	    				<img src="img/resources/next.svg" />
-	    			</li>
-	    		</ul>
-	    		<div id="p13n-group-action" class="group-actions">
-	    			<ul>
-	    				<li>
-	    					No hay eventos pr&oacute;ximo
-	    				</li>
-	    			</ul>
-	    		</div>
-	    		<ul class="facu group" id="facu-group">
-	    			<li>
-	    				<div class="logo-group">F
-	    				</div>
-	    				<span>Facu</span>
-	    				<img src="img/resources/next.svg" />
-	    			</li>
-	    		</ul>
-	    		<div id="facu-group-actions" class="group-actions">
-	    			<ul>
-	    				<li>
-	    					<div class="time">
-	    						<div class="hour-group">18hs</div>
-	    						<label>Martes 10/12</label>
-	    					</div>
-	    					<div class="event">
-	    						<p><strong>Fase</strong> </br> Centro Cultural Recoleta </p>
-	    					</div>
-	    				</li>
-	    			</ul>
-	    		</div>
+	    		</div>-->
 	   		</div>
+
+
 	   		<div class="section" id="notifications-section">
 	   			<ul>
 	   				<li>
