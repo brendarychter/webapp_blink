@@ -10,7 +10,7 @@
     	$group = $_POST["groupName"];
     	$id = $_POST["id"];
     	$errorNombreGrupo = '-Ya existe un grupo con ese nombre, elija otro-';
-
+    	//$arrayIDS = $_POST["array_ids"];
 		$query = "SELECT * FROM groups WHERE groupName = '$group'";;
 		$response = mysqli_query($connection->connected, $query);
 		$responseArray = [];
@@ -18,11 +18,20 @@
 			$consulta = "INSERT INTO groups (groupName) VALUES ('$group')";
 
 			if (mysqli_query ($connection->connected, $consulta)) {
+				$consulta2 = "SELECT * FROM groups WHERE groupName = '$group'";
 				
-				$consulta3 = "INSERT INTO modules (groupName, idUser) VALUES ('$group', '$id')";
-				
-				if (mysqli_query ($connection->connected, $consulta3)) {
-					$responseArray = array('type' => 'success', 'message' => 'ok');
+				if($response2 = mysqli_query($connection->connected, $consulta2)){
+					if(mysqli_num_rows($response2)>=1){
+						while($obj = mysqli_fetch_object($response2)){
+							$idGroup = $obj->idGroup;
+						}
+						//for loop con cada id seleccionado
+						$consulta4 = "INSERT INTO modules (idGroup, idUser, idType) VALUES ('$idGroup', '$id', 1)";
+						
+						if (mysqli_query ($connection->connected, $consulta4)) {
+							$responseArray = array('type' => 'success', 'message' => 'ok');
+						}
+					}
 				}
 
 			} else {

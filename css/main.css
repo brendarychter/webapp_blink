@@ -284,6 +284,42 @@
 #form-create-group {
   display: none;
   margin-top: 20px; }
+  #form-create-group .class_checkbox {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    margin-bottom: -4px; }
+  #form-create-group .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0;
+    /* margin-left: -20px; */
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff; }
+  #form-create-group #users-to-add {
+    margin: 0px;
+    padding: 0; }
+  #form-create-group #users-to-add li {
+    position: relative;
+    padding: 15px;
+    margin-bottom: 1px;
+    background-color: #FFF;
+    cursor: pointer; }
+  #form-create-group #users-to-add li p {
+    margin-bottom: 0; }
+  #form-create-group #users-to-add li, #form-create-group #users-to-add li p {
+    color: #bcbcbc; }
+  #form-create-group #users-to-add li.checked, #form-create-group #users-to-add li.checked p {
+    color: #6a6f7b; }
+  #form-create-group #users-to-add li .class_checkbox {
+    position: absolute;
+    right: 15px;
+    z-index: 10;
+    top: 30%; }
   #form-create-group .input-name-group {
     background-color: transparent;
     border: 0;
