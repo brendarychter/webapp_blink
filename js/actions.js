@@ -187,8 +187,7 @@ $(document).ready(function(){
     
 
     
-    function getGroupsSelectedUser(id){
-        console.log()
+    function getGroupsSelectedUser(id, showNewGroupFromUser){
         params= {};
         params.id = id;
         $.ajax({
@@ -200,6 +199,7 @@ $(document).ready(function(){
             dataType: "json"
         }).done(function( data ) {
             //if data.length == 0, show button de agregar grupo.
+            console.log(data);
             $('.groups-user').empty();
             if (data.length == 0){
                 console.log("todavia no hay grupos");
@@ -208,8 +208,14 @@ $(document).ready(function(){
             }else {
                 for (var i in data){
                     var group = data[i];
-                    $('.groups-user').append("<li><div class='logo-group'>"+group.groupName.charAt(0)+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li>")
+                    $('.groups-user').append("<li style='position: absolute' class='group-line' id='group-element-"+group.idGroup+"'><div class='logo-group'>"+group.groupName.charAt(0)+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li><div id='about-2' class='page' style='position: absolute'><p>Content for about 2</p>")
                 }   
+                //ocultar seccion de grupo nuevo
+                //mostrar grupos
+                if (showNewGroupFromUser){
+                    $('.new-user-section').slideToggle('slow');
+                    $('.groups-user').slideToggle('slow');
+                }
             }
            
         }).error(function(error, textStatus){
@@ -218,6 +224,14 @@ $(document).ready(function(){
         });
     }
 
+
+    $('.group-line').click(transitionPage);
+    function transitionPage() {
+        // Hide to left / show from left
+        $(".group-line").toggle("slide", {direction: "left"}, 500);
+
+        $("#about-2").toggle("slide", {direction: "right"}, 500);
+    }
 
     function getUserGroups() {
         var id = $(".active-section").attr("id");
@@ -300,7 +314,7 @@ $(document).ready(function(){
                 //mostrar los grupos del usuario
                 console.log(data);
                 //getUserGroups();
-                getGroupsSelectedUser(params.id);
+                getGroupsSelectedUser(params.id, true);
             }).error(function(error, textStatus){
                 console.log(error);
             });
