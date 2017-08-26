@@ -4,8 +4,6 @@ $(document).ready(function(){
     =            Section LocalStorage block            =
     =============================================*/
     
-    
-    
     //query cada x segundos para las notificaciones
     if (localStorage.getItem("username") != undefined){
         $('.overlay').fadeIn(1000, function(){
@@ -81,7 +79,6 @@ $(document).ready(function(){
         localStorage.setItem("id", user.userID);
         localStorage.setItem("phoneNumber", user.phoneNumber);
         localStorage.setItem("active", user.phoneNumber);
-        //console.log(user);
         if(user.photo == ""){
             $('.img-user').css('background-image', 'url("img/resources/default_user.svg"');
         }else{
@@ -198,8 +195,6 @@ $(document).ready(function(){
             cache: false,
             dataType: "json"
         }).done(function( data ) {
-            //if data.length == 0, show button de agregar grupo.
-            console.log(data);
             $('.groups-user').empty();
             if (data.length == 0){
                 console.log("todavia no hay grupos");
@@ -213,8 +208,9 @@ $(document).ready(function(){
                 //ocultar seccion de grupo nuevo
                 //mostrar grupos
                 if (showNewGroupFromUser){
-                    $('.new-user-section').slideToggle('slow');
-                    $('.groups-user').slideToggle('slow');
+                    $('.new-user-section').slideToggle('slow', function(){
+                        $('.groups-user').slideToggle('slow');
+                    });
                 }
             }
            
@@ -235,7 +231,6 @@ $(document).ready(function(){
 
     function getUserGroups() {
         var id = $(".active-section").attr("id");
-        console.log(id)
         
         params= {};
         params.action = "getUser";
@@ -259,53 +254,57 @@ $(document).ready(function(){
     }
 
     var usersList = [];
-    $('#create-group').on('click', function(){
-        $('#form-create-group').slideToggle('slow');
-        //getUsers();
-        //function getUsers(){
-            $.ajax({
-                //url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
-                url: "admin/getAllUsers.php",
-                type: "POST",
-                cache: false,
-                dataType: "json"
-            }).done(function( data ) {
-                var list = $('.users-to-add');
-                var array = [];
+    $('.block-new-group').on('click', function(){
+        $(this).children('.alert-no-groups').text(function(i, text){
+            return text === "Crear nuevo grupo" ? "  " : "Crear nuevo grupo";
+        })
+        $(this).children(".new-group").text(function(i, text){
+            return text === "+" ? "×" : "+";
+        })
+        
+        $('#form-create-group').slideToggle("slow");
+        $.ajax({
+            //url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
+            url: "admin/getAllUsers.php",
+            type: "POST",
+            cache: false,
+            dataType: "json"
+        }).done(function( data ) {
+            $('.users-to-add').empty();
+            var list = $('.users-to-add');
+            var array = [];
 
-                for (var a in data){
-                    console.log(data[a].userID);
-                    if (data[a].userID != localStorage.getItem("id")){
-                        array.push(data[a]);
-                    }
+            for (var a in data){
+                if (data[a].userID != localStorage.getItem("id")){
+                    array.push(data[a]);
                 }
-                for (var i in array){
-                    var user = array[i];
-                    list.append('<li id="'+user.userID+'"><div class="img-user-group"></div><span>'+user.username+'</span><p>'+user.phoneNumber+'</p><input type="checkbox" class="input_class_checkbox"/></li>')
-                    if (user.photo != ""){
-                        $('.img-user-group').css('background-image', 'url(' + user.photo + ')');
-                    }
+            }
+            for (var i in array){
+                var user = array[i];
+                list.append('<li id="'+user.userID+'"><div class="img-user-group" id="img-user-group-'+user.userID+'"></div><span>'+user.username+'</span></br><span>'+user.phoneNumber+'</span><input type="checkbox" class="input_class_checkbox"/></li>')
+                if (user.photo != ""){
+                    $('#img-user-group-'+user.userID).css('background-image', 'url(' + user.photo + ')');
                 }
+            }
 
-                $('.input_class_checkbox').each(function(){
-                        $(this).hide().after('<div class="class_checkbox" />');
-                    });
-                $('.users-to-add li').on('click',function(){
-                    // usersList.push(this.id);
-                    $(this).toggleClass('checked').prev().prop('checked', $(this).is('.checked'));
-                    if ($(this).is('.checked')){
-                        usersList.push(this.id);
-                    }else{
-                        var index = usersList.indexOf(this.id);
-                        if (index > -1) {
-                            usersList.splice(index, 1);
-                        }
-                    }
+            $('.input_class_checkbox').each(function(){
+                    $(this).hide().after('<div class="class_checkbox" />');
                 });
-            }).error(function(error, textStatus){
-                console.log(error);
-            }); 
-        //}
+            $('.users-to-add li').on('click',function(){
+                // usersList.push(this.id);
+                $(this).toggleClass('checked').prev().prop('checked', $(this).is('.checked'));
+                if ($(this).is('.checked')){
+                    usersList.push(this.id);
+                }else{
+                    var index = usersList.indexOf(this.id);
+                    if (index > -1) {
+                        usersList.splice(index, 1);
+                    }
+                }
+            });
+        }).error(function(error, textStatus){
+            console.log(error);
+        }); 
     });
 
     $('#submit-group').on('click', function(){
@@ -314,8 +313,8 @@ $(document).ready(function(){
         params.id = localStorage.getItem("id");
         usersList.push(params.id);
         params.usersList = usersList;
-
-        console.log(params);
+        params.date = new Date();
+        
         if (groupName != ""){
             $.ajax({
                 //url: "http://www.blinkapp.com.ar/blink_webapp/admin/createGroup.php",
@@ -427,7 +426,6 @@ $(document).ready(function(){
             dataType: "text",
             contentType: false,
         }).done(function( data ) {
-            console.log(data);
             $('.overlay').fadeIn("slow");
 
             $.ajax({
@@ -438,7 +436,6 @@ $(document).ready(function(){
                 data: params,
                 dataType: "json"
             }).done(function( data ) {
-                console.log(data);
                 $('.img-user').css('background-image', 'url(' + data.photo + ')');
                 $('#form-foto').slideToggle('slow');
                 $('.overlay').fadeOut("slow");

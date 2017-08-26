@@ -129,7 +129,6 @@
     display: block;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
     #page-2 #group-section .groups-user {
-      border-bottom: 1px solid #ccc;
       cursor: pointer;
       width: 100%;
       position: absolute; }
@@ -148,7 +147,8 @@
       #page-2 #group-section .groups-user li {
         height: 50px;
         padding: 10px 15px;
-        background: #fff; }
+        background: #fff;
+        border-bottom: 1px solid #ccc; }
         #page-2 #group-section .groups-user li img {
           width: 22px;
           float: right;
@@ -156,6 +156,17 @@
           padding-right: 0; }
       #page-2 #group-section .groups-user li:nth-child(odd) {
         background: #ddd; }
+    #page-2 #group-section .new-group {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 30px;
+      color: #fff;
+      line-height: 40px;
+      text-align: center;
+      background: #666;
+      display: inline-block;
+      font-weight: bold; }
     #page-2 #group-section .group-actions {
       display: none; }
       #page-2 #group-section .group-actions .hour-group {
@@ -267,20 +278,16 @@
         margin-right: -30px;
         float: right; }
 
-#create-group {
-  background-color: #000;
-  padding: 7px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 14px;
-  display: inline-block; }
-
 .new-user-section {
   display: none;
   overflow: hidden;
   padding: 15px; }
   .new-user-section .alert-no-groups {
     display: inline-block; }
+  .new-user-section .block-new-group {
+    position: absolute;
+    bottom: 70px;
+    right: 25px; }
 
 #form-create-group {
   display: none;
@@ -340,8 +347,8 @@
     font-size: 14px; }
   #form-create-group .img-user-group {
     background-image: url("../img/resources/default_user.svg");
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     font-size: 28px;
     color: #fff;
@@ -358,6 +365,8 @@
 @font-face {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: none; }
+@viewport {
+  orientation: portrait; }
 body span, body input {
   text-shadow: none; }
 body a {

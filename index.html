@@ -15,7 +15,7 @@
                    script-src 'self' 'unsafe-inline' 'unsafe-eval';">
         Place favicon.ico and apple-touch-icon.png in the root directory -->
         
-		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css" media="all and (orientation:portrait)">
 		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -82,18 +82,20 @@
 	   		</div>
 	   		<div class="section active-section " id="group-section">
 	   			<div class="new-user-section">
-	   				<p class="alert-no-groups">Todav&iacute;a no est&aacute;s unido a ning&uacute;n grupo</p>
-                	<a href="" type="submit" class="btn btn-primary" id="create-group">+</a>
-					
 					<form id="form-create-group">
 						<input class="input-name-group" type="text" placeholder="Nombre del grupo" id="group_name" name="group_name">
-						<span>Usuarios</span>
+						<span>Contactos</span>
 						<ul class="users-to-add">
 						</ul>
 			        	
 			        	<a id="submit-group" type="submit" href="#">Crear grupo</a>
 			        	<span class="error-data-entry" id="error-signin"></span>
 		   			</form>
+		   			<div class="block-new-group">
+						<p class="alert-no-groups">Crear nuevo grupo</p>
+	                	<a href="" type="submit" class="btn btn-primary new-group" id="create-group">+</a>
+		   			</div>
+		   			
 	   			</div>
 	   			
 	   			<ul class="group groups-user">
