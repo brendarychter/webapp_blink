@@ -128,10 +128,12 @@
   #page-2 #group-section {
     display: block;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
-    #page-2 #group-section .group {
+    #page-2 #group-section .groups-user {
       border-bottom: 1px solid #ccc;
-      cursor: pointer; }
-      #page-2 #group-section .group .logo-group {
+      cursor: pointer;
+      width: 100%;
+      position: absolute; }
+      #page-2 #group-section .groups-user .logo-group {
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -141,18 +143,18 @@
         text-align: center;
         background: #222;
         display: inline-block; }
-      #page-2 #group-section .group span {
+      #page-2 #group-section .groups-user span {
         margin-left: 20px; }
-      #page-2 #group-section .group li {
+      #page-2 #group-section .groups-user li {
         height: 50px;
-        padding: 10px 15px; }
-        #page-2 #group-section .group li img {
+        padding: 10px 15px;
+        background: #fff; }
+        #page-2 #group-section .groups-user li img {
           width: 22px;
           float: right;
-          padding: 16px; }
-      #page-2 #group-section .group li:nth-child(odd) {
-        background: #fff; }
-      #page-2 #group-section .group li:nth-child(even) {
+          padding: 16px;
+          padding-right: 0; }
+      #page-2 #group-section .groups-user li:nth-child(odd) {
         background: #ddd; }
     #page-2 #group-section .group-actions {
       display: none; }
@@ -275,9 +277,8 @@
 
 .new-user-section {
   display: none;
-  width: 100%;
   overflow: hidden;
-  padding: 25px; }
+  padding: 15px; }
   .new-user-section .alert-no-groups {
     display: inline-block; }
 

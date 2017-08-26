@@ -208,7 +208,7 @@ $(document).ready(function(){
             }else {
                 for (var i in data){
                     var group = data[i];
-                    $('.groups-user').append("<li style='position: absolute' class='group-line' id='group-element-"+group.idGroup+"'><div class='logo-group'>"+group.groupName.charAt(0)+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li><div id='about-2' class='page' style='position: absolute'><p>Content for about 2</p>")
+                    $('.groups-user').append("<li class='group-line' id='group-element-"+group.idGroup+"'><div class='logo-group'>"+group.groupName.charAt(0).toUpperCase()+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li>")
                 }   
                 //ocultar seccion de grupo nuevo
                 //mostrar grupos
@@ -259,11 +259,10 @@ $(document).ready(function(){
     }
 
     var usersList = [];
-    // $('#create-group').on('click', function(){
-    //     $('#form-create-group').slideToggle('slow');
-        //get all users excepto yo
-        getUsers();
-        function getUsers(){
+    $('#create-group').on('click', function(){
+        $('#form-create-group').slideToggle('slow');
+        //getUsers();
+        //function getUsers(){
             $.ajax({
                 //url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
                 url: "admin/getAllUsers.php",
@@ -292,16 +291,22 @@ $(document).ready(function(){
                         $(this).hide().after('<div class="class_checkbox" />');
                     });
                 $('.users-to-add li').on('click',function(){
-                    console.log(this.id)
-                    usersList.push(this.id);
+                    // usersList.push(this.id);
                     $(this).toggleClass('checked').prev().prop('checked', $(this).is('.checked'));
+                    if ($(this).is('.checked')){
+                        usersList.push(this.id);
+                    }else{
+                        var index = usersList.indexOf(this.id);
+                        if (index > -1) {
+                            usersList.splice(index, 1);
+                        }
+                    }
                 });
             }).error(function(error, textStatus){
                 console.log(error);
             }); 
-        }
-
-    // })
+        //}
+    });
 
     $('#submit-group').on('click', function(){
         var groupName = $('#group_name').val();
@@ -320,8 +325,6 @@ $(document).ready(function(){
                 cache: false,
                 dataType: "json"
             }).done(function( data ) {
-                //mostrar los grupos del usuario
-                console.log(data);
                 //getUserGroups();
                 getGroupsSelectedUser(params.id, true);
             }).error(function(error, textStatus){

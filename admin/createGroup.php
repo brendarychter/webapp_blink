@@ -34,7 +34,6 @@
 								$responseArray = array('type' => 'success', 'message' => 'ok');
 							}
 						}
-						
 					}
 				}
 

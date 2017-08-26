@@ -57,9 +57,12 @@
 	#group-section{
 		display: block;
 		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-		.group{
+		.groups-user{
 		    border-bottom: 1px solid #ccc;
 		    cursor: pointer;
+		    width: 100%;
+			position: absolute;
+
 			.logo-group{
 				width: 50px;
 				height: 50px;
@@ -77,14 +80,15 @@
 			li{
 				height: 50px;
 				padding: 10px 15px;
+				background: #fff;
 				img{
 					width: 22px;
 				    float: right;
 				    padding: 16px;
+				    padding-right: 0;
 				}
 			}
-			li:nth-child(odd) { background: #fff; }
-			li:nth-child(even) { background: #ddd; }
+			li:nth-child(odd) { background: #ddd; }
 		}
 		.group-actions{
 			display: none;
@@ -240,9 +244,9 @@
 }
 .new-user-section{
 	display: none;
-	width: 100%;
+	// width: 100%;
     overflow: hidden;
-    padding: 25px;
+    padding: 15px;
     .alert-no-groups{
     	display: inline-block;
     }
@@ -311,4 +315,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
+}
+.groups-user{
+	
 }
