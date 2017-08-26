@@ -9,6 +9,7 @@
     	//chequear que no exista el nombre del grupo
     	$group = $_POST["groupName"];
     	$id = $_POST["id"];
+    	$usersList = $_POST["usersList"];
     	$errorNombreGrupo = '-Ya existe un grupo con ese nombre, elija otro-';
     	//$arrayIDS = $_POST["array_ids"];
 		$query = "SELECT * FROM groups WHERE groupName = '$group'";;
@@ -26,11 +27,14 @@
 							$idGroup = $obj->idGroup;
 						}
 						//for loop con cada id seleccionado
-						$consulta4 = "INSERT INTO modules (idGroup, idUser, idType) VALUES ('$idGroup', '$id', 1)";
-						
-						if (mysqli_query ($connection->connected, $consulta4)) {
-							$responseArray = array('type' => 'success', 'message' => 'ok');
+
+						foreach ($usersList as $value) {
+						    $consulta4 = "INSERT INTO modules (idGroup, idUser, idType) VALUES ('$idGroup', '$value', 1)";
+							if (mysqli_query ($connection->connected, $consulta4)) {
+								$responseArray = array('type' => 'success', 'message' => 'ok');
+							}
 						}
+						
 					}
 				}
 

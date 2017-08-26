@@ -271,12 +271,12 @@
 		background-color: #fff;
 	}
 
-	#users-to-add { margin:0px; padding:0;}
-	#users-to-add li { position:relative; padding:15px; margin-bottom:1px;  background-color:#FFF; cursor:pointer;}
-	#users-to-add li p { margin-bottom:0; }
-	#users-to-add li, #users-to-add li p { color:#bcbcbc; }
-	#users-to-add li.checked, #users-to-add li.checked p { color:#6a6f7b; }
-	#users-to-add li .class_checkbox { position:absolute; right:15px; z-index:10; top:30%; }
+	.users-to-add { margin:0px; padding:0;}
+	.users-to-add li { position:relative; padding:15px; margin-bottom:1px;  background-color:#FFF; cursor:pointer;}
+	.users-to-add li p { margin-bottom:0; }
+	.users-to-add li, .users-to-add li p { color:#bcbcbc; }
+	.users-to-add li.checked, .users-to-add li.checked p { color:#6a6f7b; }
+	.users-to-add li .class_checkbox { position:absolute; right:15px; z-index:10; top:30%; }
 	
 	.input-name-group{
 		background-color: transparent;
