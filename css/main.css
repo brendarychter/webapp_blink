@@ -131,7 +131,9 @@
     #page-2 #group-section .groups-user {
       cursor: pointer;
       width: 100%;
-      position: absolute; }
+      position: absolute;
+      max-height: 300px;
+      overflow-y: auto; }
       #page-2 #group-section .groups-user .logo-group {
         width: 50px;
         height: 50px;
@@ -282,15 +284,15 @@
   display: none;
   overflow: hidden;
   padding: 15px; }
-  .new-user-section .alert-no-groups {
+
+.block-new-group {
+  position: absolute;
+  bottom: 70px;
+  right: 25px; }
+  .block-new-group .alert-no-groups {
     display: inline-block; }
-  .new-user-section .block-new-group {
-    position: absolute;
-    bottom: 70px;
-    right: 25px; }
 
 #form-create-group {
-  display: none;
   margin-top: 20px; }
   #form-create-group .class_checkbox {
     display: inline-block;
@@ -358,6 +360,9 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover; }
+
+.section-group-selected {
+  display: none; }
 
 .ui-header {
   height: 40px; }

@@ -183,7 +183,7 @@ $(document).ready(function(){
     =============================================*/
     
 
-    
+    var activeGroup;
     function getGroupsSelectedUser(id, showNewGroupFromUser){
         params= {};
         params.id = id;
@@ -198,12 +198,10 @@ $(document).ready(function(){
             $('.groups-user').empty();
             if (data.length == 0){
                 console.log("todavia no hay grupos");
-                $('.groups-user').hide();
-                $('.new-user-section').show();
             }else {
                 for (var i in data){
                     var group = data[i];
-                    $('.groups-user').append("<li class='group-line' id='group-element-"+group.idGroup+"'><div class='logo-group'>"+group.groupName.charAt(0).toUpperCase()+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li>")
+                    $('.groups-user').append("<li class='group-line' group-name='"+group.groupName+"' id='group-element-"+group.idGroup+"'><div class='logo-group'>"+group.groupName.charAt(0).toUpperCase()+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li>")
                 }   
                 //ocultar seccion de grupo nuevo
                 //mostrar grupos
@@ -213,6 +211,19 @@ $(document).ready(function(){
                     });
                 }
             }
+            $('.group-line').on("click", function(){
+                console.log(this.id);
+                var id = this.id;
+                var name = $(this).attr("group-name");
+                activeGroup = true;
+                $('#group-section').toggle("slide", {direction: "left"}, 100);
+                $('#title-section').text("  " + name);
+                $('#title-section').prepend("<img src='img/resources/prev.svg' id='back-to-menu'/>");
+                $('#title-section').addClass("backToMenu");
+                $('#top-bar').css("cursor", "pointer");
+                
+
+            });
            
         }).error(function(error, textStatus){
             console.log(error);
@@ -220,8 +231,16 @@ $(document).ready(function(){
         });
     }
 
+    $('#top-bar').on("click", function(){
+        if(activeGroup){
+            $(this).css("cursor", "default");
+            $('#title-section').text("Mis grupos");
+            $('#group-section').toggle("slide", {direction: "right"}, 100);
+            activeGroup = false; 
+        }
+    });
 
-    $('.group-line').click(transitionPage);
+    
     function transitionPage() {
         // Hide to left / show from left
         $(".group-line").toggle("slide", {direction: "left"}, 500);
@@ -255,6 +274,7 @@ $(document).ready(function(){
 
     var usersList = [];
     $('.block-new-group').on('click', function(){
+        console.log("entro")
         $(this).children('.alert-no-groups').text(function(i, text){
             return text === "Crear nuevo grupo" ? "  " : "Crear nuevo grupo";
         })
@@ -262,7 +282,8 @@ $(document).ready(function(){
             return text === "+" ? "×" : "+";
         })
         
-        $('#form-create-group').slideToggle("slow");
+        $('.new-user-section').slideToggle("slow");
+        $('.groups-user').slideToggle("slow");
         $.ajax({
             //url: "http://www.blinkapp.com.ar/blink_webapp/admin/log_in.php",
             url: "admin/getAllUsers.php",
@@ -326,6 +347,9 @@ $(document).ready(function(){
             }).done(function( data ) {
                 //getUserGroups();
                 getGroupsSelectedUser(params.id, true);
+                $('.block-new-group').children('.alert-no-groups').text("Crear nuevo grupo");
+                $('.block-new-group').children(".new-group").text("+");
+                $('.input-name-group').val("");
             }).error(function(error, textStatus){
                 console.log(error);
             });
