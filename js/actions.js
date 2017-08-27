@@ -115,10 +115,10 @@ $(document).ready(function(){
                             $('.overlay').fadeIn("slow", function(){
                                 $('#page-1').fadeOut(200, function(){
                                     $('#page-2').fadeIn("slow");
-                                    $('#username-show').text(localStorage.getItem("username"));
                                     $('.overlay').fadeOut("slow");
                                     localStorage.setItem("username", data.username);
                                     localStorage.setItem("password", data.password);
+                                    $('#username-show').text(localStorage.getItem("username"));
                                     getUserGroups();
                                 });
                             });
@@ -183,6 +183,10 @@ $(document).ready(function(){
     =============================================*/
     
     $('#home-click').on("click", function(){
+        $('.section-group-selected').hide();
+    });
+
+    $('#settings-click').on("click", function(){
         $('.section-group-selected').hide();
     });
 
@@ -315,8 +319,8 @@ $(document).ready(function(){
         $('.section-group-selected').toggle();
     }
 
-    $('.grupos-title').on("click", function(){
-        $('.grupos-title').removeClass("active-group");
+    $('.title-grupos').on("click", function(){
+        $('.title-grupos').removeClass("active-group");
         $(this).addClass("active-group");
 
         //getAllUsersOutCurrentGroup('76');
