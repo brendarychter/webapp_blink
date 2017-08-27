@@ -182,6 +182,9 @@ $(document).ready(function(){
     =            APPLICATION            =
     =============================================*/
     
+    $('#home-click').on("click", function(){
+        $('.section-group-selected').hide();
+    });
 
     var activeGroup;
     function getGroupsSelectedUser(id, showNewGroupFromUser){
@@ -311,7 +314,79 @@ $(document).ready(function(){
     function loadSelectedGroup(){
         $('.section-group-selected').toggle();
     }
-    
+
+    $('.grupos-title').on("click", function(){
+        $('.grupos-title').removeClass("active-group");
+        $(this).addClass("active-group");
+
+        //getAllUsersOutCurrentGroup('76');
+
+    })
+
+    $('.contactos-title').on("click", function(){
+        $('#contactos-grupo').show();
+        $('#muro-grupo').hide();
+        getAllUsersCurrentGroup(localStorage.getItem("group"));
+    })
+    $('.muro-title').on("click", function(){
+        $('#contactos-grupo').hide();
+        $('#muro-grupo').show();
+    })
+
+    function getAllUsersCurrentGroup(){
+        params = {};
+        params.idGroup = localStorage.getItem("group");
+
+        $.ajax({
+            //url: "http://www.blinkapp.com.ar/blink_webapp/admin/getAllUsersCurrentGroup.php",
+            url: "admin/getAllUsersCurrentGroup.php",
+            type: "POST",
+            data: params,
+            cache: false,
+            dataType: "json"
+        }).done(function( data ) {
+            var list = $('.current-group-users');
+            list.empty();
+
+            for (var i in data){
+                var user = data[i];
+                list.append('<li><div class="img-user-group-2" id="img-user-group-2-'+user.userID+'"></div><span class="username-to-add">'+user.username+'</span></br><span class="phonenumber-to-add">'+user.phoneNumber+'</span></li>')
+                if (user.photo != ""){
+                    $('#img-user-group-2-'+user.userID).css('background-image', 'url(' + user.photo + ')');
+                }
+            }
+        }).error(function(error, textStatus){
+            console.log(error);
+        }); 
+    }
+
+    // function getAllUsersOutCurrentGroup(){
+    //     params = {};
+    //     params.idGroup = localStorage.getItem("group");
+
+    //     $.ajax({
+    //         //url: "http://www.blinkapp.com.ar/blink_webapp/admin/getAllUsersOutCurrentGroup.php",
+    //         url: "admin/getAllUsersOutCurrentGroup.php",
+    //         type: "POST",
+    //         data: params,
+    //         cache: false,
+    //         dataType: "json"
+    //     }).done(function( data ) {
+    //         var list = $('.usuarios-para-agregar');
+    //         list.empty();
+
+    //         for (var i in data){
+    //             var user = data[i];
+    //             list.append('<li><div class="img-user-group-2" id="img-user-group-3-'+user.userID+'"></div><span class="username-to-add">'+user.username+'</span></br><span class="phonenumber-to-add">'+user.phoneNumber+'</span></li>')
+    //             if (user.photo != ""){
+    //                 $('#img-user-group-3-'+user.userID).css('background-image', 'url(' + user.photo + ')');
+    //             }
+    //         }
+    //     }).error(function(error, textStatus){
+    //         console.log(error);
+    //     }); 
+    // }
+
     function transitionPage() {
         // Hide to left / show from left
         $(".group-line").toggle("slide", {direction: "left"}, 500);
@@ -394,6 +469,7 @@ $(document).ready(function(){
                     }
                 }
             });
+            $('.active-group').show();
         }).error(function(error, textStatus){
             console.log(error);
         }); 
@@ -452,33 +528,6 @@ $(document).ready(function(){
         });
     })
 
-    $('#nefetz-group').on("click", function(){
-        if($('#nefetz-group-actions').hasClass("active")){
-            $('#nefetz-group-actions').fadeOut("slow");
-            $('#nefetz-group-actions').removeClass("active");
-        }else{
-            $('#nefetz-group-actions').fadeIn("slow");
-            $('#nefetz-group-actions').addClass("active");
-        }
-    })
-    $('#p13n-group').on("click", function(){
-        if($('#p13n-group-actions').hasClass("active")){
-            $('#p13n-group-actions').fadeOut("slow");
-            $('#p13n-group-actions').removeClass("active");
-        }else{
-            $('#p13n-group-actions').fadeIn("slow");
-            $('#p13n-group-actions').addClass("active");
-        }
-    })
-    $('#facu-group').on("click", function(){
-        if($('#facu-group-actions').hasClass("active")){
-            $('#facu-group-actions').fadeOut("slow");
-            $('#facu-group-actions').removeClass("active");
-        }else{
-            $('#facu-group-actions').fadeIn("slow");
-            $('#facu-group-actions').addClass("active");
-        }
-    })
     /*=====  End of Section comment block  ======*/
 
 

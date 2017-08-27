@@ -376,13 +376,77 @@
 }
 .section-group-selected{
 	display: none;
-	.muro{
+	.menu-grupos{
+		float: left;
+	    display: inline-block;
+	    position: absolute;
+	    top: 75px;
+	    left: 26px;
+		.grupos-title{
+			padding: 8px;
+    		background-color: #aaa;
+		    color: #fff;
+    		text-transform: lowercase;
+		    letter-spacing: 3px;
+		    cursor: pointer;
+		}
+		.active-group{
+			background-color: #fff;
+    		color: #49af91;
+		}
+	}
+	
+	.grupo-c{
 		height: 100%;
 		padding: 25px;
+	}
+	.current-group-users, .usuarios-para-agregar{
+		margin: 0px;
+	    margin-top: 8px;
+	    padding: 0;
+	    max-height: 415px;
+	    overflow-y: auto;
+	    list-style-type: none;
+    	padding: 0;
+    	margin-top: 35px;
+    	li{
+		    position: relative;
+		    padding: 15px;
+		    margin-bottom: 1px;
+		    background-color: #FFF;
+    	}
+    	li:nth-child(odd) { background: #ddd; }
+    	.img-user-group-2 {
+		    background-image: url(../img/resources/default_user.svg);
+		    width: 60px;
+		    height: 60px;
+		    border-radius: 50%;
+		    font-size: 28px;
+		    color: #fff;
+		    line-height: 48px;
+		    text-align: center;
+		    display: inline-block;
+		    background-position: 50% 50%;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+		.username-to-add{
+		    position: absolute;
+		    top: 30px;
+		    left: 90px;
+		}
+		.phonenumber-to-add{
+			position: absolute;
+		    top: 50px;
+		    left: 90px;
+		}
+	}
+	.muro{
 		.messages-list{
 			padding: 0;
 			max-height: 415px;
     		overflow-y: auto;
+    		margin-top: 35px;
 			li{
 				list-style-type: none;
 				background: #eee;
@@ -393,17 +457,9 @@
 			}
 			li:nth-child(odd) { background: #ddd; }
 		}
-		.active-group{
-			padding: 8px;
-		    background-color: #aaa;
-		    color: #fff;
-		    text-transform: lowercase;
-		    letter-spacing: 3px;
-		    cursor: pointer;
-		}
 		.message-area{
 			position: absolute;
-		    bottom: 15%;
+		    bottom: 12%;
 		    width: 85%;
 		}
 		#message-to-send{
@@ -460,16 +516,15 @@
 		    padding: 2px;
 		}
 		.text-message{
-			position: absolute;
-		    left: 90px;
+		    position: absolute;
 		    top: 20px;
 		    height: 46px;
 		    background-color: #fff;
-		    width: 65%;
-		    padding-top: 5px;
-		    padding-left: 7px;
+		    width: 58%;
+		    padding: 5px;
 		    text-overflow: ellipsis;
 		    overflow: hidden;
+		    right: 10px;
 		}
 	}
 }

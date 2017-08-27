@@ -126,8 +126,12 @@
 	    		</div>-->
 	   		</div>
 	   		<div class="section-group-selected" group-selected="">
-	   			<div class="muro">
-					<span class="muro-title active-group">Muro</span>
+	   			<div class="menu-grupos">
+	   				<span class="grupos-title active-group muro-title" action="muro-grupo">Muro</span>
+					<span class="grupos-title contactos-title" action="contactos-grupo">Contactos</span>
+					<span class="grupos-title add-title" action="agregar-grupo" style="background-color: #000; color: #fff; cursor: not-allowed">+</span>
+	   			</div>
+	   			<div class="muro grupo-c active-group" id="muro-grupo">
 					<ul class="messages-list">
 					</ul>
 					<div class="message-area">
@@ -135,18 +139,15 @@
 	                	<a href="" type="submit" class="btn btn-primary" id="send-message">Enviar</a>
 					</div>
 	   			</div>
-	   			<!-- <div>
-					<span>Contactos</span>
-					<ul>
-						<li>User 1</li>
+	   			<div class="grupo-c" id="contactos-grupo">
+					<ul class="current-group-users">
 					</ul>
 	   			</div>
-	   			<div>
-					<span>Contactos</span>
-					<ul>
-						<li>User 1</li>
+	   			<div class="grupo-c" id="agregar-grupo" style="display: none;">
+					<ul class="usuarios-para-agregar">
 					</ul>
-	   			</div> -->
+					<a href="" type="submit">Agregar contacto</a>
+	   			</div>
 	   		</div>
 
 	   		<div class="section" id="notifications-section">
@@ -195,7 +196,7 @@
 	   		</div>
 	    	<div class="menu-bottom-app">
 	    		<ul class= "list-items">
-	    			<li class="border-item group active button-action" action="group-section">
+	    			<li class="border-item group active button-action" action="group-section" id="home-click">
 	    				<img src="img/resources/user.svg"/>
 	    			</li>
 	    			<li class="border-item notifications" style="cursor: not-allowed; background-color: #888;">
