@@ -271,11 +271,22 @@
 }
 #form-create-group{
 	margin-top: 20px;
+	padding: 10px;
 	.class_checkbox {
 		display: inline-block;
 		width: 27px;
 		height: 27px;
 		margin-bottom: -4px;
+	}
+	.username-to-add{
+	    position: absolute;
+	    top: 30px;
+	    left: 90px;
+	}
+	.phonenumber-to-add{
+		position: absolute;
+	    top: 50px;
+	    left: 90px;
 	}
 	.class_checkbox.checked {
 	}
@@ -291,25 +302,53 @@
 		border-radius: 3px;
 		background-color: #fff;
 	}
-
-	.users-to-add { margin:0px; padding:0;}
+	.contact-list{
+		padding: 8px;
+	    background-color: #aaa;
+	    color: #fff;
+	    text-transform: lowercase;
+	    letter-spacing: 3px;
+	    cursor: pointer;
+	}
+	.users-to-add { margin:0px; margin-top: 8px; padding:0; max-height: 415px; overflow-y: auto;}
 	.users-to-add li { position:relative; padding:15px; margin-bottom:1px;  background-color:#FFF; cursor:pointer;}
 	.users-to-add li p { margin-bottom:0; }
 	.users-to-add li, .users-to-add li p { color:#bcbcbc; }
 	.users-to-add li.checked, .users-to-add li.checked p { color:#6a6f7b; }
 	.users-to-add li .class_checkbox { position:absolute; right:15px; z-index:10; top:30%; }
-	
+	.users-to-add{
+
+		li:nth-child(odd) { background: #ddd; }
+	}
 	.input-name-group{
 		background-color: transparent;
-		border: 0;
-		border-bottom: 1px solid #fff;
-		color: #222;
-		width: 80%;
-		padding-left: 15px;
-		margin-bottom: 20px;
-		height: 32px;
-		display: inline-block;
-		margin-left: 10px;
+	    border: 0;
+	    border-bottom: 2px solid #ccc;
+	    color: #222;
+	    width: 80%;
+	    margin-bottom: 20px;
+	    height: 32px;
+	    display: inline-block;
+	    margin-left: 10px;
+	    font-size: 14px;
+	    letter-spacing: 1.5px;
+	}
+	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    	color:    #000;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:    #000;
+	   opacity:  1;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:    #000;
+	   opacity:  1;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	   color:    #000;
+	}
+	::-ms-input-placeholder { /* Microsoft Edge */
+	   color:    #000;
 	}
 	#submit-group{
 		background-color: #000;
@@ -317,6 +356,8 @@
 	    text-transform: uppercase;
 	    letter-spacing: 2px;
 	    font-size: 14px;
+	    margin-top: 20px;
+    	display: inline-block;
 	}
 	.img-user-group{
 		background-image: url("../img/resources/default_user.svg");
@@ -335,4 +376,100 @@
 }
 .section-group-selected{
 	display: none;
+	.muro{
+		height: 100%;
+		padding: 25px;
+		.messages-list{
+			padding: 0;
+			max-height: 415px;
+    		overflow-y: auto;
+			li{
+				list-style-type: none;
+				background: #eee;
+				border: 1px solid #fffffa;
+				padding: 16px;
+				position: relative;
+				height: 70px;
+			}
+			li:nth-child(odd) { background: #ddd; }
+		}
+		.active-group{
+			padding: 8px;
+		    background-color: #aaa;
+		    color: #fff;
+		    text-transform: lowercase;
+		    letter-spacing: 3px;
+		    cursor: pointer;
+		}
+		.message-area{
+			position: absolute;
+		    bottom: 15%;
+		    width: 85%;
+		}
+		#message-to-send{
+			width: 60%;
+		    height: 30px !important;
+		    border: 2px solid #cccccc;
+		    padding: 5px;
+		    resize: none;
+		}
+		#send-message{
+			background-color: #000;
+		    padding: 6px;
+		    text-transform: uppercase;
+		    letter-spacing: 2px;
+		    font-size: 14px;
+		    color: #fff;
+		    text-decoration: none;
+		    display: inline-block;
+		    position: absolute;
+		    margin-top: 9px;
+		    margin-left: 10px;
+		}
+		.img-user-message{
+			background-image: url("../img/resources/default_user.svg");
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			font-size: 28px;
+			color: #fff;
+			line-height: 48px;
+			text-align: center;
+			display: inline-block;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			top: 28px;
+    		position: absolute;
+		}
+		.user-message{
+		    top: 10px;
+		    position: absolute;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    font-size: 16px;
+		}
+		.time-message{
+			position: absolute;
+		    right: 10px;
+		    top: 10px;
+		    font-size: 13px;
+		    color: #fff;
+		    background-color: #49af91;
+		    letter-spacing: 1px;
+		    padding: 2px;
+		}
+		.text-message{
+			position: absolute;
+		    left: 90px;
+		    top: 20px;
+		    height: 46px;
+		    background-color: #fff;
+		    width: 62%;
+		    padding-top: 5px;
+		    padding-left: 7px;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		}
+	}
 }

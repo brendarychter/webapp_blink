@@ -85,7 +85,7 @@
 	   			<div class="new-user-section">
 					<form id="form-create-group">
 						<input class="input-name-group" type="text" placeholder="Nombre del grupo" id="group_name" name="group_name">
-						<span>Contactos</span>
+						<span class="contact-list">Contactos</span>
 						<ul class="users-to-add">
 						</ul>
 			        	
@@ -125,16 +125,17 @@
 	    			</ul>
 	    		</div>-->
 	   		</div>
-	   		<div class="section-group-selected">
-	   			<div>
-					<span>Muro</span>
-					<ul>
-						<li>Mensaje 1</li>
+	   		<div class="section-group-selected" group-selected="">
+	   			<div class="muro">
+					<span class="muro-title active-group">Muro</span>
+					<ul class="messages-list">
 					</ul>
-					<textarea>Mensajes</textarea>
-                	<a href="" type="submit" class="btn btn-primary" id="send-message">Enviar</a>
+					<div class="message-area">
+						<textarea id="message-to-send" placeholder="Tu mensaje"></textarea>
+	                	<a href="" type="submit" class="btn btn-primary" id="send-message">Enviar</a>
+					</div>
 	   			</div>
-	   			<div>
+	   			<!-- <div>
 					<span>Contactos</span>
 					<ul>
 						<li>User 1</li>
@@ -145,7 +146,7 @@
 					<ul>
 						<li>User 1</li>
 					</ul>
-	   			</div>
+	   			</div> -->
 	   		</div>
 
 	   		<div class="section" id="notifications-section">
@@ -177,9 +178,6 @@
 	   				<div class="img-user"></div>
 	   			</div>
 	   			<ul class="settings-list">
-	   				<!-- <li style="background-color:#FFF">
-	   					<img src="img/resources/settings.svg"/><span>Mis datos</span>
-	   				</li> -->
 	   				<li id="subir-imagen">
 	   					<img src="img/resources/camera.png"/><span>Subir foto</span>
 	   				</li>
@@ -200,7 +198,7 @@
 	    			<li class="border-item group active button-action" action="group-section">
 	    				<img src="img/resources/user.svg"/>
 	    			</li>
-	    			<li class="border-item notifications button-action" action="notifications-section">
+	    			<li class="border-item notifications" style="cursor: not-allowed; background-color: #888;">
 	    				<img src="img/resources/events.svg"/>
 	    			</li>
 	    			<li class="user button-action" action="user-section">

@@ -201,7 +201,7 @@ $(document).ready(function(){
             }else {
                 for (var i in data){
                     var group = data[i];
-                    $('.groups-user').append("<li class='group-line' group-name='"+group.groupName+"' id='group-element-"+group.idGroup+"'><div class='logo-group'>"+group.groupName.charAt(0).toUpperCase()+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li>")
+                    $('.groups-user').append("<li class='group-line' group-name='"+group.groupName+"' group-id='"+group.idGroup+"'><div class='logo-group'>"+group.groupName.charAt(0).toUpperCase()+"</div><span>"+group.groupName+"</span><img src='img/resources/next.svg' /></li>")
                 }   
                 //ocultar seccion de grupo nuevo
                 //mostrar grupos
@@ -212,17 +212,17 @@ $(document).ready(function(){
                 }
             }
             $('.group-line').on("click", function(){
-                console.log(this.id);
-                var id = this.id;
+                var id = $(this).attr("group-id");
                 var name = $(this).attr("group-name");
+                localStorage.setItem("group", id);
                 activeGroup = true;
+                loadSelectedGroup();
                 $('#group-section').toggle("slide", {direction: "left"}, 100);
                 $('#title-section').text("  " + name);
                 $('#title-section').prepend("<img src='img/resources/prev.svg' id='back-to-menu'/>");
                 $('#title-section').addClass("backToMenu");
                 $('#top-bar').css("cursor", "pointer");
-                
-
+                populateMessages(id);
             });
            
         }).error(function(error, textStatus){
@@ -237,9 +237,80 @@ $(document).ready(function(){
             $('#title-section').text("Mis grupos");
             $('#group-section').toggle("slide", {direction: "right"}, 100);
             activeGroup = false; 
+            $('.section-group-selected').toggle();
         }
     });
 
+    $('#send-message').on("click", function(){
+        
+        params= {};
+        params.idGroup = localStorage.getItem("group");
+        params.userID = localStorage.getItem("id");
+        params.text = $('#message-to-send').val();
+        params.dateTime = new Date();
+        console.log(params);
+
+        if (params.text != ""){
+            $.ajax({
+                //url: "http://www.blinkapp.com.ar/blink_webapp/admin/sendMessage.php",
+                url: "admin/sendMessage.php",
+                type: "POST",
+                data: params,
+                cache: false,
+                dataType: "json"
+            }).done(function( data ) {
+                if (data.type == "success"){
+                    $('#message-to-send').val("");
+                    populateMessages(params.idGroup);
+                }
+            }).error(function(error, textStatus){
+                console.log(error);
+            });
+        }else{
+            $('#message-to-send').css('border', '1px solid red');
+        }
+    });
+
+    function populateMessages(idGroup){
+        var list = $('.messages-list');
+        list.empty();
+        params= {};
+        params.idGroup = localStorage.getItem("group");
+
+        if (params.text != ""){
+            $.ajax({
+                //url: "http://www.blinkapp.com.ar/blink_webapp/admin/getAllMessages.php",
+                url: "admin/getAllMessages.php",
+                type: "POST",
+                data: params,
+                cache: false,
+                dataType: "json"
+            }).done(function( data ) {
+                for (var i in data){
+                    var message = data[i];
+                    if(message.idUser == localStorage.getItem("id")){
+                        message.username = "Yo";
+                    }
+                    var time = new Date(message.datetimeText);
+                    time = ((time.getHours()<10?'0':'') + time.getHours() ) + ":" + ((time.getMinutes()<10?'0':'') + time.getMinutes() ) + ":" + ((time.getSeconds()<10?'0':'') + time.getSeconds() );
+                    list.append('<li><span class="user-message">'+message.username+'</span><div class="img-user-message img-user-message-'+message.idUser+'"></div><span class="time-message">'+time+'</span></br><p class="text-message">'+message.texto+'</p></li>')
+                    console.log(message.photo)
+                    if (message.photo != ""){
+                        $('.img-user-message-'+message.idUser).css('background-image', 'url(' + message.photo + ')');
+                    }
+                }
+                $('.messages-list').scrollTop($('.messages-list')[0].scrollHeight);
+            }).error(function(error, textStatus){
+                console.log(error);
+            });
+        }else{
+            $('#message-to-send').css('border', '1px solid red');
+        }
+    }
+
+    function loadSelectedGroup(){
+        $('.section-group-selected').toggle();
+    }
     
     function transitionPage() {
         // Hide to left / show from left
@@ -302,7 +373,7 @@ $(document).ready(function(){
             }
             for (var i in array){
                 var user = array[i];
-                list.append('<li id="'+user.userID+'"><div class="img-user-group" id="img-user-group-'+user.userID+'"></div><span>'+user.username+'</span></br><span>'+user.phoneNumber+'</span><input type="checkbox" class="input_class_checkbox"/></li>')
+                list.append('<li id="'+user.userID+'"><div class="img-user-group" id="img-user-group-'+user.userID+'"></div><span class="username-to-add">'+user.username+'</span></br><span class="phonenumber-to-add">'+user.phoneNumber+'</span><input type="checkbox" class="input_class_checkbox"/></li>')
                 if (user.photo != ""){
                     $('#img-user-group-'+user.userID).css('background-image', 'url(' + user.photo + ')');
                 }
