@@ -169,7 +169,7 @@ $(document).ready(function(){
             $('.overlay').fadeOut("slow");
             $('#page-1').fadeIn("slow");
             $('.img-user').css('background-image', 'url("../img/resources/default_user.svg"');
-
+            $('.input-app').val("")
             localStorage.clear();
         })
     })
