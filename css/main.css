@@ -132,7 +132,7 @@
       cursor: pointer;
       width: 100%;
       position: absolute;
-      max-height: 300px;
+      max-height: 450px !important;
       overflow-y: auto; }
       #page-2 #group-section .groups-user .logo-group {
         width: 50px;
@@ -330,7 +330,7 @@
     margin: 0px;
     margin-top: 8px;
     padding: 0;
-    max-height: 415px;
+    max-height: 280px !important;
     overflow-y: auto; }
   #form-create-group .users-to-add li {
     position: relative;
