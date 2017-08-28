@@ -412,14 +412,13 @@
     left: 26px; }
     .section-group-selected .menu-grupos .grupos-title {
       padding: 8px;
-      background-color: #aaa;
-      color: #fff;
+      background-color: #bbb;
+      color: #49af91;
       text-transform: lowercase;
       letter-spacing: 3px;
       cursor: pointer; }
     .section-group-selected .menu-grupos .active-group {
-      background-color: #fff;
-      color: #49af91; }
+      background-color: #fff; }
   .section-group-selected .grupo-c {
     height: 100%;
     padding: 25px; }

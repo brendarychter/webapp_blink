@@ -194,6 +194,7 @@ $(document).ready(function(){
     function getGroupsSelectedUser(id, showNewGroupFromUser){
         params= {};
         params.id = id;
+
         $.ajax({
             url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getGroupsCurrentUser.php",
             //url: "admin/getGroupsCurrentUser.php",
@@ -217,6 +218,7 @@ $(document).ready(function(){
                         $('.groups-user').slideToggle('slow');
                     });
                 }
+                $('.overlay').fadeOut("slow");
             }
             $('.group-line').on("click", function(){
                 var id = $(this).attr("group-id");
@@ -283,6 +285,7 @@ $(document).ready(function(){
         list.empty();
         params= {};
         params.idGroup = localStorage.getItem("group");
+        $('.overlay').fadeIn("slow");
 
         if (params.text != ""){
             $.ajax({
@@ -306,6 +309,7 @@ $(document).ready(function(){
                         $('.img-user-message-'+message.idUser).css('background-image', 'url(' + message.photo + ')');
                     }
                 }
+                $('.overlay').fadeOut("slow");
                 $('.messages-list').scrollTop($('.messages-list')[0].scrollHeight);
             }).error(function(error, textStatus){
                 console.log(error);
@@ -340,6 +344,7 @@ $(document).ready(function(){
     function getAllUsersCurrentGroup(){
         params = {};
         params.idGroup = localStorage.getItem("group");
+        
 
         $.ajax({
             url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersCurrentGroup.php",
@@ -359,6 +364,8 @@ $(document).ready(function(){
                     $('#img-user-group-2-'+user.userID).css('background-image', 'url(' + user.photo + ')');
                 }
             }
+            $('.overlay').fadeOut("slow");
+
         }).error(function(error, textStatus){
             console.log(error);
         }); 
@@ -434,6 +441,8 @@ $(document).ready(function(){
         
         $('.new-user-section').slideToggle("slow");
         $('.groups-user').slideToggle("slow");
+        $('.overlay').fadeOut("slow");
+
         $.ajax({
             url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsers.php",
             //url: "admin/getAllUsers.php",
@@ -473,6 +482,7 @@ $(document).ready(function(){
                     }
                 }
             });
+            $('.overlay').fadeOut("slow");
             $('.active-group').show();
         }).error(function(error, textStatus){
             console.log(error);
@@ -486,7 +496,7 @@ $(document).ready(function(){
         usersList.push(params.id);
         params.usersList = usersList;
         params.date = new Date();
-        
+        $('.overlay').fadeIn("slow");
         if (groupName != ""){
             $.ajax({
                 url: "http://www.blinkapp.com.ar/blinkwebapp/admin/createGroup.php",
