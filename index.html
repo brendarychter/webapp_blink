@@ -8,7 +8,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Blink App</title>
-        <meta name="description" content=""><!-- 
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width height=device-height, initial-scale=1.0">
+        <!-- 
 <meta http-equiv="Content-Security-Policy" 
           content="default-src *; 
                    style-src 'self' 'unsafe-inline' 'unsafe-eval'; 
@@ -90,7 +92,7 @@
 						</ul>
 			        	
 			        	<a id="submit-group" type="submit" href="#">Crear grupo</a>
-			        	<span class="error-data-entry" id="error-signin"></span>
+			        	<!--<span class="error-data-entry" id="error-signin"></span>-->
 		   			</form>
 	   			</div>
 	   			<div class="block-new-group">
@@ -180,15 +182,22 @@
 	   			</div>
 	   			<ul class="settings-list">
 	   				<li id="subir-imagen">
-	   					<img src="img/resources/camera.png"/><span>Subir foto</span>
+	   					<img src="img/resources/camera.png"/><span>Ajustes</span>
 	   				</li>
 	   				<div id="form-foto">
+						<form id="form-user-ajustes" method="post">
+							<input class="btn-login btn-user input-app" type="text" id="username_change" name="username_change" required />
+							<input class="btn-login btn-pass input-app" name="password_change" id="password_change" required />
+							<input class="btn-login btn-pass input-app" name="mail_change" id="mail_change" required />
+							<div class="btn-login log-in-app"><a id="submit_update" type="submit" href="#">Actualizar</a></div>
+						</form>
 				    	<form method="post" enctype="multipart/form-data" data-type="submit-image" >
 							<input type="file" class="create-foto" id="create-foto" name="imagen" required style="display: inline-block"/><label style="display: inline-block" id="fotis"></label>
 							<a href="" class="save-img" name="submit" type="submit" id="guardar-foto"/>Guardar foto</a>
 							<p class="help-block"></p>
 						</form>
 				    </div>
+
 	   				<li style="background-color:#FFF" id="sign-out">
 	   					<img src="img/resources/exit.svg"/><span><a href="#page-1" style="color:#000 !important;">Cerrar sesi&oacute;n</a></span>
 	   				</li>
