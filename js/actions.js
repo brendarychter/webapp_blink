@@ -435,7 +435,7 @@ $(document).ready(function(){
         $('.new-user-section').slideToggle("slow");
         $('.groups-user').slideToggle("slow");
         $.ajax({
-            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/log_in.php",
+            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsers.php",
             //url: "admin/getAllUsers.php",
             type: "POST",
             cache: false,
