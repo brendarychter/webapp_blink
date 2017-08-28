@@ -422,6 +422,8 @@ $(document).ready(function(){
             dataType: "json"
         }).done(function( user ) {
             setCurrentUser(user);
+            $('.overlay').fadeIn("slow");
+
             getGroupsSelectedUser(user.userID);
         }).error(function(error, textStatus){
             console.log(error);
@@ -441,7 +443,7 @@ $(document).ready(function(){
         
         $('.new-user-section').slideToggle("slow");
         $('.groups-user').slideToggle("slow");
-        $('.overlay').fadeOut("slow");
+        $('.overlay').fadeIn("slow");
 
         $.ajax({
             url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsers.php",
