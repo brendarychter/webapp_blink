@@ -78,7 +78,13 @@ $(document).ready(function(){
         localStorage.setItem("mail", user.mail);
         localStorage.setItem("id", user.userID);
         localStorage.setItem("phoneNumber", user.phoneNumber);
-        localStorage.setItem("active", user.phoneNumber);
+        localStorage.setItem("active", user.active);
+
+        $("#mail_change").text = user.mail;
+        $("#password_change").text = user.password;
+        $("#username_change").text = user.username;
+        $("#phone_change").text = user.phoneNumber;
+
         if(user.photo == ""){
             $('.img-user').css('background-image', 'url("img/resources/default_user.svg"');
         }else{
@@ -119,6 +125,7 @@ $(document).ready(function(){
                                     localStorage.setItem("username", data.username);
                                     localStorage.setItem("password", data.password);
                                     $('#username-show').text(localStorage.getItem("username"));
+
                                     getUserGroups();
                                 });
                             });
@@ -597,6 +604,37 @@ $(document).ready(function(){
         });
     })
     /*=====  End of Subir imagen  ======*/
-    
+
+    $('#guardar_datos').on("click", function(){
+        var params = {};
+        params.mail = $("#mail_change").val();
+        params.pass = $("#password_change").val();
+        params.user = $("#username_change").val();
+        params.phone = $("#phone_change").val();
+
+        //$("#error-signin").empty();
+        if (params.user == "" || params.pass == "" || params.phone == "" || params.mail == ""){
+            //cleanSignIn("-Alguno de los campos se encuentra vacío-");
+        }else{
+            if(validateMail(params.mail)){
+                $.ajax({
+                    //url: "http://www.blinkapp.com.ar/blink_webapp/admin/updateUserData.php",
+                    url: "admin/updateUserData.php",
+                    type: "POST",
+                    data: params,
+                    cache: false,
+                    dataType: "json"
+                }).done(function( data ) {
+                    console.log("mensaje de ok");
+                    $("#mail_change").text = data.mail;
+                    $("#password_change").text = data.password;
+                    $("#username_change").text = data.username;
+                    $("#phone_change").text = data.phoneNumber;
+                }).error(function (err){
+                    console.log(err);
+                });
+            })
+        }
+    });
     
 });
