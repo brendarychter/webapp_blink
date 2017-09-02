@@ -15,8 +15,10 @@
                    script-src 'self' 'unsafe-inline' 'unsafe-eval';">
         Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- <meta name="viewport" content="height=height, initial-scale=1.0"> -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=700"/>
-		<link rel="stylesheet" type="text/css" href="css/main.css" media="all and (orientation:portrait)">
+        <meta name="viewport" content="width=device-width, height=device-height"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!--  media="only screen and (max-device-width: 480px)" -->
+		<!-- all and (orientation:portrait) -->
 		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
@@ -30,7 +32,7 @@
         <section class="app-page first-page" id="page-1">
         	<div class="btns-log-in">
 		        <div class="option-login btn-login">
-		        	<img src="img/resources/logo.svg" alt="Blink" title="Blink"/>
+		        	<img src="img/resources/logo-2.svg" alt="Blink" title="Blink"/>
 		        	<p class="title-app">
 		        		BLINK APP
 		        	</p>
@@ -130,7 +132,7 @@
 	   			<div class="menu-grupos">
 	   				<span class="grupos-title title-grupos active-group muro-title" action="muro-grupo">Muro</span>
 					<span class="grupos-title title-grupos contactos-title" action="contactos-grupo">Contactos</span>
-					<span class="grupos-title title-grupos add-title" action="agregar-grupo">+</span>
+					<!-- <span class="grupos-title title-grupos add-title" action="agregar-grupo">+</span> -->
 	   			</div>
 	   			<div class="muro grupo-c active-group" id="muro-grupo">
 					<ul class="messages-list">
@@ -167,6 +169,8 @@
 				    		<label for="mail_update">Mail: </label><input class="btn-login btn-user input-app" type="text" id="mail_update" name="mail_update" required />
 				    		<label for="phone_update">Tel&eacute;fono: </label><input class="btn-login btn-user input-app" type="text" id="phone_update" name="phone_update" required />
 							<a href="" class="save-img" name="submit" type="submit" id="guardar-datos"/>Guardar</a>
+		        			<span class="error-data-entry" id="error-update"></span>
+
 						</form>
 				    </div>
 	   				<li id="subir-imagen" style="background-color:#FFF">

@@ -80,18 +80,24 @@ $(document).ready(function(){
     }
 
     function setCurrentUser(user){
+        console.log(user);
         localStorage.setItem("username", user.username);
         localStorage.setItem("password", user.password);
         localStorage.setItem("mail", user.mail);
         localStorage.setItem("id", user.userID);
         localStorage.setItem("phoneNumber", user.phoneNumber);
         localStorage.setItem("active", user.phoneNumber);
+        $('#username-show').text(localStorage.getItem("username"));
         if(user.photo == ""){
             $('.img-user').css('background-image', 'url("img/resources/default_user.svg"');
         }else{
             $('.img-user').css('background-image', 'url(' + user.photo + ')');
         }
 
+        actualizarDatos(user);
+    }
+
+    function actualizarDatos(user){
         $('#username_update').val(user.username);
         $('#password_update').val(user.password);
         $('#mail_update').val(user.mail);
@@ -635,7 +641,85 @@ $(document).ready(function(){
         $('#form-datos').slideToggle('slow');
     })
     
-    
+    $('#guardar-datos').on("click", function(){
+        var params = {};
+        params.mail = $("#mail_update").val();
+        params.id = localStorage.getItem("id");
+        params.tel = $("#phone_update").val();
+        params.pass = $("#password_update").val();
+        params.user = $("#username_update").val();
+        $('.overlay').fadeIn("slow");
+        
+        if (params.user == "" || params.pass == "" || params.tel == "" || params.mail == ""){
+            cleanUpdate("-Revise los campos-");
+        }else{    
+            if(validateMail(params.mail)){
+                $.ajax({
+                    //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/update_data.php",
+                    url: "admin/update_data.php",
+                    type: "POST",
+                    data: params,
+                    cache: false,
+                    dataType: "json"
+                }).done(function( data ) {
+                        console.log(data);
+                    if (data.type == "success"){
+                        console.log(data);
+                        actualizarDatos2(data);
+                        $('#form-datos').slideToggle('slow');
+                        $('.overlay').fadeOut("slow");
+                        // cleanSignIn(data.message);
+                        // setTimeout(function(){
+                        //     $('.overlay').fadeIn("slow", function(){
+                        //         $('#page-1').fadeOut(200, function(){
+                        //             $('#page-2').fadeIn("slow");
+                        //             $('.overlay').fadeOut("slow");
+                        //             localStorage.setItem("username", data.username);
+                        //             localStorage.setItem("password", data.password);
+                        //             $('#username-show').text(localStorage.getItem("username"));
+                        //             getUserGroups();
+                        //         });
+                        //     });
+                        // }, 2000);
+                    }// else if (data.type == "errorName"){
+                    //     cleanUpdate(data.message);
+                    // }else if (data.type == "errorMail"){
+                    //     cleanUpdate(data.message);
+                    // }
+                }).error(function(error, textStatus){
+                    console.log(error);
+                    cleanUpdate(textStatus);
+                });
+            }else{
+                cleanUpdate("-Verifique su correo electrónico-");
+            }
+        }
+
+    })
+
+    function actualizarDatos2(user){
+        console.log(user);
+        localStorage.setItem("username", user.username);
+        localStorage.setItem("password", user.password);
+        localStorage.setItem("mail", user.mail);
+        localStorage.setItem("id", user.userID);
+        localStorage.setItem("phoneNumber", user.phoneNumber);
+        localStorage.setItem("active", user.phoneNumber);
+        $('#username-show').text(localStorage.getItem("username"));
+        $('#username_update').val(user.username);
+        $('#password_update').val(user.password);
+        $('#mail_update').val(user.mail);
+        $('#phone_update').val(user.phoneNumber);
+    }
+
+    function cleanUpdate(text){
+        $("#error-update").text("");
+        $("#error-update").fadeIn("slow");
+        $("#error-update").append(text);
+        setTimeout(function(){
+            $("#error-update").fadeOut("slow");
+        }, 2500);
+    }
     /*=====  End of Datos usuario  ======*/
     
 });
