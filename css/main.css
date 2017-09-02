@@ -223,18 +223,21 @@
   #page-2 .section ul {
     list-style-type: none;
     padding: 0; }
-  #page-2 .section .settings-list li {
-    cursor: pointer;
-    padding-left: 20px;
-    position: relative; }
-    #page-2 .section .settings-list li img {
-      height: 35px;
-      padding-top: 5px;
-      margin: 0 auto; }
-    #page-2 .section .settings-list li span {
-      padding-left: 15px;
-      position: absolute;
-      top: 30%; }
+  #page-2 .section .settings-list {
+    overflow-y: auto;
+    max-height: 300px !important; }
+    #page-2 .section .settings-list li {
+      cursor: pointer;
+      padding-left: 20px;
+      position: relative; }
+      #page-2 .section .settings-list li img {
+        height: 35px;
+        padding-top: 5px;
+        margin: 0 auto; }
+      #page-2 .section .settings-list li span {
+        padding-left: 15px;
+        position: absolute;
+        top: 30%; }
   #page-2 #user-section .user-info {
     margin: 0 auto;
     width: 100%;
@@ -673,10 +676,26 @@ body {
   z-index: 1500;
   display: none; }
 
+#update-data {
+  padding: 6px; }
+
+#guardar-datos {
+  margin-top: 5px; }
+
 #form-foto, #form-datos {
   display: none;
   text-align: center;
   margin-bottom: 25px; }
+
+#form-datos label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px; }
+
+#form-datos input {
+  display: inline-block;
+  margin-bottom: 10px; }
 
 .create-foto {
   margin-bottom: 10px;

@@ -180,6 +180,8 @@
 			padding: 0;
 		}
 		.settings-list{
+			overflow-y: auto;
+    		max-height: 300px !important;
 			li{
 				cursor: pointer;
 				padding-left: 20px;

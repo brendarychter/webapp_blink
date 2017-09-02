@@ -91,6 +91,11 @@ $(document).ready(function(){
         }else{
             $('.img-user').css('background-image', 'url(' + user.photo + ')');
         }
+
+        $('#username_update').val(user.username);
+        $('#password_update').val(user.password);
+        $('#mail_update').val(user.mail);
+        $('#phone_update').val(user.phoneNumber);
     }
 
     $("#submit_signin").on("click", function(){
