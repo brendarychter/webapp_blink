@@ -203,7 +203,6 @@
 		    width: 100%;
 		    overflow: hidden;
 		    text-align: center;
-		    height: 300px;
 			#username-show{
 				text-transform: uppercase;
 				font-size: 25px;
@@ -212,8 +211,8 @@
 			}
 			.img-user{
 				background-image: url("../img/resources/default_user.svg");
-				width: 200px;
-				height: 200px;
+				width: 150px;
+				height: 150px;
 				border-radius: 50%;
 				font-size: 28px;
 				color: #fff;
@@ -310,7 +309,7 @@
 	    letter-spacing: 3px;
 	    cursor: pointer;
 	}
-	.users-to-add { margin:0px; margin-top: 8px; padding:0; max-height: 350px !important; overflow-y: auto;}
+	.users-to-add { margin:0px; margin-top: 8px; padding:0; max-height: 300px !important; overflow-y: auto;}
 	.users-to-add li { position:relative; padding:15px; margin-bottom:1px;  background-color:#FFF; cursor:pointer;}
 	.users-to-add li p { margin-bottom:0; }
 	.users-to-add li, .users-to-add li p { color:#bcbcbc; }

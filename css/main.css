@@ -239,8 +239,7 @@
     margin: 0 auto;
     width: 100%;
     overflow: hidden;
-    text-align: center;
-    height: 300px; }
+    text-align: center; }
     #page-2 #user-section .user-info #username-show {
       text-transform: uppercase;
       font-size: 25px;
@@ -248,8 +247,8 @@
       letter-spacing: 1px; }
     #page-2 #user-section .user-info .img-user {
       background-image: url("../img/resources/default_user.svg");
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       font-size: 28px;
       color: #fff;
@@ -330,7 +329,7 @@
     margin: 0px;
     margin-top: 8px;
     padding: 0;
-    max-height: 350px !important;
+    max-height: 300px !important;
     overflow-y: auto; }
   #form-create-group .users-to-add li {
     position: relative;
@@ -674,7 +673,7 @@ body {
   z-index: 1500;
   display: none; }
 
-#form-foto {
+#form-foto, #form-datos {
   display: none;
   text-align: center;
   margin-bottom: 25px; }

@@ -6,7 +6,6 @@ $(document).ready(function(){
     
     //query cada x segundos para las notificaciones
     if (localStorage.getItem("username") != undefined){
-        $('.overlay').fadeIn(1000, function(){
             $('#page-2').fadeIn("slow");
             $('#username-show').text(localStorage.getItem("username"));
             $('.overlay').fadeOut("slow");
@@ -14,7 +13,6 @@ $(document).ready(function(){
             $("#home-click").addClass("active");
             $("#page-2").show();
             getUserGroups();
-        })
     }
 
     /*=====  End of LocalStorage block  ======*/
@@ -313,7 +311,8 @@ $(document).ready(function(){
                         message.username = "Yo";
                     }
                     var time = new Date(message.datetimeText);
-                    time = ((time.getHours()<10?'0':'') + time.getHours() ) + ":" + ((time.getMinutes()<10?'0':'') + time.getMinutes() ) + ":" + ((time.getSeconds()<10?'0':'') + time.getSeconds() );
+                    console.log(time.getDate());
+                    time = time.getDate() + "/" + (time.getMonth() + 1) + " - " + ((time.getHours()<10?'0':'') + time.getHours() ) + ":" + ((time.getMinutes()<10?'0':'') + time.getMinutes() ) + ":" + ((time.getSeconds()<10?'0':'') + time.getSeconds() );
                     list.append('<li><span class="user-message">'+message.username+'</span><div class="img-user-message img-user-message-'+message.idUser+'"></div><span class="time-message">'+time+'</span></br><p class="text-message">'+message.texto+'</p></li>')
                     console.log(message.photo)
                     if (message.photo != ""){
@@ -436,6 +435,7 @@ $(document).ready(function(){
             setCurrentUser(user);
 
             getGroupsSelectedUser(user.userID);
+            $('.overlay').fadeOut("slow");
         }).error(function(error, textStatus){
             console.log(error);
             cleanInputs(textStatus);
@@ -621,5 +621,16 @@ $(document).ready(function(){
     })
     /*=====  End of Subir imagen  ======*/
     
+
+    /*=====================================
+    =            Datos usuario            =
+    =====================================*/
+    
+    $('#cambiar-datos').on("click", function(){
+        $('#form-datos').slideToggle('slow');
+    })
+    
+    
+    /*=====  End of Datos usuario  ======*/
     
 });

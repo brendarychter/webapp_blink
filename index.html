@@ -35,7 +35,7 @@
 		        	</p>
 		        </div>
 				<form id="loginform" method="post">
- 					<img src="img/resources/user.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Usuario" name="user_name" required />
+ 					<img src="img/resources/user-home.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Usuario" name="user_name" required />
  					<img src="img/resources/locked.svg"/><input class="btn-login btn-pass input-app" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" name="password" required />
                     <div class="btn-login log-in-app"><a id="submit_login" type="submit" href="#">Iniciar sesi&oacute;n</a></div>
                     <span class="error-data-entry" id="error-login"></span>
@@ -150,29 +150,6 @@
 	   			</div>
 	   		</div>
 
-	   		<!-- <div class="section" id="notifications-section">
-	   			<ul>
-	   				<li>
-	   					Nico public&oacute; en <strong>P13N</strong>
-	   					<div class="hour-not">
-	   						<img src="img/resources/chat.svg"/><span>Hace 6 min</span>
-	   					</div>
-	   				</li>
-	   				<li>
-	   					Pame agreg&oacute; un evento en <strong>Nefetz</strong>
-	   					<div class="hour-not">
-	   						<img src="img/resources/calendar_2.svg"/><span>Hace 32 min</span>
-	   					</div>
-	   				</li>
-	   				<li>
-	   					Mile actualiz&oacute; el registro en <strong>Nefetz</strong>
-	   					<div class="hour-not">
-	   						<img src="img/resources/clipboard.svg"/><span>Hace 2 hs</span>
-	   					</div>
-	   				</li>
-
-	   			</ul>
-	   		</div> -->
 	   		<div class="section" id="user-section">
 	   			<div class="user-info">
 	   				<p id="username-show"></p>
@@ -180,34 +157,29 @@
 	   			</div>
 	   			<ul class="settings-list">
 	   				<li id="cambiar-datos">
-	   					<img src="img/resources/camera.png"/><span>Mis datos</span>
+	   					<img src="img/resources/user.svg"/><span>Mis datos</span>
 	   				</li>
 	   				<div id="form-datos" style="overflow: hidden;">
-				    	<form method="post" enctype="multipart/form-data" data-type="submit-image" >
-							<input type="file" class="create-foto" id="create-foto" name="imagen" required style="display: inline-block"/><label style="display: inline-block" id="fotis"></label>
-							<a href="" class="save-img" name="submit" type="submit" id="guardar-foto"/>Guardar foto</a>
-							<p class="help-block"></p>
+				    	<form method="post" >
+							<a href="" class="save-img" name="submit" type="submit" id="guardar-datos"/>Guardar</a>
 						</form>
 				    </div>
 	   				<li id="subir-imagen" style="background-color:#FFF">
 	   					<img src="img/resources/camera.png"/><span>Cambiar foto</span>
 	   				</li>
 	   				<div id="form-foto" style="background-color:#FFF; overflow: hidden;">
-				    	<form method="post" enctype="multipart/form-data" data-type="submit-image" >
+				    	<form method="post" enctype="multipart/form-data" data-type="submit-image" style="height: 70px">
 							<input type="file" class="create-foto" id="create-foto" name="imagen" required style="display: inline-block"/><label style="display: inline-block" id="fotis"></label>
-							<a href="" class="save-img" name="submit" type="submit" id="guardar-foto"/>Guardar foto</a>
-							<p class="help-block"></p>
+							<a href="" class="save-img" name="submit" type="submit" id="guardar-foto"/>Guardar</a>
 						</form>
 				    </div>
-	   				<!-- <li style="background-color:#FFF" id="sign-out">
-	   					<img src="img/resources/exit.svg"/><span><a href="#page-1" style="color:#000 !important;">Cerrar sesi&oacute;n</a></span>
-	   				</li> -->
 	    		</ul>
 	   		</div>
+
 	    	<div class="menu-bottom-app">
 	    		<ul class= "list-items">
 	    			<li class="border-item group active button-action" action="group-section" id="home-click">
-	    				<img src="img/resources/user.svg"/>
+	    				<img src="img/resources/home.svg"/>
 	    			</li>
 	    			<li class="border-item user button-action" action="user-section" id="settings-click">
 	    				<img src="img/resources/settings.svg"/>
