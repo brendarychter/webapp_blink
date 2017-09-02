@@ -229,7 +229,7 @@
     position: relative; }
     #page-2 .section .settings-list li img {
       height: 35px;
-      padding-top: 10px;
+      padding-top: 5px;
       margin: 0 auto; }
     #page-2 .section .settings-list li span {
       padding-left: 15px;
@@ -330,7 +330,7 @@
     margin: 0px;
     margin-top: 8px;
     padding: 0;
-    max-height: 415px;
+    max-height: 350px !important;
     overflow-y: auto; }
   #form-create-group .users-to-add li {
     position: relative;
