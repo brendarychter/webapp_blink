@@ -651,6 +651,7 @@ $(document).ready(function(){
         $('.overlay').fadeIn("slow");
         
         if (params.user == "" || params.pass == "" || params.tel == "" || params.mail == ""){
+            $('.overlay').fadeOut("slow");
             cleanUpdate("-Revise los campos-");
         }else{    
             if(validateMail(params.mail)){
@@ -667,7 +668,6 @@ $(document).ready(function(){
                         console.log(data);
                         actualizarDatos2(data);
                         $('#form-datos').slideToggle('slow');
-                        $('.overlay').fadeOut("slow");
                         // cleanSignIn(data.message);
                         // setTimeout(function(){
                         //     $('.overlay').fadeIn("slow", function(){
@@ -681,16 +681,18 @@ $(document).ready(function(){
                         //         });
                         //     });
                         // }, 2000);
-                    }// else if (data.type == "errorName"){
-                    //     cleanUpdate(data.message);
-                    // }else if (data.type == "errorMail"){
-                    //     cleanUpdate(data.message);
-                    // }
+                    } else if (data.type == "errorName"){
+                        cleanUpdate(data.message);
+                    }else if (data.type == "errorMail"){
+                        cleanUpdate(data.message);
+                    }
+                    $('.overlay').fadeOut("slow");
                 }).error(function(error, textStatus){
                     console.log(error);
                     cleanUpdate(textStatus);
                 });
             }else{
+                $('.overlay').fadeOut("slow");
                 cleanUpdate("-Verifique su correo electrónico-");
             }
         }
