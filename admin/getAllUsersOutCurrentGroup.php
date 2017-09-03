@@ -5,13 +5,17 @@
 
     if(!mysqli_connect_error()){
     	$idGroup = $_POST["idGroup"];
+    	$idList = $_POST["idList"];
 
-		$query = "select * from modules inner join users on users.userID = modules.idUser where modules.idGroup != '$idGroup'";
-		$response = mysqli_query($connection->connected, $query);
-
-		while($obj = mysqli_fetch_object($response)){
-			$matriz[] = array('username' => $obj->username, 'phoneNumber' => $obj->phoneNumber, 'photo' => $obj->photo);
+    	$query = "select * from users where userID NOT IN (".implode(',',$idList).")";
+		if($response = mysqli_query($connection->connected, $query)){
+			if(mysqli_num_rows($response)>=1){
+					while($obj = mysqli_fetch_object($response)){
+						$matriz[] =  array('username' => $obj->username, 'phoneNumber' => $obj->phoneNumber, 'photo' => $obj->photo, 'userID' => $obj->userID);
+					}
+			}
 		}
+
 		$datos = json_encode($matriz);
 		echo $datos;
 	}else{

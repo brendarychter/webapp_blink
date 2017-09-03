@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $('#agregar-grupo').hide();
+
     /*=============================================
     =            Section LocalStorage block            =
     =============================================*/
@@ -12,6 +14,7 @@ $(document).ready(function(){
             $('.button-action').removeClass("active");
             $("#home-click").addClass("active");
             $("#page-2").show();
+
             getUserGroups();
     }
 
@@ -250,6 +253,8 @@ $(document).ready(function(){
                 $('#title-section').addClass("backToMenu");
                 $('#top-bar').css("cursor", "pointer");
                 populateMessages(id);
+                getAllUsersCurrentGroup();
+                $('#contactos-grupo').hide();
             });
             $('.overlay').fadeOut("slow");
 
@@ -306,7 +311,7 @@ $(document).ready(function(){
         params= {};
         params.idGroup = localStorage.getItem("group");
         $('.overlay').fadeIn("slow");
-
+        $('.messages-list').empty();
         if (params.text != ""){
             $.ajax({
                 //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllMessages.php",
@@ -316,28 +321,38 @@ $(document).ready(function(){
                 cache: false,
                 dataType: "json"
             }).done(function( data ) {
-                for (var i in data){
-                    var message = data[i];
-                    if(message.idUser == localStorage.getItem("id")){
-                        message.username = "Yo";
+                if (data.length == 0){
+                    console.log("no hay mensajes");
+                    $('.messages-list').append("<li style='height: 30px;'>Todavía no hay mensajes</li>")
+                }else{
+                    for (var i in data){
+                        $('.messages-list').empty();
+                        var message = data[i];
+                        if(message.idUser == localStorage.getItem("id")){
+                            message.username = "Yo";
+                        }
+                        var time = new Date(message.datetimeText);
+                        console.log(time.getDate());
+                        time = time.getDate() + "/" + (time.getMonth() + 1) + " - " + ((time.getHours()<10?'0':'') + time.getHours() ) + ":" + ((time.getMinutes()<10?'0':'') + time.getMinutes() ) + ":" + ((time.getSeconds()<10?'0':'') + time.getSeconds() );
+                        list.append('<li><span class="user-message">'+message.username+'</span><div class="img-user-message img-user-message-'+message.idUser+'"></div><span class="time-message">'+time+'</span></br><p class="text-message">'+message.texto+'</p></li>')
+                        console.log(message.photo)
+                        if (message.photo != ""){
+                            $('.img-user-message-'+message.idUser).css('background-image', 'url(' + message.photo + ')');
+                        }
                     }
-                    var time = new Date(message.datetimeText);
-                    console.log(time.getDate());
-                    time = time.getDate() + "/" + (time.getMonth() + 1) + " - " + ((time.getHours()<10?'0':'') + time.getHours() ) + ":" + ((time.getMinutes()<10?'0':'') + time.getMinutes() ) + ":" + ((time.getSeconds()<10?'0':'') + time.getSeconds() );
-                    list.append('<li><span class="user-message">'+message.username+'</span><div class="img-user-message img-user-message-'+message.idUser+'"></div><span class="time-message">'+time+'</span></br><p class="text-message">'+message.texto+'</p></li>')
-                    console.log(message.photo)
-                    if (message.photo != ""){
-                        $('.img-user-message-'+message.idUser).css('background-image', 'url(' + message.photo + ')');
-                    }
+                    $('.messages-list').scrollTop($('.messages-list')[0].scrollHeight);
+                    
+
                 }
-                $('.overlay').fadeOut("slow");
-                $('.messages-list').scrollTop($('.messages-list')[0].scrollHeight);
+                
             }).error(function(error, textStatus){
                 console.log(error);
             });
         }else{
             $('#message-to-send').css('border', '1px solid red');
         }
+        $('.overlay').fadeOut("slow");
+
     }
 
     function loadSelectedGroup(){
@@ -348,24 +363,25 @@ $(document).ready(function(){
         $('.title-grupos').removeClass("active-group");
         $(this).addClass("active-group");
 
-        //getAllUsersOutCurrentGroup('76');
-
     })
 
     $('.contactos-title').on("click", function(){
         $('#contactos-grupo').show();
         $('#muro-grupo').hide();
+        $('#agregar-grupo').hide();
+
         getAllUsersCurrentGroup(localStorage.getItem("group"));
     })
     $('.muro-title').on("click", function(){
+        $('#agregar-grupo').hide();
         $('#contactos-grupo').hide();
         $('#muro-grupo').show();
     })
 
+    var currentGroupUsers = [];
     function getAllUsersCurrentGroup(){
         params = {};
         params.idGroup = localStorage.getItem("group");
-        
 
         $.ajax({
             //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersCurrentGroup.php",
@@ -377,7 +393,7 @@ $(document).ready(function(){
         }).done(function( data ) {
             var list = $('.current-group-users');
             list.empty();
-
+            currentGroupUsers = data;
             for (var i in data){
                 var user = data[i];
                 list.append('<li><div class="img-user-group-2" id="img-user-group-2-'+user.userID+'"></div><span class="username-to-add">'+user.username+'</span></br><span class="phonenumber-to-add">'+user.phoneNumber+'</span></li>')
@@ -391,33 +407,6 @@ $(document).ready(function(){
             console.log(error);
         }); 
     }
-
-    // function getAllUsersOutCurrentGroup(){
-    //     params = {};
-    //     params.idGroup = localStorage.getItem("group");
-
-    //     $.ajax({
-    //         //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersOutCurrentGroup.php",
-    //         url: "admin/getAllUsersOutCurrentGroup.php",
-    //         type: "POST",
-    //         data: params,
-    //         cache: false,
-    //         dataType: "json"
-    //     }).done(function( data ) {
-    //         var list = $('.usuarios-para-agregar');
-    //         list.empty();
-
-    //         for (var i in data){
-    //             var user = data[i];
-    //             list.append('<li><div class="img-user-group-2" id="img-user-group-3-'+user.userID+'"></div><span class="username-to-add">'+user.username+'</span></br><span class="phonenumber-to-add">'+user.phoneNumber+'</span></li>')
-    //             if (user.photo != ""){
-    //                 $('#img-user-group-3-'+user.userID).css('background-image', 'url(' + user.photo + ')');
-    //             }
-    //         }
-    //     }).error(function(error, textStatus){
-    //         console.log(error);
-    //     }); 
-    // }
 
     function transitionPage() {
         // Hide to left / show from left
@@ -723,5 +712,111 @@ $(document).ready(function(){
         }, 2500);
     }
     /*=====  End of Datos usuario  ======*/
+    
+    /*========================================================
+    =            Agregar nuevos usuarios al grupo            =
+    ========================================================*/
+    
+    $('.add-title').on("click", function(){
+        $('#muro-grupo').hide();
+        $('#agregar-grupo').show();
+        $('#contactos-grupo').hide();
+        getAllUsersOutCurrentGroup();
+    })
+    
+    /*=====  End of Agregar nuevos usuarios al grupo  ======*/
+
+
+    usersListAdd = [];
+    idsAdd = [];
+    function getAllUsersOutCurrentGroup(){
+        var list = $('.usuarios-para-agregar');
+
+        params = {};
+        params.idGroup = localStorage.getItem("group");
+        console.log(currentGroupUsers)
+        idsAdd = [];
+        for (var h in currentGroupUsers){
+            idsAdd.push(currentGroupUsers[h].userID)
+        }
+        params.idList = idsAdd;
+        $.ajax({
+            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersOutCurrentGroup.php",
+            url: "admin/getAllUsersOutCurrentGroup.php",
+            type: "POST",
+            data: params,
+            cache: false,
+            dataType: "json"
+        }).done(function( user ) {
+            $('.usuarios-para-agregar').empty();
+            for (var j in user){
+                list.append('<li data-id="'+user[j].userID+'"><div class="img-user-group-2" id="img-user-group-3-'+user[j].userID+'"></div><span class="username-to-add">'+user[j].username+'</span></br><span class="phonenumber-to-add">'+user[j].phoneNumber+'</span><input type="checkbox" class="input_class_checkbox"/></li>')
+                if (user[j].photo != ""){
+                    $('#img-user-group-3-'+user[j].userID).css('background-image', 'url(' + user[j].photo + ')');
+                }
+            }
+
+            $('.input_class_checkbox').each(function(){
+                $(this).hide().after('<div class="class_checkbox" />');
+            });
+            $('.usuarios-para-agregar li').on('click',function(){
+                // usersList.push(this.id);
+                $(this).toggleClass('checked').prev().prop('checked', $(this).is('.checked'));
+                var id = $(this).attr("data-id");
+                console.log(id)
+                if ($(this).is('.checked')){
+                    usersListAdd.push(id);
+                }else{
+                    var index = usersListAdd.indexOf(id);
+                    if (index > -1) {
+                        usersListAdd.splice(index, 1);
+                    }
+                }
+            });
+        }).error(function(error, textStatus){
+            console.log(error);
+        }); 
+    }
+
+    $('#add-new-contacts').on('click', function(){
+        var groupName = $('#group_name').val();
+        params.groupID = localStorage.getItem("idGroup");
+        params.usersList = usersListAdd;
+        
+        $('.overlay').fadeIn("slow");
+            //chequear que la lista esté completa
+        $('#usuarios-para-agregar').hide();
+        $('#usuarios-para-agregar').empty();
+        $('#usuarios-para-agregar').show();
+        console.log(params.usersList.length);
+        if(params.usersList.length > 0){
+            $.ajax({
+                //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/addUserToGroup.php",
+                url: "admin/addUserToGroup.php",
+                type: "POST",
+                data: params,
+                cache: false,
+                dataType: "json"
+            }).done(function( data ) {
+                console.log(data);
+                if(data.type=="success"){
+                    getAllUsersCurrentGroup();
+                    getAllUsersOutCurrentGroup()
+
+                    $('.overlay').fadeOut("slow");
+                }
+            }).error(function(error, textStatus){
+                console.log(error);
+            });
+        }else{
+            $('.overlay').fadeOut("slow");
+
+            $("#error-add-contacts").fadeIn("slow");
+            $("#error-add-contacts").append("-Seleccione los contactos a agregar-");
+            setTimeout(function(){
+                $("#error-add-contacts").fadeOut("slow");
+            }, 2500);
+        }
+    })
     
 });

@@ -10,7 +10,7 @@
 		$response = mysqli_query($connection->connected, $query);
 
 		while($obj = mysqli_fetch_object($response)){
-			$matriz[] = array('username' => $obj->username, 'phoneNumber' => $obj->phoneNumber, 'photo' => $obj->photo);
+			$matriz[] = array('username' => $obj->username, 'phoneNumber' => $obj->phoneNumber, 'photo' => $obj->photo, 'userID' => $obj->userID);
 		}
 		$datos = json_encode($matriz);
 		echo $datos;

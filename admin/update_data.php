@@ -16,7 +16,6 @@
 		$consulta = "SELECT * FROM users WHERE mail = '$mail' AND userID != '$id'";
 		$response = mysqli_query($connection->connected, $consulta);
 
-		// $sql = "update users SET username='$user', password='$pass', mail='$mail', phoneNumber='$tel'  where userID='$id'";
 
 		if(!mysqli_num_rows($response)>=1){
 

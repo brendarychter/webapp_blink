@@ -5,12 +5,15 @@
     
     if(!mysqli_connect_error()){
     	//chequear que no exista el nombre del grupo
-    	$idGgroup = $_POST["groupID"];
-    	$id = $_POST["id"];
+    	$idGroup = $_POST["idGroup"];
+    	$usersList = $_POST["usersList"];
+		$responseArray = [];
 
-	    $consulta4 = "INSERT INTO modules (idGroup, idUser, idType) VALUES ('$idGroup', '$id', 1)";
-		if (mysqli_query ($connection->connected, $consulta4)) {
-			$responseArray = array('type' => 'success', 'message' => 'ok');
+    	foreach ($usersList as $value) {
+			$consulta4 = "INSERT INTO modules (idGroup, idUser, idType) VALUES ('$idGroup', '$value', 1)";
+			if (mysqli_query ($connection->connected, $consulta4)) {
+				$responseArray = array('type' => 'success', 'message' => 'ok');
+			}
 		}
 
 		$encoded = json_encode($responseArray);

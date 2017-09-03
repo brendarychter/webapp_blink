@@ -403,6 +403,7 @@
 	.current-group-users, .usuarios-para-agregar{
 		margin: 0px;
 	    margin-top: 8px;
+	    margin-bottom: 25px;
 	    padding: 0;
 	    max-height: 415px;
 	    overflow-y: auto;
@@ -528,3 +529,44 @@
 		}
 	}
 }
+
+.usuarios-para-agregar { margin:0px; margin-top: 8px; padding:0; max-height: 300px !important; overflow-y: auto;}
+.usuarios-para-agregar li { position:relative; padding:15px; margin-bottom:1px;  background-color:#FFF; cursor:pointer;}
+.usuarios-para-agregar li p { margin-bottom:0; }
+.usuarios-para-agregar li, .usuarios-para-agregar li p { color:#bcbcbc; }
+.usuarios-para-agregar li.checked, .usuarios-para-agregar li.checked p { color:#6a6f7b; }
+.usuarios-para-agregar li .class_checkbox { position:absolute; right:15px; z-index:10; top:30%; }
+.usuarios-para-agregar{
+
+	li:nth-child(odd) { background: #ddd; }
+}
+.class_checkbox {
+		display: inline-block;
+		width: 27px;
+		height: 27px;
+		margin-bottom: -4px;
+	}
+	.username-to-add{
+	    position: absolute;
+	    top: 30px;
+	    left: 90px;
+	}
+	.phonenumber-to-add{
+		position: absolute;
+	    top: 50px;
+	    left: 90px;
+	}
+	.class_checkbox.checked {
+	}
+	.checkbox label::before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		left: 0;
+		/* margin-left: -20px; */
+		border: 1px solid #cccccc;
+		border-radius: 3px;
+		background-color: #fff;
+	}

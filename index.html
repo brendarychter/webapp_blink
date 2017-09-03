@@ -102,37 +102,12 @@
 	   			</div>
 	   			<ul class="group groups-user">
 	    		</ul>
-	    		<!-- <div>
-	    			<div>
-	    				<img src='img/resources/previous.svg' />
-	    				<span>Nombre de grupo</span>
-	    			</div>
-	    			<div>
-	    				<span>Contactos</span>
-	    			</div>
-	    			<div>
-	    				<span>Muro</span>
-	    			</div>
-	    		</div> -->
-	    		<!-- <div id="nefetz-group-actions" class="group-actions">
-	    			<ul>
-	    				<li>
-	    					<div class="time">
-	    						<div class="hour-group">20hs</div>
-	    						<label>Jueves 24/11</label>
-	    					</div>
-	    					<div class="event">
-	    						<p><strong>Espect&aacute;culo</strong> </br> Teatro Carlos Gardel </p>
-	    					</div>
-	    				</li>
-	    			</ul>
-	    		</div>-->
 	   		</div>
 	   		<div class="section-group-selected" group-selected="">
 	   			<div class="menu-grupos">
 	   				<span class="grupos-title title-grupos active-group muro-title" action="muro-grupo">Muro</span>
 					<span class="grupos-title title-grupos contactos-title" action="contactos-grupo">Contactos</span>
-					<!-- <span class="grupos-title title-grupos add-title" action="agregar-grupo">+</span> -->
+					<span class="grupos-title title-grupos add-title" action="agregar-grupo">+</span>
 	   			</div>
 	   			<div class="muro grupo-c active-group" id="muro-grupo">
 					<ul class="messages-list">
@@ -146,10 +121,12 @@
 					<ul class="current-group-users">
 					</ul>
 	   			</div>
-	   			<div class="grupo-c" id="agregar-grupo" style="display: none;">
-					<ul class="usuarios-para-agregar">
+	   			<div class="grupo-c" id="agregar-grupo">
+					<ul class="usuarios-para-agregar" id="usuarios-para-agregar">
 					</ul>
-					<a href="" type="submit">Agregar contacto</a>
+					<a href="" type="submit" id="add-new-contacts" style="background-color:#000; margin: 10px; padding: 10px;">Agregar contactos</a>
+		        	<span class="error-data-entry" id="error-add-contacts" style="color: #000; margin-top: 20px;"></span>
+
 	   			</div>
 	   		</div>
 
