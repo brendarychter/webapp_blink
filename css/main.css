@@ -784,4 +784,7 @@ body {
   color: #000 !important;
   margin-top: 10px !important; }
 
+@-ms-viewport {
+  height: height; }
+
 /*# sourceMappingURL=main.css.map */
