@@ -785,10 +785,6 @@ $(document).ready(function(){
         
         $('.overlay').fadeIn("slow");
             //chequear que la lista esté completa
-        $('#usuarios-para-agregar').hide();
-        $('#usuarios-para-agregar').empty();
-        $('#usuarios-para-agregar').show();
-        console.log(params.usersList.length);
         if(params.usersList.length > 0){
             $.ajax({
                 url: "http://www.blinkapp.com.ar/blinkwebapp/admin/addUserToGroup.php",
@@ -801,9 +797,12 @@ $(document).ready(function(){
                 console.log(data);
                 if(data.type=="success"){
                     getAllUsersCurrentGroup();
-                    getAllUsersOutCurrentGroup()
-
-                    $('.overlay').fadeOut("slow");
+                    $('#usuarios-para-agregar').slideToggle("slow", function(){
+                        $('#usuarios-para-agregar').empty();
+                        $('#usuarios-para-agregar').slideToggle();
+                        $('.overlay').fadeOut("slow");
+                        getAllUsersOutCurrentGroup()
+                    });
                 }
             }).error(function(error, textStatus){
                 console.log(error);
