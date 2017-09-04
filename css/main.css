@@ -16,7 +16,8 @@
     float: left;
     margin-top: 6px; }
   .first-page .btns-log-in {
-    padding: 4%; }
+    padding: 4%;
+    padding-top: 8%; }
     .first-page .btns-log-in .btn-login {
       width: 100%;
       margin-bottom: 3%;
@@ -67,7 +68,7 @@
       display: inline-block;
       margin-left: 10px; }
     .first-page .btns-log-in .btn-pass {
-      margin-bottom: 25px; }
+      margin-bottom: 20px; }
     .first-page .btns-log-in .option-login {
       width: 100%;
       color: #FFFFFF;
@@ -783,8 +784,5 @@ body {
 #error-update {
   color: #000 !important;
   margin-top: 10px !important; }
-
-@-ms-viewport {
-  height: height; }
 
 /*# sourceMappingURL=main.css.map */
