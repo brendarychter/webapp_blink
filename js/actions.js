@@ -280,7 +280,7 @@ $(document).ready(function(){
         params= {};
         params.idGroup = localStorage.getItem("group");
         params.userID = localStorage.getItem("id");
-        params.text = $('#message-to-send').val();
+        params.text = escape($('#message-to-send').val());
         params.dateTime = new Date();
         console.log(params);
 
@@ -334,7 +334,7 @@ $(document).ready(function(){
                         var time = new Date(message.datetimeText);
                         console.log(time.getDate());
                         time = time.getDate() + "/" + (time.getMonth() + 1) + " - " + ((time.getHours()<10?'0':'') + time.getHours() ) + ":" + ((time.getMinutes()<10?'0':'') + time.getMinutes() ) + ":" + ((time.getSeconds()<10?'0':'') + time.getSeconds() );
-                        list.append('<li><span class="user-message">'+message.username+'</span><div class="img-user-message img-user-message-'+message.idUser+'"></div><span class="time-message">'+time+'</span></br><p class="text-message">'+message.texto+'</p></li>')
+                        list.append('<li><span class="user-message">'+message.username+'</span><div class="img-user-message img-user-message-'+message.idUser+'"></div><span class="time-message">'+time+'</span></br><p class="text-message">'+unescape(message.texto)+'</p></li>')
                         console.log(message.photo)
                         if (message.photo != ""){
                             $('.img-user-message-'+message.idUser).css('background-image', 'url(' + message.photo + ')');
