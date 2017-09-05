@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    $("body").height($(window).height());
     $('#agregar-grupo').hide();
 
     /*=============================================
@@ -304,10 +304,10 @@ $(document).ready(function(){
             $('#message-to-send').css('border', '1px solid red');
         }
     });
+    
+    var list = $('.messages-list');
 
     function populateMessages(idGroup){
-        var list = $('.messages-list');
-        list.empty();
         params= {};
         params.idGroup = localStorage.getItem("group");
         $('.overlay').fadeIn("slow");
@@ -326,7 +326,7 @@ $(document).ready(function(){
                     $('.messages-list').append("<li style='height: 30px;'>Todavía no hay mensajes</li>")
                 }else{
                     for (var i in data){
-                        $('.messages-list').empty();
+                       // $('.messages-list').empty();
                         var message = data[i];
                         if(message.idUser == localStorage.getItem("id")){
                             message.username = "Yo";
@@ -341,10 +341,7 @@ $(document).ready(function(){
                         }
                     }
                     $('.messages-list').scrollTop($('.messages-list')[0].scrollHeight);
-                    
-
                 }
-                
             }).error(function(error, textStatus){
                 console.log(error);
             });
