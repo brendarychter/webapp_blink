@@ -608,11 +608,14 @@
   text-shadow: none; }
 @viewport {
   orientation: portrait; }
-body span, body input {
-  text-shadow: none; }
-body a {
-  text-decoration: none;
-  color: #FFF !important; }
+body {
+  height: 100vh;
+  overflow: auto; }
+  body span, body input {
+    text-shadow: none; }
+  body a {
+    text-decoration: none;
+    color: #FFF !important; }
 
 body {
   font-family: sans-serif;
