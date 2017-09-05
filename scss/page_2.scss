@@ -518,11 +518,12 @@
 		}
 		.text-message{
 		    position: absolute;
+		    font-size: 14px;
 		    top: 20px;
 		    height: 46px;
 		    background-color: #fff;
 		    width: 58%;
-		    padding: 5px;
+		    padding: 6px;
 		    text-overflow: ellipsis;
 		    overflow: hidden;
 		    right: 10px;
