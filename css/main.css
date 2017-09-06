@@ -609,7 +609,7 @@
 @viewport {
   orientation: portrait; }
 body {
-  height: 100vh;
+  height: 100vh !important;
   overflow: auto; }
   body span, body input {
     text-shadow: none; }
