@@ -608,15 +608,16 @@
   text-shadow: none; }
 @viewport {
   orientation: portrait; }
-body span, body input {
-  text-shadow: none; }
-body a {
-  text-decoration: none;
-  color: #FFF !important; }
-
 body {
+  height: 100vh;
+  overflow: auto;
   font-family: sans-serif;
   background-color: #33c197; }
+  body span, body input {
+    text-shadow: none; }
+  body a {
+    text-decoration: none;
+    color: #FFF !important; }
 
 .app-page {
   padding: 0;

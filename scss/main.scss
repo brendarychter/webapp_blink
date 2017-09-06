@@ -19,10 +19,12 @@ body{
 		text-decoration: none;
 		color: #FFF !important;
 	}
-}
-body{
+	height: 100vh;
+	overflow: auto;
+
 	font-family: sans-serif /*{global-font-family}*/;
 	background-color: #33c197;
+
 }
 .app-page{
 	padding: 0;
