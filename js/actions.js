@@ -323,10 +323,11 @@ $(document).ready(function(){
             }).done(function( data ) {
                 if (data.length == 0){
                     console.log("no hay mensajes");
-                    $('.messages-list').append("<li style='height: 30px;'>Todavía no hay mensajes</li>")
+                    $('.messages-list').append("<li  id='no-messages' style='height: 30px;'>Todavía no hay mensajes</li>")
                 }else{
                     for (var i in data){
                        // $('.messages-list').empty();
+                        $('#no-messages').remove();
                         var message = data[i];
                         if(message.idUser == localStorage.getItem("id")){
                             message.username = "Yo";
