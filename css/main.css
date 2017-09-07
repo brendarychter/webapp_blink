@@ -615,7 +615,7 @@
   orientation: portrait; }
 body {
   height: 100vh !important;
-  overflow: auto; }
+  overflow: hidden; }
   body span, body input {
     text-shadow: none; }
   body a {
