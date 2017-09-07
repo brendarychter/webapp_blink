@@ -1,43 +1,37 @@
-.second-page{
+.menu-bottom-app{
+	position:absolute;
+	bottom:0;
+	background-color: #3AA792;
+	width: 100%;
+	left: 0;
+	height: 9%;
 	.list-items{
+		padding: 0;
 		margin-top: 0;
 		li{
 			list-style-type: none;
 			width: 33%;
 			height: 70px;
 			float: left;
-		}
-		.border-item{
-			border-right:1px solid #fff;
-		}
-	}
-}
-
-#page-2{
-	background-color: #F3F3F3;
-	#menu-panel{
-		ul{
-			li{
-				text-transform: uppercase;
-			}
-		}
-	}
-	.menu-bottom-app{
-		height:55px;
-		position:absolute;
-		bottom:0;
-		background-color: #3AA792;
-		width: 100%;
-	}
-	.list-items{
-		padding: 0;
-		li{
 			cursor: pointer;
 			text-align: center;
 			img{
 				height:35px;
 				padding-top:10px;
 				margin: 0 auto;
+			}
+		}
+		.border-item{
+			border-right:1px solid #fff;
+		}
+	}
+}
+#page-2{
+	background-color: #F3F3F3;
+	#menu-panel{
+		ul{
+			li{
+				text-transform: uppercase;
 			}
 		}
 	}
