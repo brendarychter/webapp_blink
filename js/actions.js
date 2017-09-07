@@ -23,9 +23,12 @@ $(document).ready(function(){
     /*=============================================
     =            LOGIN            =
     =============================================*/
+    $('.menu-bottom-app').show();
 
     $("#submit_login").on("click", function(){
         $("#error-login").empty();
+        $('.menu-bottom-app').show();
+        
         if (!$("#user_name").val() || !$("#password").val()){
             cleanInputs("-Alguno de los campos se encuentra vacío-");
         }else{
@@ -190,7 +193,8 @@ $(document).ready(function(){
             $('.overlay').fadeOut("slow");
             $('#page-1').fadeIn("slow");
             $('.img-user').css('background-image', 'url("../img/resources/default_user.svg"');
-            $('.input-app').val("")
+            $('.input-app').val("");
+            $('.menu-bottom-app').hide();
             localStorage.clear();
         })
     })

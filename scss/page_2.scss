@@ -5,6 +5,7 @@
 	width: 100%;
 	left: 0;
 	height: 9%;
+	display: none;
 	.list-items{
 		padding: 0;
 		margin-top: 0;
@@ -20,6 +21,9 @@
 				padding-top:10px;
 				margin: 0 auto;
 			}
+		}
+		.active{
+			background-color: #43D8AC;
 		}
 		.border-item{
 			border-right:1px solid #fff;
@@ -40,9 +44,6 @@
 			color: #fff;
 			text-transform: uppercase;
 		}
-	}
-	.active{
-		background-color: #43D8AC;
 	}
 	#notifications-section, #user-section{
 		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
