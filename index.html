@@ -20,7 +20,7 @@
 		<!-- all and (orientation:portrait) -->
 		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="height=device-height">
 		<script src="js/actions.js"></script>
     </head>
     <body>
@@ -56,7 +56,7 @@
 	        	<div class="btns-log-in" >
 	        		<div class="option-login btn-login" >
 			        	<p class="title-app" style="font-size: 24px;text-align: left;letter-spacing: 4px;">
-			        		REGISTRATE
+			        		BIENVENIDO
 			        	</p>
 			        </div>
 		        	<form id="signinform" method="post">
@@ -139,10 +139,10 @@
 		   				</li>
 		   				<div id="form-datos" style="overflow: hidden;">
 					    	<form method="post" id="update-data">
-					    		<label for="username_update">Usuario: </label><input class="btn-login btn-user input-app" type="text" id="username_update" name="username_update" required />
-					    		<label for="password_update">Contrase&ntilde;a: </label><input class="btn-login btn-user input-app" type="text" id="password_update" name="password_update" required />
-					    		<label for="mail_update">Mail: </label><input class="btn-login btn-user input-app" type="text" id="mail_update" name="mail_update" required />
-					    		<label for="phone_update">Tel&eacute;fono: </label><input class="btn-login btn-user input-app" type="text" id="phone_update" name="phone_update" required />
+					    		<div style="display: block;"><label for="username_update">Usuario: </label><input class="btn-login btn-user input-app" type="text" id="username_update" name="username_update" required /></div>
+					    		<div style="display: block;"><label for="password_update">Contrase&ntilde;a: </label><input class="btn-login btn-user input-app" type="text" id="password_update" name="password_update" required /></div>
+					    		<div style="display: block;"><label for="mail_update">Mail: </label><input class="btn-login btn-user input-app" type="text" id="mail_update" name="mail_update" required /></div>
+					    		<div style="display: block;"><label for="phone_update">Tel&eacute;fono: </label><input class="btn-login btn-user input-app" type="text" id="phone_update" name="phone_update" required /></div>
 								<a href="" class="save-img" name="submit" type="submit" id="guardar-datos"/>Guardar</a>
 			        			<span class="error-data-entry" id="error-update"></span>
 
