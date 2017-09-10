@@ -19,7 +19,7 @@ body{
 		text-decoration: none;
 		color: #FFF !important;
 	}
-	height: 100vh !important;
+	height: 90vh !important;
 	overflow: hidden;
 
 }
@@ -37,6 +37,7 @@ body{
     background-color: #33c197;
 	background-size: cover;
 	position: fixed;
+	height: 100vh;
     .menu-bar{
 		height: 7.5%;
 		background-color: #2D2D2D;
@@ -212,5 +213,5 @@ body{
     margin-top: 10px !important;
 }
 .contenedor{
-	height: 91%;
+	height: 100%;
 }

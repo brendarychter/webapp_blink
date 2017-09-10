@@ -14,7 +14,7 @@ $(document).ready(function(){
             $('.button-action').removeClass("active");
             $("#home-click").addClass("active");
             $("#page-2").show();
-
+            $('.menu-bottom-app').show();
             getUserGroups();
     }
 
@@ -23,7 +23,6 @@ $(document).ready(function(){
     /*=============================================
     =            LOGIN            =
     =============================================*/
-    $('.menu-bottom-app').show();
 
     $("#submit_login").on("click", function(){
         $("#error-login").empty();

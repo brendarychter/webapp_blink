@@ -16,7 +16,8 @@
     float: left;
     margin-top: 6px; }
   .first-page .btns-log-in {
-    padding: 4%; }
+    padding: 4%;
+    padding-top: 45px; }
     .first-page .btns-log-in .btn-login {
       width: 100%;
       margin-bottom: 3%;
@@ -93,32 +94,30 @@
   .first-page .register span a:hover {
     color: #ccc !important; }
 
-.menu-bottom-app {
+.menu-bottom-app.list-items {
   position: absolute;
   bottom: 0;
   background-color: #3AA792;
   width: 100%;
   left: 0;
-  height: 9%;
-  display: none; }
-  .menu-bottom-app .list-items {
-    padding: 0;
-    margin-top: 0; }
-    .menu-bottom-app .list-items li {
-      list-style-type: none;
-      width: 33%;
-      height: 70px;
-      float: left;
-      cursor: pointer;
-      text-align: center; }
-      .menu-bottom-app .list-items li img {
-        height: 35px;
-        padding-top: 10px;
-        margin: 0 auto; }
-    .menu-bottom-app .list-items .active {
-      background-color: #43D8AC; }
-    .menu-bottom-app .list-items .border-item {
-      border-right: 1px solid #fff; }
+  display: none;
+  padding: 0;
+  margin: 0; }
+  .menu-bottom-app.list-items li {
+    list-style-type: none;
+    width: 33%;
+    height: 70px;
+    float: left;
+    cursor: pointer;
+    text-align: center; }
+    .menu-bottom-app.list-items li img {
+      height: 35px;
+      padding-top: 15px;
+      margin: 0 auto; }
+  .menu-bottom-app.list-items .active {
+    background-color: #43D8AC; }
+  .menu-bottom-app.list-items .border-item {
+    border-right: 1px solid #fff; }
 
 #page-2 {
   background-color: #F3F3F3; }
@@ -294,7 +293,7 @@
 
 .block-new-group {
   position: absolute;
-  bottom: 70px;
+  bottom: 100px;
   right: 25px; }
   .block-new-group .alert-no-groups {
     display: inline-block; }
@@ -614,7 +613,7 @@
 @viewport {
   orientation: portrait; }
 body {
-  height: 100vh !important;
+  height: 90vh !important;
   overflow: hidden; }
   body span, body input {
     text-shadow: none; }
@@ -635,7 +634,8 @@ body {
   height: 91%;
   background-color: #33c197;
   background-size: cover;
-  position: fixed; }
+  position: fixed;
+  height: 100vh; }
   .app-page .menu-bar {
     height: 7.5%;
     background-color: #2D2D2D;
@@ -794,6 +794,6 @@ body {
   margin-top: 10px !important; }
 
 .contenedor {
-  height: 91%; }
+  height: 100%; }
 
 /*# sourceMappingURL=main.css.map */
