@@ -1,4 +1,5 @@
 .menu-bottom-app.list-items{
+	position:absolute;
 	bottom:0;
 	background-color: #3AA792;
 	width: 100%;
@@ -6,7 +7,6 @@
 	display: none;
 	padding: 0;
 	margin: 0;
-	float:left;
 	li{
 		list-style-type: none;
 		width: 33%;

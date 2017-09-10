@@ -95,14 +95,14 @@
     color: #ccc !important; }
 
 .menu-bottom-app.list-items {
+  position: absolute;
   bottom: 0;
   background-color: #3AA792;
   width: 100%;
   left: 0;
   display: none;
   padding: 0;
-  margin: 0;
-  float: left; }
+  margin: 0; }
   .menu-bottom-app.list-items li {
     list-style-type: none;
     width: 33%;
@@ -791,7 +791,6 @@ body {
   margin-top: 10px !important; }
 
 .contenedor {
-  height: 80%;
-  float: left; }
+  height: 100%; }
 
 /*# sourceMappingURL=main.css.map */
