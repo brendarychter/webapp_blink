@@ -1,9 +1,5 @@
 $(document).ready(function(){
     $("body").height($(window).height());
-
-    var clientHeight = $( window ).height();
-    $('body').css('height', clientHeight);
-
     $('#agregar-grupo').hide();
 
     /*=============================================

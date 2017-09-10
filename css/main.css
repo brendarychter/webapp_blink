@@ -613,7 +613,8 @@
 @viewport {
   orientation: portrait; }
 body {
-  height: 90vh !important;
+  height: 100vh !important;
+  width: 100vh;
   overflow: hidden;
   margin: 0;
   font-family: sans-serif;
