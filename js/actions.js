@@ -9,6 +9,7 @@ $(document).ready(function(){
     //query cada x segundos para las notificaciones
     if (localStorage.getItem("username") != undefined){
             $('#page-2').fadeIn("slow");
+            $('#page-1').hide();
             $('#username-show').text(localStorage.getItem("username"));
             $('.overlay').fadeOut("slow");
             $('.button-action').removeClass("active");
@@ -55,6 +56,7 @@ $(document).ready(function(){
                             $('#page-1').fadeOut(200, function(){
                                 $("#group-section").show();
                                 $("#title-section").show();
+                                $("#page-1").hide();
                                 $('#page-2').fadeIn("slow");
                                 $('#username-show').text(localStorage.getItem("username"));
                                 $('.overlay').fadeOut("slow");
