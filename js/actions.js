@@ -9,12 +9,13 @@ $(document).ready(function(){
     //query cada x segundos para las notificaciones
     if (localStorage.getItem("username") != undefined){
             $('#page-2').fadeIn("slow");
+            $('#page-1').hide();
             $('#username-show').text(localStorage.getItem("username"));
             $('.overlay').fadeOut("slow");
             $('.button-action').removeClass("active");
             $("#home-click").addClass("active");
             $("#page-2").show();
-
+            $('.menu-bottom-app').show();
             getUserGroups();
     }
 
@@ -26,6 +27,7 @@ $(document).ready(function(){
 
     $("#submit_login").on("click", function(){
         $("#error-login").empty();
+        
         if (!$("#user_name").val() || !$("#password").val()){
             cleanInputs("-Alguno de los campos se encuentra vacío-");
         }else{
@@ -52,7 +54,9 @@ $(document).ready(function(){
                             setCurrentUser(user);
                             $('#page-1').fadeOut(200, function(){
                                 $("#group-section").show();
+                                $('.menu-bottom-app').show();
                                 $("#title-section").show();
+                                $("#page-1").hide();
                                 $('#page-2').fadeIn("slow");
                                 $('#username-show').text(localStorage.getItem("username"));
                                 $('.overlay').fadeOut("slow");
@@ -190,7 +194,8 @@ $(document).ready(function(){
             $('.overlay').fadeOut("slow");
             $('#page-1').fadeIn("slow");
             $('.img-user').css('background-image', 'url("../img/resources/default_user.svg"');
-            $('.input-app').val("")
+            $('.input-app').val("");
+            $('.menu-bottom-app').hide();
             localStorage.clear();
         })
     })
@@ -440,7 +445,7 @@ $(document).ready(function(){
     }
 
     var usersList = [];
-    $('.block-new-group').on('click', function(){
+    $('.block-new-group').on('click', function(e){
         console.log("entro")
         $(this).children('.alert-no-groups').text(function(i, text){
             return text === "Crear nuevo grupo" ? "  " : "Crear nuevo grupo";
@@ -448,7 +453,8 @@ $(document).ready(function(){
         $(this).children(".new-group").text(function(i, text){
             return text === "+" ? "×" : "+";
         })
-        
+        e.preventDefault();
+
         $('.new-user-section').slideToggle("slow");
         $('.groups-user').slideToggle("slow");
         $('.overlay').fadeIn("slow");

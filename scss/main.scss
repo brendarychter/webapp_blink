@@ -19,21 +19,22 @@ body{
 		text-decoration: none;
 		color: #FFF !important;
 	}
-}
-body{
+	height: 100vh !important;
+	overflow: hidden;
+	margin: 0;
 	font-family: sans-serif /*{global-font-family}*/;
 	background-color: #33c197;
 }
+
 .app-page{
 	padding: 0;
     margin: 0;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     background-color: #33c197;
 	background-size: cover;
-	position: fixed;
+	height: 100%;
     .menu-bar{
 		height: 7.5%;
 		background-color: #2D2D2D;
@@ -120,7 +121,6 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     display: none;
 }
 #map{
@@ -207,4 +207,15 @@ body{
 #error-update{
 	color: #000 !important;
     margin-top: 10px !important;
+}
+.contenedor{
+	height: 90%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+#top-bar{
+	float: left;
+	width: 100%;
 }

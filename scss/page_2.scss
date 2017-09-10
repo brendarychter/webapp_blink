@@ -1,18 +1,31 @@
-.second-page{
-	.list-items{
-		margin-top: 0;
-		li{
-			list-style-type: none;
-			width: 33%;
-			height: 70px;
-			float: left;
-		}
-		.border-item{
-			border-right:1px solid #fff;
+.menu-bottom-app.list-items{
+	background-color: #3AA792;
+	width: 100%;
+	display: none;
+	padding: 0;
+	margin: 0;
+	height: 10%;
+    float: left;
+	li{
+		list-style-type: none;
+		width: 33%;
+		height: 70px;
+		float: left;
+		cursor: pointer;
+		text-align: center;
+		img{
+			height:35px;
+			padding-top:15px;
+			margin: 0 auto;
 		}
 	}
+	.active{
+		background-color: #43D8AC;
+	}
+	.border-item{
+		border-right:1px solid #fff;
+	}
 }
-
 #page-2{
 	background-color: #F3F3F3;
 	#menu-panel{
@@ -22,33 +35,11 @@
 			}
 		}
 	}
-	.menu-bottom-app{
-		height:55px;
-		position:absolute;
-		bottom:0;
-		background-color: #3AA792;
-		width: 100%;
-	}
-	.list-items{
-		padding: 0;
-		li{
-			cursor: pointer;
-			text-align: center;
-			img{
-				height:35px;
-				padding-top:10px;
-				margin: 0 auto;
-			}
-		}
-	}
 	#notifications{
 		p{
 			color: #fff;
 			text-transform: uppercase;
 		}
-	}
-	.active{
-		background-color: #43D8AC;
 	}
 	#notifications-section, #user-section{
 		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -60,9 +51,9 @@
 		.groups-user{
 		    cursor: pointer;
 		    width: 100%;
-			position: absolute;
 			max-height: 300px;
 			overflow-y: auto;
+			float: left;
 			.logo-group{
 				width: 50px;
 				height: 50px;
@@ -264,7 +255,7 @@
 }
 .block-new-group{
 	position: absolute;
-    bottom: 70px;
+    bottom: 100px;
     right: 25px;
     .alert-no-groups{
     	display: inline-block;
