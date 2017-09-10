@@ -24,10 +24,145 @@
 
 		<script src="js/actions.js"></script>
     </head>
-    <body style="height: 90vh !important;">
+    <body>
 		<!-- START PAGE 1 -->
 		<div class="overlay">
 		</div>
+<!-- 		<div class="contenedor">
+			<section class="app-page first-page" id="page-1">
+	        	<div class="btns-log-in">
+			        <div class="option-login btn-login">
+			        	<img src="img/resources/logo-2.svg" alt="Blink" title="Blink"/>
+			        	<p class="title-app">
+			        		BLINK APP
+			        	</p>
+			        </div>
+					<form id="loginform" method="post">
+	 					<img src="img/resources/user-home.svg"/><input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Usuario" name="user_name" required />
+	 					<img src="img/resources/locked.svg"/><input class="btn-login btn-pass input-app" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" name="password" required />
+	                    <div class="btn-login log-in-app"><a id="submit_login" type="submit" href="#">Iniciar sesi&oacute;n</a></div>
+	                    <span class="error-data-entry" id="error-login"></span>
+		            </form>
+	        	</div>
+	        	<div class="register">
+	        		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in" id="register-click">&nbsp;Registrate</a></span>
+	        	</div>
+		    </section>
+		    <!-- END PAGE 1 -->
+			
+			<!-- START PAGE SIGN IN -->
+
+	        <section class="app-page first-page" id="page-sign-in">
+	        	<div class="btns-log-in" >
+	        		<div class="option-login btn-login" >
+			        	<p class="title-app" style="font-size: 24px;text-align: left;letter-spacing: 4px;">
+			        		REGISTRATE
+			        	</p>
+			        </div>
+		        	<form id="signinform" method="post">
+						<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre" id="name_sign_in" name="name_sign_in">
+						<input class="btn-login btn-pass input-app" type="text" placeholder="Nombre de usuario" id="usuario_sign_in" name="usuario_sign_in">
+			        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" id="password_sign_in" name="password_sign_in">
+			        	<input class="btn-login btn-pass input-app" type="tel" placeholder="N&uacute;mero de tel&eacute;fono" id="tel_sign_in" name="tel_sign_in">
+			        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" id="mail_sign_in" name="mail_sign_in">
+			        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" href="#">Crear cuenta</a></div>
+			        	<span class="error-data-entry" id="error-signin"></span>
+			       	</form>
+	        	</div>
+	        	<div data-role="footer" class="register">
+	        		<span><a href="#page-1" id="volver">Volver al inicio</a></span>
+	        	</div>
+		    </section>
+		    <!-- END PAGE SIGN IN -->
+
+		    <!-- START PAGE 2 -->
+		   	<section class="app-page second-page" id="page-2">
+		   		<div class="section" id="top-bar">
+		   			<div class="title" id="title-section">
+		    			Mis grupos
+		   			</div>
+		   		</div>
+		   		<div class="section active-section " id="group-section">
+		   			<div class="new-user-section">
+						<form id="form-create-group">
+							<input class="input-name-group" type="text" placeholder="Nombre del grupo" id="group_name" name="group_name">
+							<span class="contact-list">Contactos</span>
+							<ul class="users-to-add">
+							</ul>
+				        	
+				        	<a id="submit-group" type="submit" href="#">Crear grupo</a>
+				        	<span class="error-data-entry" id="error-signin"></span>
+			   			</form>
+		   			</div>
+		   			<div class="block-new-group">
+						<p class="alert-no-groups">Crear nuevo grupo</p>
+	                	<a href="" type="submit" class="btn btn-primary new-group" id="create-group">+</a>
+		   			</div>
+		   			<ul class="group groups-user">
+		    		</ul>
+		   		</div>
+		   		<div class="section-group-selected" group-selected="">
+		   			<div class="menu-grupos">
+		   				<span class="grupos-title title-grupos active-group muro-title" action="muro-grupo">Muro</span>
+						<span class="grupos-title title-grupos contactos-title" action="contactos-grupo">Contactos</span>
+						<span class="grupos-title title-grupos add-title" action="agregar-grupo">+</span>
+		   			</div>
+		   			<div class="muro grupo-c active-group" id="muro-grupo">
+						<ul class="messages-list">
+						</ul>
+						<div class="message-area">
+							<textarea id="message-to-send" placeholder="Tu mensaje" maxlength="60"></textarea>
+		                	<a href="" type="submit" class="btn btn-primary" id="send-message">Enviar</a>
+						</div>
+		   			</div>
+		   			<div class="grupo-c" id="contactos-grupo">
+						<ul class="current-group-users">
+						</ul>
+		   			</div>
+		   			<div class="grupo-c" id="agregar-grupo">
+						<ul class="usuarios-para-agregar" id="usuarios-para-agregar">
+						</ul>
+						<a href="" type="submit" id="add-new-contacts" style="background-color:#000; margin: 10px; padding: 10px;">Agregar contactos</a>
+			        	<span class="error-data-entry" id="error-add-contacts" style="color: #000; margin-top: 20px;"></span>
+
+		   			</div>
+		   		</div>
+
+		   		<div class="section" id="user-section">
+		   			<div class="user-info">
+		   				<p id="username-show"></p>
+		   				<div class="img-user"></div>
+		   			</div>
+		   			<ul class="settings-list">
+		   				<li id="cambiar-datos">
+		   					<img src="img/resources/user.svg"/><span>Mis datos</span>
+		   				</li>
+		   				<div id="form-datos" style="overflow: hidden;">
+					    	<form method="post" id="update-data">
+					    		<label for="username_update">Usuario: </label><input class="btn-login btn-user input-app" type="text" id="username_update" name="username_update" required />
+					    		<label for="password_update">Contrase&ntilde;a: </label><input class="btn-login btn-user input-app" type="text" id="password_update" name="password_update" required />
+					    		<label for="mail_update">Mail: </label><input class="btn-login btn-user input-app" type="text" id="mail_update" name="mail_update" required />
+					    		<label for="phone_update">Tel&eacute;fono: </label><input class="btn-login btn-user input-app" type="text" id="phone_update" name="phone_update" required />
+								<a href="" class="save-img" name="submit" type="submit" id="guardar-datos"/>Guardar</a>
+			        			<span class="error-data-entry" id="error-update"></span>
+
+							</form>
+					    </div>
+		   				<li id="subir-imagen" style="background-color:#FFF">
+		   					<img src="img/resources/camera.png"/><span>Cambiar foto</span>
+		   				</li>
+		   				<div id="form-foto" style="background-color:#FFF; overflow: hidden;">
+					    	<form method="post" enctype="multipart/form-data" data-type="submit-image" style="height: 70px">
+								<input type="file" class="create-foto" id="create-foto" name="imagen" required style="display: inline-block"/><label style="display: inline-block" id="fotis"></label>
+								<a href="" class="save-img" name="submit" type="submit" id="guardar-foto"/>Guardar</a>
+							</form>
+					    </div>
+		    		</ul>
+		   		</div>
+
+		    	
+		    </section>
+		</div> -->
         
 		<ul class= "list-items menu-bottom-app">
 			<li class="border-item group active button-action" action="group-section" id="home-click">
