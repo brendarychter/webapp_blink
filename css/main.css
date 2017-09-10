@@ -613,7 +613,7 @@
 @viewport {
   orientation: portrait; }
 body {
-  height: 100vh !important;
+  height: 90vh !important;
   overflow: hidden;
   margin: 0;
   font-family: sans-serif;
@@ -633,7 +633,7 @@ body {
   background-color: #33c197;
   background-size: cover;
   position: fixed;
-  height: 100vh; }
+  height: 90vh; }
   .app-page .menu-bar {
     height: 7.5%;
     background-color: #2D2D2D;
