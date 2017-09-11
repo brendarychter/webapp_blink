@@ -46,7 +46,7 @@
 		if($file && $file["name"]!=""){
 
 			// DEFINO CUÁL VA A SER LA URL DE MI SITIO WEB, Y LA CARPETA DONDE SE GUARDARÁN LAS IMÁGENES (ESTO DEBERÍA ESTAR EN UN ARCHIVO EXTERNO DE CONFIGURACIÓN)
-			$direccion_web = "http://www.blinkapp.com.ar/blink_webapp/uploads/";
+			$direccion_web = "http://www.blinkapp.com.ar/blinkwebapp/uploads/";
 			//$direccion_web = "http://localhost/webapp_blink/uploads/";
 			$nombre_carpeta = "../uploads/";
 			chmod("../uploads/", 0755);
@@ -54,7 +54,7 @@
 			
 			//generate random name
 
-			$target_file = $nombre_carpeta . basename($file["name"]);
+			$target_file = $nombre_carpeta .time() . basename($file["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			$checkFile = getimagesize($file["tmp_name"]);
 			$uploadOk = true;
@@ -82,7 +82,7 @@
 			    if(move_uploaded_file($file["tmp_name"], $target_file)){
 			    	
 			    	// SI LO PUDE SUBIR BIEN, DEVUELVO LA URL COMPLETA DEL ARCHIVO QUE ACABO DE SUBIR
-			    	return $direccion_web.basename($file["name"]);
+			    	return $direccion_web .time().basename($file["name"]);
 			    }
 			}
 		}
