@@ -292,7 +292,7 @@
 
 .block-new-group {
   position: absolute;
-  bottom: 100px;
+  bottom: 20%;
   right: 25px; }
   .block-new-group .alert-no-groups {
     display: inline-block; }
@@ -612,7 +612,6 @@
 @viewport {
   orientation: portrait; }
 body {
-  height: 100vh !important;
   overflow: hidden;
   margin: 0;
   font-family: sans-serif;
