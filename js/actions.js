@@ -606,7 +606,7 @@ $(document).ready(function(){
             contentType: false,
         }).done(function( data ) {
             $('.overlay').fadeIn("slow");
-
+            console.log(data);
             $.ajax({
                 url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getPhoto.php",
                 //url: "admin/getPhoto.php",
@@ -620,7 +620,7 @@ $(document).ready(function(){
                 $('.overlay').fadeOut("slow");
 
             }).error(function(error, textStatus){
-                console.log(error)
+                console.log(textStatus)
             });
 
         }).error(function(error, textStatus){
