@@ -611,6 +611,9 @@
   text-shadow: none; }
 @viewport {
   orientation: portrait; }
+html {
+  height: 100%; }
+
 body {
   overflow: hidden;
   margin: 0;

@@ -10,7 +10,10 @@
 }
 @viewport {  
    orientation: portrait;  
-}  
+}
+html{
+	height: 100%;
+}
 body{
 	span, input{
 		text-shadow: none;
