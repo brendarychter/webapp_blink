@@ -595,6 +595,7 @@ $(document).ready(function(){
 
         var params = {};
         params.id = id;
+        console.log(form_data)
         $.ajax({
             url: "http://www.blinkapp.com.ar/blinkwebapp/admin/updateImages.php",
             //url: "admin/updateImages.php",
@@ -615,6 +616,7 @@ $(document).ready(function(){
                 data: params,
                 dataType: "json"
             }).done(function( data ) {
+                console.log(data)
                 $('.img-user').css('background-image', 'url(' + data.photo + ')');
                 $('#form-foto').slideToggle('slow');
                 $('.overlay').fadeOut("slow");
@@ -645,6 +647,8 @@ $(document).ready(function(){
         params.tel = $("#phone_update").val();
         params.pass = $("#password_update").val();
         params.user = $("#username_update").val();
+
+        console.log(params);
         $('.overlay').fadeIn("slow");
         
         if (params.user == "" || params.pass == "" || params.tel == "" || params.mail == ""){
@@ -658,26 +662,14 @@ $(document).ready(function(){
                     type: "POST",
                     data: params,
                     cache: false,
-                    dataType: "json"
+                    dataType: "json",
+                    contentType: false
                 }).done(function( data ) {
                         console.log(data);
                     if (data.type == "success"){
                         console.log(data);
                         actualizarDatos2(data);
                         $('#form-datos').slideToggle('slow');
-                        // cleanSignIn(data.message);
-                        // setTimeout(function(){
-                        //     $('.overlay').fadeIn("slow", function(){
-                        //         $('#page-1').fadeOut(200, function(){
-                        //             $('#page-2').fadeIn("slow");
-                        //             $('.overlay').fadeOut("slow");
-                        //             localStorage.setItem("username", data.username);
-                        //             localStorage.setItem("password", data.password);
-                        //             $('#username-show').text(localStorage.getItem("username"));
-                        //             getUserGroups();
-                        //         });
-                        //     });
-                        // }, 2000);
                     } else if (data.type == "errorName"){
                         cleanUpdate(data.message);
                     }else if (data.type == "errorMail"){
@@ -686,6 +678,7 @@ $(document).ready(function(){
                     $('.overlay').fadeOut("slow");
                 }).error(function(error, textStatus){
                     console.log(error);
+                    console.log(textStatus);
                     cleanUpdate(textStatus);
                 });
             }else{

@@ -47,7 +47,7 @@
 			// DEFINO CUÁL VA A SER LA URL DE MI SITIO WEB, Y LA CARPETA DONDE SE GUARDARÁN LAS IMÁGENES (ESTO DEBERÍA ESTAR EN UN ARCHIVO EXTERNO DE CONFIGURACIÓN)
 			$direccion_web = "http://www.blinkapp.com.ar/blinkwebapp/uploads/";
 			//$direccion_web = "http://localhost/uploads/";
-			$nombre_carpeta = "../../../uploads/";
+			$nombre_carpeta = "../uploads/";
  			chmod("../../../uploads/", 0755);
 			
 			// DEFINICIONES INTERNAS PARA CONTROL

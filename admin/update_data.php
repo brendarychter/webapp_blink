@@ -41,5 +41,7 @@
 		$encoded = json_encode($responseArray);
 		echo $encoded;
 
+	}else{
+		echo "error conexion";
 	}
 ?>
