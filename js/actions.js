@@ -7,18 +7,18 @@ $(document).ready(function(){
     =============================================*/
     
     //query cada x segundos para las notificaciones
-    // if (localStorage.getItem("username") != undefined || localStorage.getItem("id") != 0){
-    //         $('#page-2').fadeIn("slow");
-    //         $('#page-1').hide();
-    //         $('#username-show').text(localStorage.getItem("username"));
-    //         $('.overlay').fadeOut("slow");
-    //         $('.button-action').removeClass("active");
-    //         $("#home-click").addClass("active");
-    //         $("#page-2").show();
-    //         $('.menu-bottom-app').show();
-    //         console.log("entro aca");
-    //         getUserGroups();
-    // }
+    if (localStorage.getItem("username") != undefined || localStorage.getItem("id") != 0){
+            $('#page-2').fadeIn("slow");
+            $('#page-1').hide();
+            $('#username-show').text(localStorage.getItem("username"));
+            $('.overlay').fadeOut("slow");
+            $('.button-action').removeClass("active");
+            $("#home-click").addClass("active");
+            $("#page-2").show();
+            $('.menu-bottom-app').show();
+            console.log("entro aca");
+            getUserGroups();
+    }
 
     /*=====  End of LocalStorage block  ======*/
 
@@ -667,7 +667,6 @@ $(document).ready(function(){
                     console.log(data);
                     if (data.type == "success"){
                         //console.log(data);
-                        actualizarDatos2(data);
                         $('#form-datos').slideToggle('slow');
                         params2 = {};
                         params2.id = params.id;
@@ -679,7 +678,7 @@ $(document).ready(function(){
                             cache: false,
                             dataType: "json"
                         }).done(function( data ) {
-                            console.log(data);
+                            actualizarDatos2(data);
                         });
                     } else if (data.type == "errorName"){
                         cleanUpdate(data.message);
