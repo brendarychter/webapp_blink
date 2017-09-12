@@ -26,10 +26,10 @@
 			$success = '-Se ha registrado correctamente. Aguarde un instante-';
 
 			if(!mysqli_num_rows($response2)>=1){
-				$sql = "update users SET username='$user', password='$pass', mail='$mail', phoneNumber='$tel'  where userID='$id'";
+				$sql = "update users SET username='$user'";
 				if(mysqli_query($connection->connected, $sql)){
-
-					$responseArray = array('type' => 'success', 'message' => $success, 'username' => $user, 'password' => $pass, 'mail' => utf8_encode($mail), 'phoneNumber' => $tel, 'active' => '1');
+					
+					$responseArray = array('type' => 'success', 'message' => $success);
 				}
 			}else{
 				$responseArray = array('type' => 'errorName', 'message' => $errorUsername);

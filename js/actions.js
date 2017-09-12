@@ -640,7 +640,7 @@ $(document).ready(function(){
         $('#form-datos').slideToggle('slow');
     })
     
-    $('#guardar-datos').on("click", function(){
+    $('#guardar-datos').on("click", function(e){
         var params = {};
         params.mail = $("#mail_update").val();
         params.id = localStorage.getItem("id");
@@ -650,7 +650,6 @@ $(document).ready(function(){
 
         console.log(params);
         $('.overlay').fadeIn("slow");
-        
         if (params.user == "" || params.pass == "" || params.tel == "" || params.mail == ""){
             $('.overlay').fadeOut("slow");
             cleanUpdate("-Revise los campos-");
@@ -665,11 +664,22 @@ $(document).ready(function(){
                     dataType: "json",
                     contentType: false
                 }).done(function( data ) {
-                        console.log(data);
+                    console.log(data);
                     if (data.type == "success"){
                         console.log(data);
                         actualizarDatos2(data);
                         $('#form-datos').slideToggle('slow');
+                        $.ajax({
+                            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getUserById.php",
+                            //url: "admin/getUserById.php",
+                            type: "POST",
+                            data: params,
+                            cache: false,
+                            dataType: "json",
+                            contentType: false
+                        }).done(function( data ) {
+                            console.log(data);
+                        });
                     } else if (data.type == "errorName"){
                         cleanUpdate(data.message);
                     }else if (data.type == "errorMail"){
