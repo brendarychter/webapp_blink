@@ -7,17 +7,18 @@ $(document).ready(function(){
     =============================================*/
     
     //query cada x segundos para las notificaciones
-    if (localStorage.getItem("username") != undefined){
-            $('#page-2').fadeIn("slow");
-            $('#page-1').hide();
-            $('#username-show').text(localStorage.getItem("username"));
-            $('.overlay').fadeOut("slow");
-            $('.button-action').removeClass("active");
-            $("#home-click").addClass("active");
-            $("#page-2").show();
-            $('.menu-bottom-app').show();
-            getUserGroups();
-    }
+    // if (localStorage.getItem("username") != undefined || localStorage.getItem("id") != 0){
+    //         $('#page-2').fadeIn("slow");
+    //         $('#page-1').hide();
+    //         $('#username-show').text(localStorage.getItem("username"));
+    //         $('.overlay').fadeOut("slow");
+    //         $('.button-action').removeClass("active");
+    //         $("#home-click").addClass("active");
+    //         $("#page-2").show();
+    //         $('.menu-bottom-app').show();
+    //         console.log("entro aca");
+    //         getUserGroups();
+    // }
 
     /*=====  End of LocalStorage block  ======*/
 
@@ -37,8 +38,8 @@ $(document).ready(function(){
             params.password = $('#password').val();
             $('.overlay').fadeIn("slow");
             $.ajax({
-                url: "http://www.blinkapp.com.ar/blinkwebapp/admin/log_in.php",
-                //url: "admin/log_in.php",
+                //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/log_in.php",
+                url: "admin/log_in.php",
                 type: "POST",
                 data: params,
                 cache: false,
@@ -127,8 +128,8 @@ $(document).ready(function(){
         }else{
             if(validateMail(params.mail)){
                 $.ajax({
-                    url: "http://www.blinkapp.com.ar/blinkwebapp/admin/sign_in.php",
-                    //url: "admin/sign_in.php",
+                    //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/sign_in.php",
+                    url: "admin/sign_in.php",
                     type: "POST",
                     data: params,
                     cache: false,
@@ -228,8 +229,8 @@ $(document).ready(function(){
         $('.overlay').fadeIn("slow");
 
         $.ajax({
-            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getGroupsCurrentUser.php",
-            //url: "admin/getGroupsCurrentUser.php",
+            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getGroupsCurrentUser.php",
+            url: "admin/getGroupsCurrentUser.php",
             type: "POST",
             data: params,
             cache: false,
@@ -296,8 +297,8 @@ $(document).ready(function(){
 
         if (params.text != ""){
             $.ajax({
-                url: "http://www.blinkapp.com.ar/blinkwebapp/admin/sendMessage.php",
-                //url: "admin/sendMessage.php",
+                //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/sendMessage.php",
+                url: "admin/sendMessage.php",
                 type: "POST",
                 data: params,
                 cache: false,
@@ -324,8 +325,8 @@ $(document).ready(function(){
         $('.messages-list').empty();
         if (params.text != ""){
             $.ajax({
-                url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllMessages.php",
-                //url: "admin/getAllMessages.php",
+                //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllMessages.php",
+                url: "admin/getAllMessages.php",
                 type: "POST",
                 data: params,
                 cache: false,
@@ -391,8 +392,8 @@ $(document).ready(function(){
         params.idGroup = localStorage.getItem("group");
 
         $.ajax({
-            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersCurrentGroup.php",
-            //url: "admin/getAllUsersCurrentGroup.php",
+            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersCurrentGroup.php",
+            url: "admin/getAllUsersCurrentGroup.php",
             type: "POST",
             data: params,
             cache: false,
@@ -432,8 +433,8 @@ $(document).ready(function(){
         $('.overlay').fadeIn("slow");
 
         $.ajax({
-            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/log_in.php",
-            //url: "admin/log_in.php",
+            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/log_in.php",
+            url: "admin/log_in.php",
             type: "POST",
             data: params,
             cache: false,
@@ -465,8 +466,8 @@ $(document).ready(function(){
         $('.overlay').fadeIn("slow");
 
         $.ajax({
-            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsers.php",
-            //url: "admin/getAllUsers.php",
+            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsers.php",
+            url: "admin/getAllUsers.php",
             type: "POST",
             cache: false,
             dataType: "json"
@@ -520,8 +521,8 @@ $(document).ready(function(){
         $('.overlay').fadeIn("slow");
         if (groupName != ""){
             $.ajax({
-                url: "http://www.blinkapp.com.ar/blinkwebapp/admin/createGroup.php",
-                //url: "admin/createGroup.php",
+                //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/createGroup.php",
+                url: "admin/createGroup.php",
                 type: "POST",
                 data: params,
                 cache: false,
@@ -597,8 +598,8 @@ $(document).ready(function(){
         params.id = id;
         console.log(form_data)
         $.ajax({
-            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/updateImages.php",
-            //url: "admin/updateImages.php",
+            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/updateImages.php",
+            url: "admin/updateImages.php",
             type: "POST",
             cache: false,
             processData: false,
@@ -609,8 +610,8 @@ $(document).ready(function(){
             $('.overlay').fadeIn("slow");
             console.log(data);
             $.ajax({
-                url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getPhoto.php",
-                //url: "admin/getPhoto.php",
+                //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getPhoto.php",
+                url: "admin/getPhoto.php",
                 type: "POST",
                 cache: false,
                 data: params,
@@ -656,27 +657,27 @@ $(document).ready(function(){
         }else{    
             if(validateMail(params.mail)){
                 $.ajax({
-                    url: "http://www.blinkapp.com.ar/blinkwebapp/admin/update_data.php",
-                    //url: "admin/update_data.php",
+                    //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/update_data.php",
+                    url: "admin/update_data.php",
                     type: "POST",
                     data: params,
                     cache: false,
-                    dataType: "json",
-                    contentType: false
+                    dataType: "json"
                 }).done(function( data ) {
                     console.log(data);
                     if (data.type == "success"){
-                        console.log(data);
+                        //console.log(data);
                         actualizarDatos2(data);
                         $('#form-datos').slideToggle('slow');
+                        params2 = {};
+                        params2.id = params.id;
                         $.ajax({
-                            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getUserById.php",
-                            //url: "admin/getUserById.php",
+                            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getUserById.php",
+                            url: "admin/getUserById.php",
                             type: "POST",
                             data: params,
                             cache: false,
-                            dataType: "json",
-                            contentType: false
+                            dataType: "json"
                         }).done(function( data ) {
                             console.log(data);
                         });
@@ -707,7 +708,7 @@ $(document).ready(function(){
         localStorage.setItem("id", user.userID);
         localStorage.setItem("phoneNumber", user.phoneNumber);
         localStorage.setItem("active", user.phoneNumber);
-        $('#username-show').text(localStorage.getItem("username"));
+        $('#username-show').text(user.username);
         $('#username_update').val(user.username);
         $('#password_update').val(user.password);
         $('#mail_update').val(user.mail);
@@ -752,8 +753,8 @@ $(document).ready(function(){
         }
         params.idList = idsAdd;
         $.ajax({
-            url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersOutCurrentGroup.php",
-            //url: "admin/getAllUsersOutCurrentGroup.php",
+            //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/getAllUsersOutCurrentGroup.php",
+            url: "admin/getAllUsersOutCurrentGroup.php",
             type: "POST",
             data: params,
             cache: false,
@@ -798,8 +799,8 @@ $(document).ready(function(){
             //chequear que la lista esté completa
         if(params.usersList.length > 0){
             $.ajax({
-                url: "http://www.blinkapp.com.ar/blinkwebapp/admin/addUserToGroup.php",
-                //url: "admin/addUserToGroup.php",
+                //url: "http://www.blinkapp.com.ar/blinkwebapp/admin/addUserToGroup.php",
+                url: "admin/addUserToGroup.php",
                 type: "POST",
                 data: params,
                 cache: false,

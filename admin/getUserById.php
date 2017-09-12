@@ -5,8 +5,7 @@
     $connection = new connection;
 
     if(!mysqli_connect_error()){
-		$id = $_POST["username"];
-		$password = $_POST["password"];
+		$id = $_POST["id"];
 		$consulta = "SELECT * FROM users WHERE userID = '$id'";
 		$response = mysqli_query($connection->connected, $consulta);
 		$matriz = array();

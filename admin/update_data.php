@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	require_once("connection.php");
     $connection = new connection;
 	header("Access-Control-Allow-Origin: *");
@@ -26,10 +25,10 @@
 			$success = '-Se ha registrado correctamente. Aguarde un instante-';
 
 			if(!mysqli_num_rows($response2)>=1){
-				$sql = "update users SET username='$user'";
+				$sql = "update users SET username='$user', password='$pass', mail='$mail', phoneNumber='$tel' where userID='$id'";
 				if(mysqli_query($connection->connected, $sql)){
-					
-					$responseArray = array('type' => 'success', 'message' => $success);
+
+					$responseArray = array('type' => 'success', 'message' => $success, 'username' => $user, 'password' => $pass, 'mail' => utf8_encode($mail), 'phoneNumber' => $tel, 'active' => '1');
 				}
 			}else{
 				$responseArray = array('type' => 'errorName', 'message' => $errorUsername);
@@ -41,7 +40,5 @@
 		$encoded = json_encode($responseArray);
 		echo $encoded;
 
-	}else{
-		echo "error conexion";
 	}
 ?>
